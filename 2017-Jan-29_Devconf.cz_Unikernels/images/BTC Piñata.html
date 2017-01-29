@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>BTC Piñata</title><meta charset="utf-8"/><style>body {
+           font-family: monospace;
+           color: #333;
+         }
+         .content {
+           margin: 10% 0 10% 15%;
+           width: 45%;
+         }
+         .content h3 {
+           font-size: 35px;
+         }
+         a, a:visited {
+           color: #333;
+           text-decoration: none;
+           font-weight: bold;
+         }
+         #logo {
+           z-index: -1;
+           opacity: 0.9;
+           position: fixed;
+           width: 40%;
+           top: 0;
+           right: 0;
+         }</style></head><body><svg id="logo" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 364 364" xml:space="preserve" viewBox="0 0 364 364" version="1.1" y="0px" x="0px" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+      <g stroke="#000" stroke-miterlimit="10" fill="#fff">
+        <path stroke-linejoin="round" d="m125.29 212.04-75.584 7.664 66.914-37.523c-0.599-7.652-0.062-15.523 1.758-23.398 3.68-15.921 12.059-29.525 23.316-39.723l-17.053-56.102 44.406 40.066-0.018 0.012c8.447-2.836 17.454-4.229 26.662-3.955l32.709-58.913-2.154 66.195c14.354 6.723 25.964 17.595 33.701 30.774l-0.046-0.116 54.511-5.706-45.61 28.354-0.012-0.028c2.381 10.829 2.462 22.341-0.202 33.862-3.092 13.379-9.508 25.117-18.154 34.58 0.02 0.03 0.031 0.051 0.031 0.051l22.76 72.487-51.25-51.361s-0.339-0.435-0.699-1.213c-9.997 3.875-20.879 5.68-32.012 5.056l-26.145 54.399 0.379-60.355c-16.772-7.06-30.074-19.671-38.208-35.107z" stroke-width="40"/>
+        <g stroke-dasharray="4">
+          <polygon transform="matrix(-1 0 0 1 364.13 0)" points="201 307.5 200.57 238.61 171.16 245.41"/>
+          <polygon transform="matrix(-1 0 0 1 364.13 0)" points="195.07 103.03 222.24 119.66 239.48 62.961"/>
+          <polygon transform="matrix(-1 0 0 1 364.13 0)" points="49.709 131.32 104.22 137.02 95.319 159.67"/>
+          <circle cx="-193.49" transform="scale(-1,1)" cy="176.15" r="77.086"/>
+          <path d="m250.47 228.14 22.76 72.487-51.25-51.361s-6.998-8.949 8.889-18.473c15.885-9.523 19.601-2.653 19.601-2.653z"/>
+          <path d="m135.87 210.97-86.162 8.737 75.297-42.225s12.918-4.169 18.271 10.411c5.354 14.582-7.406 23.077-7.406 23.077z"/>
+          <path d="m225.53 128.45 2.873-88.275-43.08 77.595s-6.673 14.228 17.098 19.722c23.771 5.493 23.109-9.042 23.109-9.042z"/>
+        </g>
+        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="23">
+          <line y2="275" x2="49.709" y1="230.33" x1="49.709"/>
+          <line y2="306.33" x2="74.625" y1="230.33" x1="74.625"/>
+          <line y2="253.25" x2="99.291" y1="230.33" x1="99.291"/>
+        </g>
+      </g>
+    </svg><div class="content"><h3>You have reached the BTC Piñata.</h3><br/><p>BTC Piñata knows the private key to the bitcoin address <a href="https://blockchain.info/address/183XuXTTgnfYfKcHbJ4sZeF46a49Fnihdh">183XuXTTgnfYfKcHbJ4sZeF46a49Fnihdh</a>. If you break the Piñata, you get to keep what's inside.</p><p>Here are the rules of the game:</p><ul><li><p>You can connect to port 10000 using TLS. Piñata will send the key and hang up.</p></li><li><p>You can connect to port 10001 using TCP. Piñata will immediately close the connection and connect back over TLS to port 40001 on the initiating host, send the key, and hang up.</p></li><li><p>You can connect to port 10002 using TCP. Piñata will initiate a TLS handshake over that channel serving as a client, send the key over TLS, and hang up.</p></li></ul><p>And here's the kicker: in both the client and server roles, Piñata requires the other end to present a certificate. Authentication is performed using standard <a href="https://tools.ietf.org/html/rfc5280#page-71">path validation</a> with a single certificate as the trust anchor. And no, you can't have the certificate key.</p><p>It follows that it should be impossible to successfully establish a TLS connection as long as Piñata is working properly. To get the spoils, you have to smash it.</p><p>Before you ask: yes, Piñata will talk to itself and you can enjoy watching it do so.</p><br/><p><a href="https://github.com/mirleft/btc-pinata">BTC Piñata</a> is a <a href="http://openmirage.org">MirageOS</a> unikernel using <a href="https://nqsb.io">not quite so broken</a> software. It is written in OCaml, runs directly on Xen, and is using native OCaml <a href="https://github.com/mirleft/ocaml-tls">TLS</a> and <a href="https://github.com/mirleft/ocaml-x509">X.509</a> implementations.</p><p>The <a href="https://raw.githubusercontent.com/mirleft/btc-pinata/master/opam-full.txt">full list</a> of installed software and a <a href="https://raw.githubusercontent.com/mirleft/btc-pinata/master/btc-pinata.xen.xz">toy unikernel</a> without secrets are available. There is no need to use the old automated tools on Piñata - roll your own instead. This challenge runs until the above address no longer contains the 10 bitcoins it started with, or until we lose interest.</p><p>Why are we doing this? At the beginning of 2014 we started to develop a <a href="https://nqsb.io">not quite so broken</a> TLS implementation from scratch. You can read more about it on <a href="https://nqsb.io">https://nqsb.io</a> or watch our <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6443_-_en_-_saal_2_-_201412271245_-_trustworthy_secure_modular_operating_system_engineering_-_hannes_-_david_kaloper.html#video">31c3 talk</a> about it. Now, we want to boost our confidence in the TLS implementation we've developed and show that robust systems software can be written in a functional language. We recapitulated the <a href="https://mirage.io/blog/bitcoin-pinata-results">first five months of the Piñata</a>.</p><p>We are well aware that <a href="https://www.schneier.com/crypto-gram/archives/1998/1215.html#contests">bounties</a> can only disprove the security of a system, and never prove it. We won't take home the message that we are 'unbreakable', 'correct', and especially not 'secure'. But we don't rely on obscurity and have a fully transparent implementation of a well-known protocol. Our prize is publicly observable in the blockchain.  If you observe a transaction, it is taken. So if this contest attracts attention and we are still standing at the end of it, we will gain that extra inch of confidence in our work.</p><p>This page is also available via <a href="https://ownme.ipredator.se">HTTPS</a>. It will present a certificate signed by the same authority that Piñata expects to sign all of the incoming requests, so your browser will complain. The purpose of HTTPS is to allow checking of interoperability with our TLS implementation.</p><br/><p>Bitcoins and the hosting for this challenge are sponsored by <a href="https://www.ipredator.se">IPredator</a>, a friendly virtual private network provider!</p><p>If you have any results or further questions, don't hesitate to contact us. Address is anything at nqsb dot io.</p><br/><p>This is the CA:</p><pre>-----BEGIN CERTIFICATE-----
+MIIE2TCCAsGgAwIBAgIJAO523QGQ3UklMA0GCSqGSIb3DQEBCwUAMBgxFjAUBgNV
+BAMMDUJUQyBQaW5hdGEgQ0EwHhcNMTcwMTExMTgyNDQ4WhcNMTgwMTExMTgyNDQ4
+WjAYMRYwFAYDVQQDDA1CVEMgUGluYXRhIENBMIICIjANBgkqhkiG9w0BAQEFAAOC
+Ag8AMIICCgKCAgEAqfNSYc/1rsHrgi46NsddYvnrkRQaA+BhX5bKFREro8eWEe4d
+IPD4Ck35wc8Qq6maUUfmNqerO72t2ZynSQ7iTYmUAXnIkfjlzZ0ckd05FnGJvNOj
+LouiAru2StbKCBPGqKn1RI9fHu3vtKstxYA/4Wj9qltFvAS3CUXoRCF52ThEdI8S
+MUdfcLvDs8sMACpvvDifAyrabuNtNPlNjbWuGXDZZsjicFnWyNWpOlF0wlJ/AM1j
+Viotc5I0K5VfqetEQmXFvTexsepJ8wbXueuW5zRS+cwa8wmDUnHVtAqa/N3CZSmp
+TML6863Z4FEa5vU0ZgRWpiF5KlvGAzBEgGtozqyHPrwrvpPzl6K9sCzSHMIMcfo8
+IH3l6kfNkzqrVualsB7HJpt1JhdVm9Zu90h+r8G6Kfosbljj7T5LRTePJFl8pcTd
+o1Uem/1NTAZQvMwsa9j6YXF3NiWYKZ0AaZWpHKLAoBXcL7eGlizADRE/0TmXkJRl
+WYCxg7s6fIeH1NfDCLro+NwEx3n66l860kIH9+VEqWSKJoPD6n7RQgtDyG46vcGi
+jlsO50L6xTM+8kn/60v+izHA552a00Hzvon+v0/Cejw3yQfRGwNbnWFVzK4xJbvc
+wsMtuwqy8eN5Cq6qummNRdBOj6t1ZABLcj8UxZmY3hYkg9OYJWwNsuqs030CAwEA
+AaMmMCQwEgYDVR0TAQH/BAgwBgEB/wIBATAOBgNVHQ8BAf8EBAMCAgQwDQYJKoZI
+hvcNAQELBQADggIBACTGzlYTuQfRuK/lOsklIWHGMW1u/FVa78iOnT976cDdRPnJ
+J9iJ632tQ7gqaoqheKZduj2NvGyqm9n97Du+9mQbRcgAm8CKa5Rgz/MUdTbtJ5VY
+YA3g9494mUmmHu6y4uir5XECR/3grvBmqOcaFiHXIws6n2nrDF6Pt4JKHsZNz7pZ
+QdcNVHEH+Cd6QH+FgnGuUdYqoMLMBXTLhG3UtOGdNO+4kU18qWQoC1DosBYsvkpn
+a8QmCabkilDX0FvHGQXAbx9PjIBGaAbq0244rnjSAj4QyERcJgjDK5mgjVHAzqW0
+8cL0xGfGS+bfQCiTDrDrZNxDxsTAcy6DiNXnEPhz3t3qhqZUM3DbL6VWn1Ol9Z5T
+2MXMaRGYxCeI/4eWPjDqePJvMgZWrTWxntSrswHMAg1YAihCLifpUEcN69n9VXf/
+kIIkZWp91mj8WoxdVyMcrpbeGMvSaLu+BwmoeZ8g/6WVa8vAvnta4mF//MAyi4Bo
+e6L3qu4Z+93Tz4OkWXd7u3kuqRgfgCQNQMNDOQxSt0EuT5xdI8UyGzD+zQdLe56x
+VE8mWVPxA/DbovpjsS2xoFk+tPkDsdGAlg05tJ/CP7j/jEXEH3oxgw0q3tG2KhDH
+SEdUgPErfznE5EwweY2OgWx8ppOgDqWwE5I/qzsjd6kufz2v1BECVv7nueoP
+-----END CERTIFICATE-----
+</pre></div></body></html>
