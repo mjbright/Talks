@@ -97,10 +97,10 @@ This repo contains my conference talks.
     <td> Pyconfr, Pau 2015 </td>
     <td>   Oct 2015  </td>
     <td>  Talk   </td>
-    <td> <a href="" > Jupyter ... </a> </td>
+    <td> <a href="" > IPython vers Jupyter </a> </td>
     <td><a href=""> PDF </a> </td>
     <td> SRC </td> 
-    <td> Video </td> 
+    <td> <a href="https://www.youtube.com/watch?v=0Uy5jS1wgzs"> Video </a> </td> 
     <td>Michael Bright</td>
 </tr>
 
