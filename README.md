@@ -73,7 +73,7 @@ This repo contains my conference talks.
     <td>Michael Bright, Haikel Guemar, Mario Loriedo</td>
 </tr>
 <tr>
-    <td> EuroPython 2016 <td>
+    <td> EuroPython 2016 </td>
     <td> 22 Jul 2016 </td>
     <td>  Talk   </td>
     <td> <a href="" > Jupyter for Everything Else </a> </td>
@@ -83,7 +83,7 @@ This repo contains my conference talks.
     <td>Michael Bright</td>
 </tr>
 <tr>
-    <td> EuroPython 2016 <td>
+    <td> EuroPython 2016 </td>
     <td> 18 Jul 2016 </td>
     <td>   Lab   </td>
     <td> <a href="" > Ipython in Depth Tutorial </a> </td>
@@ -94,7 +94,7 @@ This repo contains my conference talks.
 </tr>
 <tr> <td>2015</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
-    <td> Pyconfr, Pau 2015 <td>
+    <td> Pyconfr, Pau 2015 </td>
     <td>   Oct 2015  </td>
     <td>  Talk   </td>
     <td> <a href="" > Jupyter ... </a> </td>
