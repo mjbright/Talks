@@ -17,7 +17,7 @@ class: center, middle, inverse
 
 <br/>
 <br/>
-<h3> <img width=120 src="images/hpe_logo_whiteText.svg" /> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Mike Bright, <img src="images/Twitter_Bird.svg" width=24 /> @mjbright </h3>
+<h3> Mike Bright, <img src="images/Twitter_Bird.svg" width=24 /> @mjbright </h3>
 
 
 
@@ -131,6 +131,13 @@ There are several up-and-coming open source projects to watch this year, includi
 Why this talk?
 
 ---
+name: section_divider_what
+layout: false
+class: center, middle, inverse
+exclude: false
+## .cyan[What are Unikernels?] .lightgray["Library OS"]
+
+---
 name: section_history
 layout: false
 class: center, left
@@ -203,6 +210,64 @@ But are they a panacea?
 SpeakerNotes:
 
 ---
+name: section_divider_families
+layout: false
+class: center, middle, inverse
+exclude: false
+## .cyan[The 2 families of Unikernels]
+
+---
+name: section_implem1
+layout: false
+class: left
+
+## .blue[Unikernel Implementations] - 2 families
+<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
+
+<!-- .left-column[ Unikernel Families ] .right-column[ ] -->
+
+There are 2 main classes of Unikernels
+<!-- [ ] -->
+
+--
+<!-- .right-column[ ] -->
+
+## Clean-Slate
+
+The *Clean-Slate* approach emphasizes safety and security.<br/>
+Same language for application and "Library OS" components.
+
+One example of this approach is **MirageOS** (written in Ocaml)
+<!-- [ ] -->
+--
+<!-- .right-column[ ] -->
+
+## Legacy
+The *Legacy* approach favours backward compatibility of existing applications based on POSIX-compatibilities.
+
+One example of this approach is **OSv** for which there are implementatons of Tomcat, Jetty, Cassandra, OpenJDK
+
+We will see more Unikernel implementations later ...
+
+
+???
+Speaker Notes:
+
+A number of unikernel open source projects are beginning to take off, each with its own unique focus and approach.
+For example, MirageOS and HaLVM take a clean-slate approach and emphasize safety and security;
+ClickOS stresses speed;
+while OSv and Rump kernels aim for compatibility with existing applications. Both OSv and Rump kernels have made significant progress in porting existing applications: for example MySQL, PHP and Nginx have been ported to Rump Kernels, whereas many applications such as Tomcat, Jetty, Cassandra, OpenJDK and others have been ported to OSv. Meanwhile, MirageOS has demonstrated 1MB unikernels that serve DNS, Git and SSL web traffic with complete type safety down to the device drivers.
+
+
+.left[.footnote[.vlightgray[ @mjbright ]]]
+---
+name: section_divider_families
+layout: false
+class: center, middle, inverse
+exclude: false
+## .cyan[Application domains for Unikernels]
+
+---
 name: section_where_needed
 layout: false
 class: left
@@ -223,15 +288,13 @@ class: left
 
 **NFV (Network Functional Virtualization)**
 
-- As cloud but stricter requirements on response times, service chaining
-
-<a href="https://www.youtube.com/watch?v=3jGClCBXuTg" /> <img src="images/youtube.jpg" width=30  />Unikernels meet NFV</a>;&nbsp;&nbsp; 
-<a href="https://www.ericsson.com/research-blog/sdn/unikernels-meet-nfv/" />Ericsson Research Blog</a>;&nbsp;&nbsp; <a href="http://unikernel.org/blog/2016/unikernel-nfv-platform">Unikernels.org Blog</a>
-<!-- Ericsson, NEC, Cisco are active in this domain -->
+- Cloud but stricter requirements on response times
+- Decouple software from the hardware, decompose/chain functions
+- Ericsson, NEC, Cisco are active in this domain
 
 --
 
-**IoT / Embedded**
+**IoT / Embedded / Network Switches **
 
 - For low-resource, potentially secure elements (<u>baremetal</u> or &micro;-vmm ?)
 - Build up the "*app*" instead of stripping down the "*OS*"
@@ -247,26 +310,197 @@ class: left
 SpeakerNotes:
 
 ---
-name: section_where_needed
+name: section_where_needed_nfv1
 layout: false
 class: left
 <h2>.blue[In what domains might they be used? - NFV/SDN]</h2>
 
-<img src="images/nfv_unikernels.png" width=400 />
+*Nano-services* boot up in 10-20 msec on demand and are removed when the request completes.
+
+<table>
+<tbody>
+<tr>
+<td>
+<img src="images/nfv_unikernels.png" width=300 />
+</td>
+<td>
+Presented by Ericsson Research, Jan 2016 at SCALE 14x.
+<br/>
+<br/>
+<a href="https://www.youtube.com/watch?v=3jGClCBXuTg" /> <img src="images/youtube.jpg" width=30  />Unikernels meet NFV</a>
+<br/>
+<br/>
+<a href="https://www.ericsson.com/research-blog/sdn/unikernels-meet-nfv/" />Ericsson Research Blog</a>
+<br/>
+<br/>
+<a href="http://unikernel.org/blog/2016/unikernel-nfv-platform">Unikernels.org Blog</a>
+</td>
+</tr>
+</tbody>
+</table>
+---
+name: section_where_needed_nfv2
+layout: false
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
+
+Taken from: <a href="https://www.ietf.org/archive/id/draft-natarajan-nfvrg-containers-for-nfv-03.txt"> draft-natarajan-nfvrg-containers-for-nfv-03.txt </a>
+
+4.2. Instantiation Times
+
+Measurement of time to boot image, up to the 1st RST packet (to a SYN flood).
+
+                |--------------------------------------+
+                | Technology Type       | Time (msecs) |
+                |--------------------------------------+
+                | standardvm.xen        |     6500     |
+                | standardvm.kvm        |     2988     |
+                | Container             |     1711     |
+                | tinyx.kvm             |     1081     |
+                | tinyx.xen             |     431      |
+                | unikernel.osv.kvm     |     330      |
+                | unikernels.minios.xen |**   31     **|
+                +-----------------------+--------------+
+
+Note:
+   - These unikernels include just one application - iperf.
+   - Tinyx is "Tinyfied Linux" running 4.4.1 kernel - busybox+sshd+iperf
+   - Standard VM is Debian running 4.4.1 kernel + iperf
+   - Docker container including iperf
 
 ---
-name: section_implem1
+name: section_where_needed_nfv2
 layout: false
-class: center, left
-exclude: true
-## Unikernel Implementations - 2 families
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
+
+4.3. Throughput
+
+   TCP/IP throughput was measured using iperf from guest to host (to avoid physical medium limitations)
+
+                |---------------------------------------------------------------+
+                |     Technology        | Throughput (Gb/s) | Throughput (Gb/s) |
+                |       Type            |        Tx         |        Rx         |
+                |-----------------------+-------------------+-------------------+
+                | standardvm.xen        |        23.1       |        24.5       |
+                | standardvm.kvm        |        20.1       |        38.9       |
+                | Container             |        45.1       |        43.8       |
+                | tinyx.kvm             |        21.5       |        37.9       |
+                | tinyx.xen             |        28.6       |        24.9       |
+                | unikernel.osv.kvm     |**      47.9     **|**      47.7     **|
+                | unikernels.minios.xen |**      49.5     **|        32.6       |
+                +-----------------------+-------------------+-------------------+
+
+Note:
+- Throughput depends not just on guest efficiency
+- Xen is optimized for Tx but not Rx (similar to ClickOS experience)
+
+---
+name: section_where_needed_nfv2
+layout: false
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
+
+4.4. RTT
+
+   Average round-trip time (RTT) measured from an external server using a ping flood.
+
+                +-----------------------+--------------+
+                | Technology Type       | Time (msecs) |
+                |--------------------------------------+
+                | standardvm.xen        |      34      |
+                | standardvm.kvm        |      18      |
+                | Container             |**     4    **|
+                | tinyx.kvm             |      19      |
+                | tinyx.xen             |      15      |
+                | unikernel.osv.kvm     |       9      |
+                | unikernels.minios.xen |**     5    **|
+                +-----------------------+--------------+
 
 
-.left[.footnote[.vlightgray[ @mjbright ]]]
+---
+name: section_where_needed_nfv2
+layout: false
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
 
-???
-SpeakerNotes:
+4.5. Image Size
+
+   We measure image size using the standard "ls" tool.
+
+                +-----------------------+------------+
+                | Technology Type       | Size (MBs) |
+                |------------------------------------+
+                | standardvm.xen        |    913     |
+                | standardvm.kvm        |    913     |
+                | Container             |     61     |
+                | tinyx.kvm             |      3.5   |
+                | tinyx.xen             |      3.7   |
+                | unikernel.osv.kvm     |     12     |
+                | unikernels.minios.xen |**    2   **|
+                +-----------------------+------------+
+
+---
+name: section_where_needed_nfv2
+layout: false
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
+
+4.6. Memory Usage
+
+   "top" and "xl" (on Xen) used to measure memory usage:
+
+                +-----------------------+-------------+
+                | Technology Type       | Usage (MBs) |
+                |-------------------------------------+
+                | standardvm.xen        |     112     |
+                | standardvm.kvm        |     82      |
+                | Container             |**   3.8   **|
+                | tinyx.kvm             |     30      |
+                | tinyx.xen             |     31      |
+                | unikernel.osv.kvm     |     52      |
+                | unikernels.minios.xen |     8       |
+                +-----------------------+-------------+
+
+
+Note:
+- OSv pre-allocates memory, e.g for buffers
+- Best result is Docker as it has no OS function
+
+---
+name: section_where_needed_nfv2
+layout: false
+class: left
+<h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
+
+So what conclusions can we draw in the case of NFV?
+
+--
+
+Well it depends of course !!
+
+--
+
+It depends upon your applications', your organizations' criteria:
+-  Service agility/elasticity: spin up/down times
+-  Memory consumption
+-  Security/Isolation
+-  Management frameworks
+-  Compatibility with applications
+
+--
+
+These are still early days for Unikernels for Cloud Computing.
+
+Hybrid approaches may be appropriate.
+
+
+---
+name: section_divider_families
+layout: false
+class: center, middle, inverse
+exclude: false
+## .cyan[Unikernel Implementations    ] .lightgray[... in more detail]
 
 ---
 name: section_implem1
@@ -376,7 +610,7 @@ OCaml unifies functional, imperative, and object-oriented programming under an M
 
 OCaml has extensive libraries available
 
-(Unison utility)
+(Unison sync utility)
 ]
 
 ---
