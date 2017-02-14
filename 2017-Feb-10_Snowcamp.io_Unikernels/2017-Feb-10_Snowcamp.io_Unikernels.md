@@ -4,16 +4,9 @@ layout: false
 class: center, middle, inverse
 
 # Unikernels - The next big little thing ?
-<!-- ![](images/unikernel.org.png) -->
-<!-- ## Unikernels: The next big little thing ?
-     #### C'est quoi les Unikernels ?
--->
-<!-- ![](images/logo-tmux.svg) -->
 
-###Snowcamp.io, Grenoble, France, Feb 2017
+### Snowcamp.io, Grenoble, France, Feb 2017
 <img src="images/snowcamp.io.png" width=200 />
-
-<!-- <h3> <img width=120 src="images/hpe_logo.svg" /> &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; Mike Bright, <img src="images/Twitter_Bird.svg" width=24 /> @mjbright </h3> -->
 
 <br/>
 <br/>
