@@ -6,7 +6,7 @@ This repo contains my conference talks.
 
 <!-- <font size+=-4> -->
 <table>
-<th>
+<th bgcolor="#A0A0C0">
     
     <td><b>   Date      </b></td>
     <td><b> Contribution </b></td>
