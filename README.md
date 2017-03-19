@@ -19,7 +19,7 @@ This repo contains my conference talks.
 </th>
 
 <tbody>
-<tr bgcolor="#8080C0"> <td>Future Talks</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
     <td> DockerCon US </td>
@@ -42,7 +42,7 @@ This repo contains my conference talks.
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="#8080C0"> <td>2017</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr>
     
@@ -76,7 +76,7 @@ This repo contains my conference talks.
     <td> Video </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="#8080C0"> <td>2016</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b>2016</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     <td> Linux/ContainerConEurope </td>
     <td>  5 Oct 2016 </td>
@@ -117,7 +117,7 @@ This repo contains my conference talks.
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="#8080C0"> <td>2015</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b>2015</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     <td> Pyconfr, Pau 2015 </td>
     <td>   Oct 2015  </td>
