@@ -4,7 +4,7 @@ Conference Talks
 
 This repo contains my conference talks.
 
-<font size+=-4>
+<!-- <font size+=-4> -->
 <table>
 <th>
     
@@ -131,7 +131,7 @@ This repo contains my conference talks.
 
 </tbody>
 </table>
-</font>
+<!-- </font> -->
 
 
 
