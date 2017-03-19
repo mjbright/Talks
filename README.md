@@ -13,7 +13,7 @@ This repo contains my conference talks.
     <td><b> Title (URL) </b></td> 
     <td><b> PDF </b></td> 
     <td><b> SRC </b></td> 
-    <td><b> Video <img src="images/youtube.jpg" /> </b></td> 
+    <td><b> Video <img src="images/youtube.jpg" width=100> </b></td> 
     <td><b> Speakers </b></td>
 
 </th>
