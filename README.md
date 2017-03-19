@@ -13,7 +13,7 @@ This repo contains my conference talks.
     <td bgcolor="#A0A0C0"><b> Title (URL) </b></td> 
     <td bgcolor="#A0A0C0"><b> PDF </b></td> 
     <td bgcolor="#A0A0C0"><b> SRC </b></td> 
-    <td bgcolor="#A0A0C0"><b> Video <img src="images/youtube.jpg" width=100> </b></td> 
+    <td bgcolor="#A0A0C0"><b> Video <img src="images/youtube_small.jpg" /> </b></td> 
     <td bgcolor="#A0A0C0"><b> Speakers </b></td>
 
 </th>
