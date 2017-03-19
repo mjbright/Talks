@@ -13,13 +13,13 @@ This repo contains my conference talks.
     <td> Title (URL) </td> 
     <td> PDF </td> 
     <td> SRC </td> 
-    <td> Video <img src="images/youtube.jpg" /> </td> 
+    <td> Video <img width=80 src="images/youtube.jpg" /> </td> 
     <td> Speakers </td>
 
 </th>
 
 <tbody>
-<tr bgcolor="yellow"> <td>2017</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#800080"> <td>2017</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     
     <td> Snowcamp.io </td>
@@ -51,7 +51,7 @@ This repo contains my conference talks.
     <td> Video </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="yellow"> <td>2016</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#800080"> <td>2016</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     <td> Linux/ContainerConEurope </td>
     <td>  5 Oct 2016 </td>
@@ -92,7 +92,7 @@ This repo contains my conference talks.
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="yellow"> <td>2015</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#800080"> <td>2015</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     <td> Pyconfr, Pau 2015 </td>
     <td>   Oct 2015  </td>
