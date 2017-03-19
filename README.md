@@ -8,13 +8,13 @@ This repo contains my conference talks.
 <table>
 <th>
     
-    <td>   Date      </td>
-    <td> Contribution </td>
-    <td> Title (URL) </td> 
-    <td> PDF </td> 
-    <td> SRC </td> 
-    <td> Video <img src="images/youtube.jpg" /> </td> 
-    <td> Speakers </td>
+    <td><b>   Date      </b></td>
+    <td><b> Contribution </b></td>
+    <td><b> Title (URL) </b></td> 
+    <td><b> PDF </b></td> 
+    <td><b> SRC </b></td> 
+    <td><b> Video <img src="images/youtube.jpg" /> </b></td> 
+    <td><b> Speakers </b></td>
 
 </th>
 
