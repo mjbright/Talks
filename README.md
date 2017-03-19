@@ -8,13 +8,13 @@ This repo contains my conference talks.
 <table>
 <th bgcolor="#A0A0C0">
     
-    <td><b>   Date      </b></td>
-    <td><b> Contribution </b></td>
-    <td><b> Title (URL) </b></td> 
-    <td><b> PDF </b></td> 
-    <td><b> SRC </b></td> 
-    <td><b> Video <img src="images/youtube.jpg" width=100> </b></td> 
-    <td><b> Speakers </b></td>
+    <td bgcolor="#A0A0C0"><b>   Date      </b></td>
+    <td bgcolor="#A0A0C0"><b> Contribution </b></td>
+    <td bgcolor="#A0A0C0"><b> Title (URL) </b></td> 
+    <td bgcolor="#A0A0C0"><b> PDF </b></td> 
+    <td bgcolor="#A0A0C0"><b> SRC </b></td> 
+    <td bgcolor="#A0A0C0"><b> Video <img src="images/youtube.jpg" width=100> </b></td> 
+    <td bgcolor="#A0A0C0"><b> Speakers </b></td>
 
 </th>
 
