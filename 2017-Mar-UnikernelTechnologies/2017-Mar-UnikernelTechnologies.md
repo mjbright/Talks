@@ -24,14 +24,19 @@ class: left, middle
 
 ## Agenda
 
-- What are unikernels ?
+- What are Unikernels ?
   - What they are not.
-- Why are they needed ?
-- Advantages / Characteristics
-- Application domains
+
+- Why Unikernels ?
+  - Advantages / Characteristics
+  - Application domains
+
 - Implementations
-- Baremetal anyone ?
+
+- Usage: Baremetal anyone ?
+
 - Where’s it all heading ?
+
 - Demos
 
 .left[.footnote[.vlightgray[ @mjbright ]]]
@@ -63,7 +68,7 @@ class: center, left
 
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
-## “Unikernels are specialised, single-address-space machine images constructed by using library operating systems”
+## “Unikernels are specialized, single-address-space machine images constructed by using library operating systems”
 
 ### “What are Unikernels”, unikernel.org
 
@@ -72,7 +77,7 @@ name: section_overview
 layout: false
 class: center, left
 
-## What are Unikernels?
+## What are Unikernels? - They are "Library OS"
 
 <table style="width:100%; solid black; ">
   <tr>  <th>  </th> <th></th> </tr>
@@ -98,29 +103,6 @@ Typically, there is no file-system for example, so configuration is stored in th
 </tr>
 </tbody>
 </table>
----
-name: section_overview
-layout: false
-class: center, left
-
-## What are Unikernels?
-
-.left-column[
-Unikernels are specialized applications built with all, but only, the OS components they need.
-
-A Unikernel is standalone able to run directly as a VM (or possibly on BM)
-
-OS components such as
-Network stack
-File-system
-Device drivers
-
-Typically, there is no file-system for example, so configuration is stored in the unikernel binary
-]
-
-.right-column[
-<img src="images/unikernel_compare.png" width=600 />
-]
 
 ---
 name: section_overview
@@ -131,17 +113,17 @@ exclude: false
 ## Unikernels: What they are not ...
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
-They are not minified general purpose OS
+They are **not** minified **general purpose OS**
 - Not micro-kernels
 - Not minified Linux kernels or container OS
 
-They are not real-time Oses
+They are **not** real-time Oses
 - But they are very fast
 
-They are not
+They are **not**
 - Exokernels SURE?
-- AnyKernels YES THEY ARE
-- Multi-kernels: well HermitCore is !
+- Multi-kernels (*though* HermitCore is !)
+- Multi-process (*though* Graphene is !)
 
 They work on similar principles but are not all the same
 
@@ -169,11 +151,11 @@ Contain only the needed functionality
 
 More difficult to develop with
 - Have less underlying features
-- They can be debugged but it’s more like debugging an embedded device (tethered)
+- **Can** be debugged but tethered like for an embedded device
 
 Potentially more secure
 - small attack surface
-- If compromised an attacker can’t do much as no shell, no users, 
+- If compromised an attacker can’t do much as no shell, no users, processes ...
 
 
 ---
@@ -185,14 +167,17 @@ class: left
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
 Cloud Computing
-- On demand services
+- Fast to boot: On demand services
 
 NFV
-- On demand services
+- Fast to boot: On demand services
 
 IoT / embedded
-- IoT is essentially distributed embedded plus data collection/analysis, cloud commn …
+- IoT is essentially distributed embedded plus data collection/analysis, cloud communication …
 
+HPC
+- Secure in the cloud
+- Very efficient (no context switches, just 1 process)
 
 ---
 
@@ -214,18 +199,25 @@ class: left
 
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
+<br/>
 <table style="width:100%; border: 1px solid black; background-color: #f1f1c1;">
   <tr>  <th> Clean-Slate </th> <th>  </th> <th>Legacy</th> </tr>
 <tbody text-align="true">
 <tr>
-    <td> a minimalist approach </td>  <td> </td>
-                               <td> POSIX compatibility </td>
+    <td> - A minimalist approach </td>  <td> </td>
+                               <td> - POSIX compatibility </td>
 </tr> <tr>
-    <td> implementation </td> <td> </td>
-                               <td> </td>
+    <td> - Re-implement all OS functions </td> <td> </td>
+                               <td> - Re-use existing libraries</td>
 </tr> <tr>
-    <td> typically functional language </td> <td> </td>
-                               <td> </td>
+    <td> - Typically uses type safe language </td> <td> </td>
+                               <td> - Possible binary compatibility</td>
+</tr> <tr>
+    <td> - Very small code size, resources </td> <td> </td>
+                               <td> - Small to large code size/resources </td>
+</tr> <tr>
+    <td> - Harder to develop apps </td> <td> </td>
+                               <td> - Easier to develop apps </td>
 </tr> <tr>
 </tr>
 </tbody>
@@ -260,24 +252,113 @@ class: center,middle
                                <td> IncludeOS </td>
 </tr> <tr>
     <td> LING </td> <td> </td>
-                               <td> Rumprun </td>
+                               <td> Rumprun (+LKL) </td>
 </tr> <tr> <td> </td> <td> </td> <td> HermitCore </td>
+</tr> <tr> <td> </td> <td> </td> <td> Graphene </td>
 </tr> <tr> <td> </td> <td> </td> <td> ClickOS </td>
 </tr> <tr> <td> </td> <td> </td> <td> Vorteil </td>
 </tr> <tr> <td> </td> <td> </td> <td> Clive </td>
 </tr> <tr> <td> </td> <td> </td> <td> Runtimejs </td>
+</tr> <tr> <td> </td> <td> </td> <td> Magnios </td>
 </tr> <tr> <td> </td> <td> </td> <td> Ultibo </td>
 </tr> <tr> <td> </td> <td> </td> <td> Drawbridge </td>
+</tr> <tr> <td> </td> <td> </td> <td> ... others ? ... </td>
 </tr> <tr>
 </tr>
 </tbody>
 </table>
 
 ---
-name: section_overview
+name: section_mirageos
 layout: false
 class: center,left
-## Unikernel Implementations: MirageOS
+## Unikernel Implementations: MirageOS - Xen project
+
+.left-column[
+Clean-Slate
+<br/>
+<br/>
+<img src="images/mirageos.png" width=80 />
+<br/>
+<a href="https://mirage.io/" >  https://mirage.io/ </a>
+
+OCaml-Based
+<img src="images/ocaml.jpg" width=80 />
+]
+
+.right-column[
+
+MirageOS "Library OS" components and apps are written in <a href="https://en.wikipedia.org/wiki/OCaml"> Ocaml </a>,
+a type-safe functional(+OOP) language with extensive libraries.
+
+The mirage tool is used to build Unikernels for various backends:
+- Xen Hypervisor (PV)
+- Unix (Linux or OS/X binaries)
+- MirageOS 3 (/Solo5) now supports kvm (/ukvm) and xhyve
+
+Building applications for unix or xen
+```
+mirage configure -t [unix|xen|ukvm]
+make depend
+make
+./mir-console
+```
+
+**Use cases**: BNC Pinata, E/// Research NFV, PayGarden
+]
+
+.left[.footnote[.vlightgray[ @mjbright ]]]
+
+???
+Speaker Notes:
+
+For me:
+<a href="https://eventil.com/users/sgrove" /> sgrove </a>
+<a href="https://github.com/ocamllabs/icfp2016-blog/blob/master/CUFP/baby-steps-to-unikernels-in-pr.md" /> Blog notes </a>
+
+
+
+
+???
+Speaker Notes:
+
+See sources:
+    /home/mjb/src/git/Unikernels/mirage-skeleton/hello
+ean Grove - From Unikernels to Databases to UIs: Truly full-stack apps in OCaml - Curry On
+Sean Grove - From Unikernels to Databases to UIs: Truly full-stack apps in OCaml - Curry On
+      https://www.youtube.com/watch?v=QWfHrbSqnB0
+
+---
+name: section_mirageos
+layout: false
+class: center, left
+exclude: true
+## .blue[Unikernel implementations - MirageOS - Use Cases]
+<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
+
+.left-column[
+Clean-Slate
+<br/>
+<br/>
+<img src="images/mirageos.png" width=80 />
+<br/>
+<a href="https://mirage.io/" >  https://mirage.io/ </a>
+]
+
+.right-column[
+- <div> BNC Pinata: http://ownme.ipredator.se/ <img src="images/pinata.svg" width=100 /> </div>
+
+- Networking applications
+    - Ericsson Research NFV experiment
+
+- PayGarden, Sean Grove
+  <br/><a href="https://www.youtube.com/watch?v=i9eu9e7gN0Q" /> <img src="images/youtube.jpg" width=30  /> "Baby steps to unikernels in production" </a>
+    - Too painful to create/configure AMI images on AWS
+    - Solo5 allows to create KVM images deployable on GCE
+
+]
+
+
 
 ---
 name: section_overview
