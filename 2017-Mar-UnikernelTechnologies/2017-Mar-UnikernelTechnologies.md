@@ -72,6 +72,13 @@ class: center, left
 
 ### “What are Unikernels”, unikernel.org
 
+--
+<br/> <br/> <br/>
+
+## “VMs aren't heavy, OSes are"
+
+### Alfred Bratterud, #includeOS
+
 ---
 name: section_overview
 layout: false
@@ -241,6 +248,8 @@ class: center,middle
 
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
+<img src="images/wildwest.jpg" width=100 />
+
 <table style="width:100%; border: 1px solid black; background-color: #f1f1c1;">
   <tr>  <th> Clean-Slate </th> <th>  </th> <th>Legacy</th> </tr>
 <tbody text-align="true">
@@ -304,7 +313,7 @@ make
 ./mir-console
 ```
 
-**Use cases**: BNC Pinata, E/// Research NFV, PayGarden
+**Use cases**: <a href="http://ownme.ipredator.se/"> BNC Pinata </a> <img src="images/pinata.svg" width=50 /> , E/// Research NFV, PayGarden
 ]
 
 .left[.footnote[.vlightgray[ @mjbright ]]]
@@ -361,23 +370,135 @@ Clean-Slate
 
 
 ---
-name: section_overview
+name: section_osv
 layout: false
 class: center,left
 ## Unikernel Implementations: OSv
 
+.left-column[
+Legacy
+<br/>
+<br/>
+<img src="images/osv.jpg" width=80 />
+<br/>
+<!-- <a href="" >  https://mirage.io/ </a> -->
+]
+
+.right-column[
+A unikernel for "POSIX" and memory-managed platforms (JVM, Go, Lua).
+
+Runs on KVM, Xen, VBox, VMWare
+
+Manifesto
+- Run **existing** Linux apps, run them **faster**
+- Boot time ~ Exec time
+- Leverage memory-managed platforms
+- Stay open
+
+C++ kernel code includes threads, tcp/ip, ZFS filesystem
+
+Single process, address space
+
+TCP/IP stack components (C++ classes) communicate via net channels
+
+Possibility for MMU to handle garbage collection
+
+]
+
 ---
-name: section_overview
+name: section_rumprun
 layout: false
 class: center,left
 ## Unikernel Implementations: Rumprun
 
+.left-column[
+Legacy
+<br/>
+<br/>
+<img src="images/rumpkernel.png" width=80 />
+<br/>
+NetBSD
+<!-- <a href="" >  https://mirage.io/ </a> -->
+]
+
+.right-column[
+A refactoring of the NetBSD kernel allowing to select OS modules as needed.
+
+Unikernel base in C/C++, supports a many languages
+  - C/C++, Lua, PHP, Python, Ruby, Node.js, Erlang, Go
+
+Workflow is
+- cross-compile against NetBSD libc (with small changes)
+- bake in the hypervisor choice (not KVM ...)
+- launch VM
+
+Baremetal "Hypercall" implementation.
+
+Many available packages: apache2, nginx, haproxy, redis, mysql, sqlite, leveldb, tor, mpg123
+
+
+**NOTE**: Since 2015 an experimental Linux version exists (LKL) ...
+]
 ---
-name: section_overview
+name: section_hermitcore
 layout: false
 class: center,left
 ## Unikernel Implementations: HermitCore
 
+.left-column[
+Legacy
+<br/>
+<br/>
+<br/>
+<!-- <a href="" >  https://mirage.io/ </a> -->
+]
+
+.right-column[
+Experimental unikernel from University of Aachen, initial performance results are promising.
+
+Supports SMP in multi-kernel mode.
+
+Modes:
+- "classical unikernel" - runs on a VM
+- multikernel on VM: proxy "Linux" kernel on one core, separate applications on other cores
+- multikernel on BM: proxy "Linux" kernel on one core, separate applications on other cores
+
+Uses Intel OpenMP runtime.
+
+Languages:
+- C++, Fortran, Go (all via gcc)
+
+]
+---
+name: section_includeos
+layout: false
+class: center,left
+## Unikernel Implementations: IncludeOS
+
+.left-column[
+Legacy
+<br/>
+<br/>
+<img src="images/includeos.png" width=80 />
+<br/>
+<!-- <a href="" >  https://mirage.io/ </a> -->
+]
+
+.right-column[
+Runs natively on baremetal, or in a VM.
+
+Single-threaded unikernel by default
+
+Delegates to route messages between TCP/IP stack components.
+
+Written in C++.
+
+Create Unikernel from an application by including
+    ```#include <os>```
+
+No blocking POSIX calls implemented yet, only async i/o.
+
+]
 ---
 name: section_overview
 layout: false
@@ -422,7 +543,7 @@ class: left
     - TLS
 
 #### But what about Baremetal ?
-Some Unikernel technologies target baremetal, but it is not appropriate for all use cases
+Some Unikernel technologies target baremetal, but it is not appropriate for all use cases.
 You won’t want to dedicate your latest Proliant server to one Unikernel (flea on an elephant’s back), but rather to a Hypervisor running Unikernels
 
 But baremetal Unikernels may be appropriate for the smallest IoT devices (webcam, sensor)
@@ -512,24 +633,5 @@ class: center, left
 </tbody>
 </table>
 
-
----
-name: section_overview
-layout: false
-class: center, left
-## Resources - Unikernel Implementations (2)
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
-
-<table style="width:100%; border: 1px solid black; background-color: #f1f1c1;">
-  <tr> <th></th> <th>URL</th> <th></th> </tr>
-<tbody text-align="true">
-<tr style="background-color: #818181;"> <td>.</td><td> </td><td> </td></tr>
-<tr><td> Unikernel.org </td><td> <a href="http://unikernel.org"> site </a> </td><td> </td></tr>
-<tr><td> Wikipedia </td><td> <a href="https://en.wikipedia.org/wiki/Unikernel"> Wiki </a> </td><td> </td></tr>
-<tr style="background-color: #818181;"> <td>.</td><td> </td><td> </td></tr>
-<tr><td> Scoop.It </td><td> <a href="http://www.scoop.it/t/unikernels/"> Unikernels</a> </td><td> </td></tr>
-<tr><td> Playlist </td><td> <a href="https://www.youtube.com/playlist?list=PLCDlZzVd_jn8heLw_Q10gOaEflLZKyf81"> YouTube Unikernels</a> </td><td> </td></tr>
-</tbody>
-</table>
 
 
