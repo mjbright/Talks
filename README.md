@@ -9,7 +9,7 @@ This repo contains my conference talks.
 <table>
 <tbody>
 <th bgcolor="#A0A0C0">
-    <td border=4><b>   Date      </b></td>
+    <td border=4 ><b>   Date      </b></td>
     <td><b> Contribution </b></td>
     <td><b> Title (URL) </b></td> 
     <td><b> PDF </b></td> 
