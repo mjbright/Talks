@@ -15,6 +15,7 @@ Conference Talks
 <table>
 <tbody>
 <tr bgcolor="#A0A0C0" border="4">
+    <th>   </th>
     <th>   Date      </th>
     <th> Contribution </th>
     <th> Title (URL) </th> 
