@@ -14,7 +14,7 @@ Conference Talks
 <!-- <font size+=-4> -->
 <table>
 <tbody>
-<th bgcolor="#A0A0C0" border="4">
+<tr bgcolor="#A0A0C0" border="4">
     <th>   Date      </th>
     <th> Contribution </th>
     <th> Title (URL) </th> 
@@ -22,7 +22,7 @@ Conference Talks
     <th> SRC </th> 
     <th> Video <img src="images/youtube_small.jpg" /> </th> 
     <th> Speakers </th>
-</th>
+</tr>
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
