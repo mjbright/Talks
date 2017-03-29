@@ -8,7 +8,7 @@ This repo contains my conference talks.
 <!-- <font size+=-4> -->
 <table>
 <tbody>
-<th bgcolor="#A0A0C0">
+<th>
     <td border=4 bgcolor="#A0A0C0"><b>   Date      </b></td>
     <td border=4 bgcolor="#A0A0C0"><b> Contribution </b></td>
     <td border=4 bgcolor="#A0A0C0"><b> Title (URL) </b></td> 
