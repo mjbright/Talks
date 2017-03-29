@@ -37,6 +37,8 @@ Conference Talks
     <td>Michael Bright</td>
 </tr>
 
+<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
     <td> HPE TES </td>
     <td> 22 Mar 2017 </td>
@@ -47,7 +49,6 @@ Conference Talks
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
-<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr>
     
