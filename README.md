@@ -2,20 +2,26 @@
 Conference Talks
 ================
 
-This repo contains my conference talks.
 <br/>
+
+<!-- This post may or may not help to figure out github markdown rules for embedded html,
+     i.e. to understand which html tags are allowed through as is (whitelisted)
+
+    https://github.com/jch/html-pipeline/blob/master/lib/html/pipeline/sanitization_filter.rb#L44-L106
+
+-->
 
 <!-- <font size+=-4> -->
 <table>
 <tbody>
 <th bgcolor="#A0A0C0" border="4">
-    <td><b>   Date      </b></td>
-    <td><b> Contribution </b></td>
-    <td><b> Title (URL) </b></td> 
-    <td><b> PDF </b></td> 
-    <td><b> SRC </b></td> 
-    <td><b> Video <img src="images/youtube_small.jpg" /> </b></td> 
-    <td><b> Speakers </b></td>
+    <th>   Date      </th>
+    <th> Contribution </th>
+    <th> Title (URL) </th> 
+    <th> PDF </th> 
+    <th> SRC </th> 
+    <th> Video <img src="images/youtube_small.jpg" /> </th> 
+    <th> Speakers </th>
 </th>
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
