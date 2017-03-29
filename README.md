@@ -3,22 +3,20 @@ Conference Talks
 ================
 
 This repo contains my conference talks.
+<br/>
 
 <!-- <font size+=-4> -->
 <table>
-<th bgcolor="#A0A0C0">
-    
-    <tr border=4 bgcolor="#A0A0C0"><b>   Date      </b></tr>
-    <tr border=4 bgcolor="#A0A0C0"><b> Contribution </b></tr>
-    <tr border=4 bgcolor="#A0A0C0"><b> Title (URL) </b></tr> 
-    <tr border=4 bgcolor="#A0A0C0"><b> PDF </b></tr> 
-    <tr border=4 bgcolor="#A0A0C0"><b> SRC </b></tr> 
-    <tr border=4 bgcolor="#A0A0C0"><b> Video <img src="images/youtube_small.jpg" /> </b></tr> 
-    <tr border=4 bgcolor="#A0A0C0"><b> Speakers </b></tr>
-
-</th>
-
 <tbody>
+<th bgcolor="#A0A0C0">
+    <td border=4 bgcolor="#A0A0C0"><b>   Date      </b></td>
+    <td border=4 bgcolor="#A0A0C0"><b> Contribution </b></td>
+    <td border=4 bgcolor="#A0A0C0"><b> Title (URL) </b></td> 
+    <td border=4 bgcolor="#A0A0C0"><b> PDF </b></td> 
+    <td border=4 bgcolor="#A0A0C0"><b> SRC </b></td> 
+    <td border=4 bgcolor="#A0A0C0"><b> Video <img src="images/youtube_small.jpg" /> </b></td> 
+    <td border=4 bgcolor="#A0A0C0"><b> Speakers </b></td>
+</th>
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
