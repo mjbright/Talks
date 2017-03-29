@@ -84,7 +84,7 @@ Conference Talks
     <td> <a href="https://mjbright.github.io/Talks/2017-Jan-29_Devconf.cz_Unikernels/2017-Jan-29_Devconf.cz_Unikernels.md.html" >Unikernels: The Next Big Little Thing?</a> </td>
     <td> </td>
     <td> SRC </td> 
-    <td> Video </td> 
+    <td> <a href="https://www.youtube.com/watch?v=6R68_Qm8n34&t=36s"> <b>Video</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 <tr bgcolor="#8080C0"> <td><b>2016</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
@@ -115,7 +115,7 @@ Conference Talks
     <td> <a href="" > Jupyter for Everything Else </a> </td>
     <td><a href=""> PDF </a> </td>
     <td> SRC </td> 
-    <td> Video </td> 
+    <td> <a href="https://www.youtube.com/watch?v=wG6u51uuXEA"> <b>Video</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 <tr>
@@ -136,7 +136,7 @@ Conference Talks
     <td> IPython vers Jupyter </a> </td>
     <td><a href="http://fr.slideshare.net/mbright1/2015-oct17-pyconfrpauipythonversjupyter"> PDF </a> </td>
     <td> </td> 
-    <td> <a href="https://www.youtube.com/watch?v=0Uy5jS1wgzs"> Video </a> </td> 
+    <td> <a href="https://www.youtube.com/watch?v=0Uy5jS1wgzs"> <b>Video</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 
