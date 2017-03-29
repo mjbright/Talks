@@ -4,10 +4,15 @@ Conference Talks
 
 <br/>
 
-<!-- This post may or may not help to figure out github markdown rules for embedded html,
+<!--
+    This post may or may not help to figure out github markdown rules for embedded html,
      i.e. to understand which html tags are allowed through as is (whitelisted)
 
     https://github.com/jch/html-pipeline/blob/master/lib/html/pipeline/sanitization_filter.rb#L44-L106
+
+    NOTE: In fact the determining factor for correct embedding of tags (whitelisted ones at least)
+          is that any tagged attributes must be quoted, e.g. border="4", not border=4.
+   
 
 -->
 
@@ -39,7 +44,7 @@ Conference Talks
 
 <tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
-<tr bgcolor="#C0C0C0"> <!-- Future Talk -->
+<tr>
     <td> HPE TES </td>
     <td> 22 Mar 2017 </td>
     <td>   Talk   </td>
