@@ -32,6 +32,30 @@ Conference Talks
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
+    <td> PyCon US </td>
+    <td> 17 May 2017 </td>
+    <td>   Tutorial   </td>
+    <td> <a href="https://us.pycon.org/2017/schedule/presentation/5/" >Container Orchestration</a> </td>
+    <td> </td>
+    <td> <a href="https://github.com/ContainerOrchestration/Labs"> SRC </a> </td> 
+    <td> </td> 
+    <td>Michael Bright, Haikel Guemar</td>
+</tr>
+
+<tr bgcolor="#C0C0C0"> <!-- Future Talk -->
+    <td> PyCon US </td>
+    <td> 18 May 2017 </td>
+    <td>   Tutorial   </td>
+    <td> <a href="https://us.pycon.org/2017/schedule/presentation/184/" > IPython and Jupyter in Depth: High productivity, interactive Python </a> </td>
+    <td> </td>
+    <td> <a href="https://github.com/ipython/ipython-in-depth"> SRC </a> </td> 
+    <td> </td> 
+    <td>Michael Bright, Matthias Buissonier, Min RK</td>
+</tr>
+
+<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+
+<tr> <!-- Future Talk -->
     <td> DockerCon US </td>
     <td> 19 Apr 2017 </td>
     <td>   Talk   </td>
@@ -41,8 +65,6 @@ Conference Talks
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
-
-<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr>
     <td> HPE TES </td>
@@ -73,7 +95,7 @@ Conference Talks
     <td>   Lab   </td>
     <td> Container Orchestration </td>
     <td> </td>
-    <td> SRC </td> 
+    <td> <a href="https://github.com/ContainerOrchestration/Labs"> SRC </a> </td> 
     <td> Video </td> 
     <td>Michael Bright, Mario Loriedo</td>
 </tr>
