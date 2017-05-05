@@ -29,6 +29,7 @@ Conference Talks
     <th> Video <img src="images/youtube_small.jpg" /> </th> 
     <th> Speakers </th>
 </tr>
+
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#C0C0C0"> <!-- Future Talk -->
@@ -55,7 +56,7 @@ Conference Talks
 
 <tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
-<tr> <!-- Future Talk -->
+<tr>
     <td> DockerCon US </td>
     <td> 19 Apr 2017 </td>
     <td>   Talk   </td>
@@ -78,7 +79,6 @@ Conference Talks
 </tr>
 
 <tr>
-    
     <td> Snowcamp.io </td>
     <td> 10 Feb 2017 </td>
     <td>   Talk   </td>
