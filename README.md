@@ -60,9 +60,9 @@ Conference Talks
     <td> DockerCon US </td>
     <td> 19 Apr 2017 </td>
     <td>   Talk   </td>
-    <td> <a href="https://mjbright.github.io/Talks/...." >Lightning Talk: Unikernel Technologies</a> </td>
-    <td> </td>
-    <td> SRC </td> 
+    <td> <a href="https://www.youtube.com/watch?v=24rvIB4_v4U" >Lightning Talk: Unikernel Technologies</a> </td>
+    <td> <a href="https://www.slideshare.net/MichaelBright3/lightning-talk-unikernels"> PDF </a> </td>
+    <td> </td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
