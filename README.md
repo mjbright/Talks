@@ -25,7 +25,7 @@ Conference Talks
     <th> Contribution </th>
     <th> Title (URL) </th> 
     <th> PDF </th> 
-    <th> SRC </th> 
+    <th> -</th> 
     <th> Video <img src="images/youtube_small.jpg" /> </th> 
     <th> Speakers </th>
 </tr>
@@ -71,10 +71,10 @@ Conference Talks
     <td> HPE TES </td>
     <td> 22 Mar 2017 </td>
     <td>   Talk   </td>
-    <td> <a href="2017-Mar-UnikernelTechnologies/2017-Mar-UnikernelTechnologies.md.html" >Unikernel Technologies</a> </td>
+    <td> Unikernel Technologies </td>
     <td> </td>
-    <td> SRC </td> 
-    <td> </td> 
+    <td> -</td> 
+    <td> <a href="2017-Mar-UnikernelTechnologies/2017-Mar-UnikernelTechnologies.md.html" >YouTube</a> </td>
     <td>Michael Bright</td>
 </tr>
 
@@ -84,7 +84,7 @@ Conference Talks
     <td>   Talk   </td>
     <td> <a href="https://mjbright.github.io/Talks/2017-Feb-10_Snowcamp.io_Unikernels/2017-Feb-10_Snowcamp.io_Unikernels.md.html" >Unikernels: The Next Big Little Thing?</a> </td>
     <td> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
@@ -105,7 +105,7 @@ Conference Talks
     <td>   Talk   </td>
     <td> <a href="https://mjbright.github.io/Talks/2017-Jan-29_Devconf.cz_Unikernels/2017-Jan-29_Devconf.cz_Unikernels.md.html" >Unikernels: The Next Big Little Thing?</a> </td>
     <td> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> <a href="https://www.youtube.com/watch?v=6R68_Qm8n34&t=36s"> <b>Video</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
@@ -116,7 +116,7 @@ Conference Talks
     <td>   Lab   </td>
     <td> <a href="" > Container Orchestration: Lab (Swarm, Kubernetes, Mesos) </a> </td>
     <td><a href="http://www.slideshare.net/MichaelBright3/container-coneu2016-lab"> PDF </a> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> </td> 
     <td>Michael Bright, Haikel Guemar, Mario Loriedo</td>
 </tr>
@@ -126,7 +126,7 @@ Conference Talks
     <td>   Talk   </td>
     <td> <a href="https://mjbright.github.io/LinuxConEU-ContainerOrchestration/ContainerConEU2016_Pres_remark.html#1" > Container Orchestration: Which Conductor? </a> </td>
     <td><a href="http://www.slideshare.net/MichaelBright3/container-con-europe-2016-container-orchestration-which-conductor" > PDF </a> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> </td> 
     <td>Michael Bright, Haikel Guemar, Mario Loriedo</td>
 </tr>
@@ -136,7 +136,7 @@ Conference Talks
     <td>  Talk   </td>
     <td> <a href="" > Jupyter for Everything Else </a> </td>
     <td><a href=""> PDF </a> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> <a href="https://www.youtube.com/watch?v=wG6u51uuXEA"> <b>Video</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
@@ -146,7 +146,7 @@ Conference Talks
     <td>   Lab   </td>
     <td> <a href="" > Ipython in Depth Tutorial </a> </td>
     <td><a href=""> PDF </a> </td>
-    <td> SRC </td> 
+    <td> -</td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
