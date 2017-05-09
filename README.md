@@ -60,10 +60,10 @@ Conference Talks
     <td> DockerCon US </td>
     <td> 19 Apr 2017 </td>
     <td>   Talk   </td>
-    <td> <a href="https://www.youtube.com/watch?v=24rvIB4_v4U" >Lightning Talk: Unikernel Technologies</a> </td>
+    <td> Lightning Talk: Unikernel Technologies </td>
     <td> <a href="https://www.slideshare.net/MichaelBright3/lightning-talk-unikernels"> PDF </a> </td>
     <td> </td> 
-    <td> </td> 
+    <td> <a href="https://www.youtube.com/watch?v=24rvIB4_v4U" >Youtube Video</a> </td>
     <td>Michael Bright</td>
 </tr>
 
@@ -72,9 +72,9 @@ Conference Talks
     <td> 22 Mar 2017 </td>
     <td>   Talk   </td>
     <td> Unikernel Technologies </td>
-    <td> </td>
+    <td> <a href="2017-Mar-UnikernelTechnologies/2017-Mar-UnikernelTechnologies.md.html" ></a> </td>
     <td> -</td> 
-    <td> <a href="2017-Mar-UnikernelTechnologies/2017-Mar-UnikernelTechnologies.md.html" >YouTube</a> </td>
+    <td> </td> 
     <td>Michael Bright</td>
 </tr>
 
