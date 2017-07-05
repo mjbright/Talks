@@ -32,7 +32,20 @@ Conference Talks
 
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
-<tr bgcolor="#C0C0C0"> <!-- Future Talk -->
+<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+
+<tr bgcolor="#C0C0C0">
+    <td> RMLL, St-Etienne </td>
+    <td> 3 July 2017 </td>
+    <td>   Tutorial   </td>
+    <td> Docker and Python, Python and Docker </td>
+    <td> <a href="2017-Jul-RMLL-Docker-Python/2017-Jul-RMLL-Docker-Python.pdf"> PDF </a> </td>
+    <td> <a href="2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC </a> </td> 
+    <td> </td> 
+    <td>Michael Bright</td>
+</tr>
+
+<tr bgcolor="#C0C0C0">
     <td> PyCon US </td>
     <td> 17 May 2017 </td>
     <td>   Tutorial   </td>
@@ -43,7 +56,7 @@ Conference Talks
     <td>Michael Bright, Haikel Guemar</td>
 </tr>
 
-<tr bgcolor="#C0C0C0"> <!-- Future Talk -->
+<tr bgcolor="#C0C0C0">
     <td> PyCon US </td>
     <td> 18 May 2017 </td>
     <td>   Tutorial   </td>
@@ -53,8 +66,6 @@ Conference Talks
     <td> </td> 
     <td>Michael Bright, Matthias Buissonier, Min RK</td>
 </tr>
-
-<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr>
     <td> DockerCon US </td>
