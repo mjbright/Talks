@@ -40,7 +40,7 @@ Conference Talks
     <td>   Tutorial   </td>
     <td> Docker and Python, Python and Docker </td>
     <td> <a href="2017-Jul-RMLL-Docker-Python/2017-Jul-RMLL-Docker-Python.pdf"> PDF </a> </td>
-    <td> <a href="2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC </a> </td> 
+    <td> <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC </a> </td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
