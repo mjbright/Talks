@@ -31,7 +31,7 @@ Conference Talks
 </tr>
 
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<tr bgcolor="#8080C0"> <td><b></b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
 
 <tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
@@ -41,6 +41,7 @@ Conference Talks
     <td>   Presentation   </td>
     <td> Unikernels: What Usage? </td>
     <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/2017-Jul-RMLL-Unikernels-WhatUsage.pdf"> PDF </a> 
+         <hr/>
          <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Unikernels-WhatUsage/#1"> Slides online </a>
     </td>
     <td> <a href="https://github.com/mjbright/Talks/tree/master/2017-Jul-RMLL-Unikernels-WhatUsage"> Slides source </a> </td> 
