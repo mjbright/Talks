@@ -54,10 +54,12 @@ Conference Talks
     <td>   Tutorial   </td>
     <td> Docker and Python, Python and Docker </td>
     <td> <a href="2017-Jul-RMLL-Docker-Python/2017-Jul-RMLL-Docker-Python.pdf"> PDF </a>
+         <hr/>
          <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Docker-Python/#1"> Slides online </a>
    </td>
     <td>
         <a href="https://github.com/mjbright/Talks/tree/master/2017-Jul-RMLL-Docker-Python"> Slides source </a> 
+         <hr/>
         <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC notebook </a>
     </td> 
     <td> </td> 
