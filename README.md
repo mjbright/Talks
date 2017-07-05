@@ -41,6 +41,7 @@ Conference Talks
     <td> Unikernels: What Usage? </td>
     <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/2017-Jul-RMLL-Unikernels-WhatUsage.pdf"> PDF </a> 
          <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Unikernels-WhatUsage/#1"> Slides online </a>
+    </td>
     <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/index.html"> Slides source </a> </td> 
     <td> </td> 
     <td>Michael Bright</td>
@@ -56,7 +57,8 @@ Conference Talks
    </td>
     <td>
         <a href="2017-Jul-RMLL-Docker-Python/index.html"> Slides source </a> 
-        <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC notebook </a> </td> 
+        <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC notebook </a>
+    </td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
