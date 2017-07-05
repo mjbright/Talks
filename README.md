@@ -31,6 +31,7 @@ Conference Talks
 </tr>
 
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b></b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
@@ -42,7 +43,7 @@ Conference Talks
     <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/2017-Jul-RMLL-Unikernels-WhatUsage.pdf"> PDF </a> 
          <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Unikernels-WhatUsage/#1"> Slides online </a>
     </td>
-    <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/index.html"> Slides source </a> </td> 
+    <td> <a href="https://github.com/mjbright/Talks/tree/master/2017-Jul-RMLL-Unikernels-WhatUsage"> Slides source </a> </td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
@@ -56,7 +57,7 @@ Conference Talks
          <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Docker-Python/#1"> Slides online </a>
    </td>
     <td>
-        <a href="2017-Jul-RMLL-Docker-Python/index.html"> Slides source </a> 
+        <a href="https://github.com/mjbright/Talks/tree/master/2017-Jul-RMLL-Docker-Python"> Slides source </a> 
         <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC notebook </a>
     </td> 
     <td> </td> 
