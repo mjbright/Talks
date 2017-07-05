@@ -37,10 +37,26 @@ Conference Talks
 <tr bgcolor="#C0C0C0">
     <td> RMLL, St-Etienne </td>
     <td> 3 July 2017 </td>
+    <td>   Presentation   </td>
+    <td> Unikernels: What Usage? </td>
+    <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/2017-Jul-RMLL-Unikernels-WhatUsage.pdf"> PDF </a> 
+         <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Unikernels-WhatUsage/#1"> Slides online </a>
+    <td> <a href="2017-Jul-RMLL-Unikernels-WhatUsage/index.html"> Slides source </a> </td> 
+    <td> </td> 
+    <td>Michael Bright</td>
+</tr>
+
+<tr bgcolor="#C0C0C0">
+    <td> RMLL, St-Etienne </td>
+    <td> 3 July 2017 </td>
     <td>   Tutorial   </td>
     <td> Docker and Python, Python and Docker </td>
-    <td> <a href="2017-Jul-RMLL-Docker-Python/2017-Jul-RMLL-Docker-Python.pdf"> PDF </a> </td>
-    <td> <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC </a> </td> 
+    <td> <a href="2017-Jul-RMLL-Docker-Python/2017-Jul-RMLL-Docker-Python.pdf"> PDF </a>
+         <a href="https://mjbright.github.io/Talks/2017-Jul-RMLL-Docker-Python/#1"> Slides online </a>
+   </td>
+    <td>
+        <a href="2017-Jul-RMLL-Docker-Python/index.html"> Slides source </a> 
+        <a href="https://github.com/mjbright/Talks/blob/master/2017-Jul-RMLL-Docker-Python/2017-July-3-RMLL-Python_and_Docker.ipynb"> SRC notebook </a> </td> 
     <td> </td> 
     <td>Michael Bright</td>
 </tr>
