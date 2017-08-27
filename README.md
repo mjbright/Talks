@@ -14,7 +14,7 @@
 <table>
 <tbody>
 <tr bgcolor="#A0A0C0" border="4"><td>
-        <img width=400 src="images/waay_over_there.png" />
+        <img src="images/waay_over_there.png" width="400" />
 </td><td>
     <a href="https://twitter.com/i/videos/897352244261158912" >
 
