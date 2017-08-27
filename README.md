@@ -20,15 +20,10 @@ Conference Talks
 <tbody>
 <tr bgcolor="#A0A0C0" border="4"><td>
     <a href="https://twitter.com/i/videos/897352244261158912" >
-        <img src="images/DockerCon2017.png" />
+<blockquote class="twitter-video" data-lang="en"><p lang="en" dir="ltr">Leveraging the <a href="https://twitter.com/hashtag/Docker?src=hash">#Docker</a> Community is an important key to getting the most out of <a href="https://twitter.com/hashtag/DockerCon?src=hash">#DockerCon</a>! <a href="https://t.co/xxMG9McL5o">pic.twitter.com/xxMG9McL5o</a></p>&mdash; Docker (@Docker) <a href="https://twitter.com/Docker/status/897352244261158912">August 15, 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </a>
 
-
-</td><td>
-
-    <video>
-        <source src=""https://twitter.com/i/videos/897352244261158912"  type="video/mp4" >
-    </video>
 
 </td></tr>
 </tbody>
