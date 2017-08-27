@@ -22,6 +22,14 @@ Conference Talks
     <a href="https://twitter.com/i/videos/897352244261158912" >
         <img src="images/DockerCon2017.png" />
     </a>
+
+
+</td><td>
+
+    <video>
+        <source src=""https://twitter.com/i/videos/897352244261158912"  type="video/mp4" >
+    </video>
+
 </td></tr>
 </tbody>
 </table>
