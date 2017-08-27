@@ -1,9 +1,4 @@
 
-Conference Talks
-================
-
-<br/>
-
 <!--
     This post may or may not help to figure out github markdown rules for embedded html,
      i.e. to understand which html tags are allowed through as is (whitelisted)
@@ -19,7 +14,6 @@ Conference Talks
 <table>
 <tbody>
 <tr bgcolor="#A0A0C0" border="4"><td>
-
         <img src="images/DockerCon2017.png" />
 </td><td>
     <a href="https://twitter.com/i/videos/897352244261158912" >
@@ -33,17 +27,9 @@ Conference Talks
 
     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </a>
-
-
 </td></tr>
 </tbody>
 </table>
-
-<!--
-    <a href="https://twitter.com/i/videos/897352244261158912" >
-        <img src="images/DockerCon2017.png" />
-    </a>
--->
 
 <!-- <font size+=-4> -->
 <table>
