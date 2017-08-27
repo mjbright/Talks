@@ -16,7 +16,9 @@ Conference Talks
 
 -->
 
-<a href="https://twitter.com/i/videos/897352244261158912"> <img src="images/DockerCon2017.png /> </a>
+<a href="https://twitter.com/i/videos/897352244261158912" >
+    <img src="images/DockerCon2017.png" />
+</a>
 
 <!-- <font size+=-4> -->
 <table>
