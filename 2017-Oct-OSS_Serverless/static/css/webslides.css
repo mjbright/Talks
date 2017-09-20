@@ -3218,16 +3218,24 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Horizontal Gradient*/
 .bg-gradient-h {
-  background: linear-gradient(134deg, #32b 0, #62b 100%); }
+  /*background: linear-gradient(134deg, #32b 0, #62b 100%); }*/
+  background: linear-gradient(134deg, #a2b 0, #22b 100%); }
 
 /*Vertical Gradient*/
 .bg-gradient-v {
+	/*
   background: -webkit-gradient(linear, left bottom, left top, from(#62b), to(#32b));
   background: linear-gradient(to top, #62b 0%, #32b 100%); }
+  */
+  background: -webkit-gradient(linear, left bottom, left top, from(#aad), to(#2ad));
+  background: linear-gradient(to top, #aad 0%, #2ad 100%); }
 
 /*Radial Gradient*/
 .bg-gradient-r {
-  background: radial-gradient(ellipse at center, #62b 0%, #32b 100%); }
+  background: radial-gradient(ellipse at center, #aad 0%, #2ad 100%);
+	/*
+  background: radial-gradient(ellipse at center, #62b 0%, #32b 100%);
+  */}
 
 /*White Gradient (vertical)*/
 .bg-gradient-white {
@@ -3699,6 +3707,8 @@ input[type='submit']:active {
 .bg-primary input,
 [class*='bg-gradient-'] .button,
 [class*='bg-'] a.button.ghost {
+  /*background-color: #333;
+  color: #333;*/
   border-color: #fff; }
 
 [class*='bg-'] a.button {
