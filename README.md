@@ -11,6 +11,8 @@
 
 -->
 
+<a href="https://confoo.ca/en/yul2018/call-for-papers/speaker/mike-bright" lang="en"><img alt="ConFoo | March 7-9, 2018 | Montreal, Canada" style="border:0" width="180" height="130" src="https://confoo.ca/images/propaganda/yul2018/en/vote.png" /></a>
+
 <table>
 <tbody>
 <tr bgcolor="#A0A0C0" border="4"><td>
