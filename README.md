@@ -48,36 +48,40 @@
 </tr>
 
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
-<!--
+<!-- -->
 <tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
--->
+<!-- -->
 
 <tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
+
 <tr bgcolor="#8080C0">
     <td><b> Open Source Summit, Prague</b></td>
-    <td> 24 October </td><td> Presentation </td>
+    <td> 24 October </td>
+    <td> Presentation </td>
     <td> <a href="https://osseu17.sched.com/event/BxIz/serverless-is-it-for-your-organization-michael-bright-hpe?iframe=yes&w=100%&sidebar=yes&bg=no"> Serverless - Is It For Your Organization? </a> </td>
-    <td> - </td>
-    <td> - </td>
+    <td> <a href="https://github.com/mjbright/Talks/raw/master/2017-Oct-OSS_Serverless/2017-Oct-OSS_Serverless.pdf"> PDF (renders badly) </a> <hr/> <a href="https://mjbright.github.io/Talks/2017-Oct-OSS_Serverless/#slide=1"> Slides online </a> </td>
+    <td> <a href="https://github.com/mjbright/Talks/tree/master/2017-Oct-OSS_Serverless"> Sources </a> </td>
     <td> - </td>
     <td> Michael Bright </td>
 </tr>
 <tr bgcolor="#8080C0">
     <td><b> Open Source Summit, Prague</b></td>
-    <td> 25 October </td><td> Presentation </td>
+    <td> 25 October </td>
+    <td> Presentation </td>
     <td> <a href="https://osseu17.sched.com/event/BxJr/container-orchestration-the-state-of-play-michael-bright-hpe?iframe=yes&w=100%&sidebar=yes&bg=no"> Container Orchestration: The State of Play </a></td>
-    <td> - </td>
-    <td> - </td>
+    <td> <a href="https://github.com/ContainerOrchestration/ContainerOrchestration/raw/gh-pages/ContainerOrchestration_Pres.pdf"> PDF </a> <hr/> <a href="https://containerorchestration.github.io/ContainerOrchestration/"> Slides online </a> </td>
+    <td> <a href="https://github.com/ContainerOrchestration/ContainerOrchestration"> Sources </a> </td>
     <td> - </td>
     <td> Michael Bright </td>
 </tr>
 <tr bgcolor="#8080C0">
     <td><b> Open Source Summit, Prague</b></td>
-    <td> 25 October </td><td> Tutorial </td>
+    <td> 25 October </td>
+    <td> Tutorial </td>
     <td> <a href="https://osseu17.sched.com/event/BxK0/container-orchestration-hands-on-with-the-technologies-michael-bright-hpe?iframe=yes&w=100%&sidebar=yes&bg=no"> Container Orchestration: Hands On with the Technologies </a></td>
     <td> - </td>
-    <td> - </td>
+    <td> <a href="https://github.com/ContainerOrchestration/Labs"> Materials (notebooks) </a> </td>
     <td> - </td>
     <td> Michael Bright </td>
 </tr>
