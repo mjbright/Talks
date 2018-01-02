@@ -55,27 +55,27 @@
     <td> Kubernetes Tutorial </td>
     <td> </td>
     <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> SRC(TODO) </a> </td> 
-    <td> Video </td> 
+    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
     <td>Michael Bright, Mario Loriedo</td>
 </tr>
 <tr>
     <td> DevConf.cz </td>
-    <td> 29 Jan 2017 </td>
+    <td> 29 Jan 2018 </td>
     <td>   Talk   </td>
     <td> <a href="TODO" >Unikernels: In Action </a> </td>
     <td> </td>
-    <td> -</td> 
-    <td> <a href="TODO"> <b>Video</b> </a> </td> 
+    <td> <a href="TODO"> SRC(TODO) </a> </td> 
+    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 <tr>
     <td> DevConf.cz </td>
-    <td> 29 Jan 2017 </td>
+    <td> 29 Jan 2018 </td>
     <td>   Talk   </td>
     <td> <a href="TODO" >Serverless</a> </td>
     <td> </td>
-    <td> -</td> 
-    <td> <a href="TODO"> <b>Video</b> </a> </td> 
+    <td> <a href="TODO"> SRC(TODO) </a> </td> 
+    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 <tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
