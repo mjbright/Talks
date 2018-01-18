@@ -54,7 +54,8 @@
     <td>   Lab   </td>
     <td> Kubernetes Tutorial </td>
     <td> </td>
-    <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> SRC(TODO) </a> </td> 
+    <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
+    <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
     <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
     <td>Michael Bright, Mario Loriedo</td>
 </tr>
