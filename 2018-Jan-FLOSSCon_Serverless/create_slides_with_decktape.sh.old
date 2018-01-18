@@ -1,0 +1,182 @@
+
+# https://jpetazzo.github.io/orchestration-workshop/#1
+
+DEBUG=0
+
+PORT=9000
+
+die() {
+    echo "$0: die - $*" >&2
+    exit 1
+}
+
+checkHTTPOK() {
+    curl -I $1 2>/dev/null | grep -E "^HTTP.*200 OK" && return 0 # OK:
+
+    # Fail:
+    return 1
+}
+
+decktape() {
+    NAME="$1"; shift
+    URL="$1"; shift
+    PDF_OP="$1"; shift
+
+    echo; echo "--- decktape '$NAME' '$URL' $PDF_OP'";  echo "--- Creating PDF of '$NAME'
+from <$URL>
+to <$PDF_OP>"
+
+    WWW_REMARK_DIR=$HOME/z/www/REMARK
+
+    CMD="docker run astefanutti/decktape $URL $OPFILE"
+    CMD="docker run --rm --net=host -v $WWW_REMARK_DIR:/slides astefanutti/decktape $URL $PDF_OP"
+    [ $DEBUG -ne 0 ] && echo "$CMD"
+    $CMD
+    ls -al -h "$WWW_REMARK_DIR/$PDF_OP"
+}
+
+containerCon1() {
+    IPFILE="2016-Oct-ContainerConEU/ContainerConEU2016_Pres.md"
+    IPFILE2="2016-Oct-ContainerConEU/ContainerConEU2016_Pres.NoNotes.md"
+    ./strip.pl $IPFILE > $IPFILE2
+
+    IPFILE=$IPFILE2
+    IPFILE="2016-Oct-ContainerConEU/ContainerConEU2016_Pres_remark.NoNotes.html"
+
+    echo; echo "--- ContainerConEU 2016 Slides"; echo "--- Creating PDF of Presentation slides [ without speaker slides ] "
+    URL_BASE="http://localhost:${PORT}/"
+    URL="$URL_BASE/$IPFILE"
+    PDF="2016-Oct-ContainerConEU/ContainerConEU2016_Pres.pdf"
+    docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape $URL $PDF
+    exit 0
+}
+
+
+containerCon2() {
+    decktape "Container ConEurop Presentation slides" "http://localhost:${PORT}/2016-Oct-ContainerConEU/ContainerConEU2016_Pres_remark.html" "2016-Oct-ContainerConEU/ContainerConEU2016_Pres.pdf"
+    exit 0
+    echo; echo "--- XXXX"; echo "--- Creating PDF of Presentation slides"
+    #exit 0
+    #URL=http://localhost:${PORT}/ContainerConEU2016_Pres_remark.html
+    URL=http://localhost:${PORT}/2016-Oct-ContainerConEU/ContainerConEU2016_Pres_remark.html
+    PDF=ContainerConEU2016_Pres.pdf
+    docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape $URL $PDF
+
+    #docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape http://localhost:${PORT}/ContainerConEU2016_Pres_remark.html ContainerConEU2016_Pres.pdf
+    #docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape http://localhost:${PORT}/ContainerConEU2016_Pres_remark.html ContainerConEU2016_Pres.pdf
+}
+
+function processDir {
+    THISDIR=$1
+
+    PARENT=$(dirname $THISDIR)
+    CHILD=$(basename $THISDIR)
+
+    #if [ $PARENT = ~/z/www/REMARK ];then
+    echo "PARENT=<$PARENT>"
+    echo "CHILD=<$CHILD>"
+
+    URL=http://localhost:${PORT}
+    checkHTTPOK $URL || die "Web server not running on port ${PORT}"
+
+    URL=http://localhost:${PORT}/${CHILD}/
+    checkHTTPOK $URL || die "No such address <$URL>"
+
+    MD=${CHILD}.md
+    if [ -f ${THISDIR}/${MD} ];then
+        URL=http://localhost:${PORT}/${CHILD}/${MD}
+        HTML=${MD}.html
+        checkHTTPOK $URL || die "No such markdown address <$URL>"
+    else
+        MD=$(ls -1t $THISDIR/*.md | sed 's/.*\///' | head -1)
+        HTML=$(ls -1t $THISDIR/*.html | sed 's/.*\///' | head -1)
+        URL=http://localhost:${PORT}/${CHILD}/${MD}
+        checkHTTPOK $URL || die "No such markdown address <$URL>"
+    fi
+
+    #URL=http://localhost:${PORT}/${CHILD}/${CHILD}.html
+    URL=http://localhost:${PORT}/${CHILD}/${HTML}
+    checkHTTPOK $URL || die "No such HTML address <$URL>"
+
+    echo "MD=<$MD>"
+    echo "HTML=<$HTML>"
+    #die decktape "${CHILD}" $URL ${CHILD}.pdf
+    decktape "${CHILD}" $URL ${CHILD}.pdf
+    #else
+    #    die "Couldn't determine dir from <$PWD>"
+    #fi
+}
+
+[ -z "$1" ] && set -- --thisdir
+
+
+while [ ! -z "$1" ];do
+    case $1 in
+        -d) DEBUG=1;;
+        -p) shift; PORT=$1;;
+
+        -dow)
+            URL="http://jpetazzo.github.io/orchestration-workshop/";
+            decktape "Jerome Petazzonis Orchestration Workshop" $URL jpetazzo.github.io_orchestration-workshop.pdf
+	    exit $?
+            ;;
+
+        --this*)
+	    if [ -z "$2" ];then
+                processDir $PWD
+            else
+                processDir $2
+	    fi
+	    exit $?
+	    ;;
+
+        http*)
+            URL="$1"
+            SITE=$( echo $URL | sed -e 's/https*:\/\///' -e 's/\/.*//' )
+            OPFILE="$SITE.$$.pdf"
+            echo; echo "--- URL $URL"; echo "--- Creating PDF of slides from URL <$URL> to file <$OPFILE>"
+            decktape "Unknown" $URL $OPFILE
+	    exit $?
+            ;;
+
+        -tmux)
+            URL="http://localhost:${PORT}/2016-Nov-16_GrenobleFLOSS_Tmux.md.html"
+            decktape "2016-Nov-16 Grenoble FLOSS Tmux" $URL 2016-Nov-16_GrenobleFLOSS_Tmux.pdf
+	    exit $?
+            ;;
+
+        -fpy)
+            URL="http://localhost:${PORT}/2017-Jan-18_Meetup_FunctionalPython.md.html"
+            decktape "2017-Jan-18_Meetup_FunctionalPython" $URL 2017-Jan-18_Meetup_FunctionalPython.pdf
+	    exit $?
+            ;;
+
+        -mario)
+            decktape "Mario's Presentation slides" "http://l0rd.github.io/talks/containers-and-languages/index_en.html#1" "5ContainerPatterns_Slides.pdf"
+            #docker run --rm -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape $URL 5ContainerPatterns_Slides.pdf
+	    exit $?
+            ;;
+
+        -lab)
+            echo; echo "--- ContainerConEU 2016 LAB"; echo "--- Creating PDF of Lab"
+            docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape http://localhost:${PORT}/ContainerConEU2016_Lab_remark.html ContainerConEU2016_Lab.pdf
+            #decktape $URL $OPFILE "PDF of Lab slides"
+            #docker run --rm --net=host -v /home/mjb/z/www/REMARK:/slides astefanutti/decktape http://localhost:${PORT}/ContainerConEU2016_Lab_remark.html ContainerConEU2016_Lab.pdf
+	    exit $?
+            ;;
+
+        -cc)
+            containerCon1
+	    exit $?
+            ;;
+
+
+        *) die "Unknown option <$1>";;
+    esac
+    shift
+done
+
+
+processDir $PWD
+
+

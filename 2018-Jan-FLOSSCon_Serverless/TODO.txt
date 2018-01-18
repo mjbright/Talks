@@ -1,0 +1,126 @@
+
+0. REPRINT Manning "AWS in Action"
+
+   DO THE FOLLOWING BEFORE Oct 5th ? ;-) before OpenShift in Action review
+
+   Learn about API GW, Protocol Buffers, SmartNews use case ...
+
+   Investigate on-premise versus bursting ...
+   Search "Cloud bursting serverless"
+
+   Synergy + serverless
+   Synergy + unikernels
+   Synergy + unikernels + serverless
+
+   Is localstack deployable - for lambda part for example?
+
+   Azure Stack + serverless
+   Azure Stack + Azure + serverless
+   Synergy + Azure Stack + serverless
+
+   Blog Posts ...
+
+   3 months off for
+   - Startup
+   - Serverless, Unikernels, Containers
+   - Good Serverless use cases
+   - Good Unikernel use cases
+   - Conferences: MOOC/Pyugre, Snowcamp, DevConf.cz, Confoo
+      23 Janvier: Meetup
+      24-27 Jan:  Snowcamp.io - Unikernels, Serverless, combined?, deploying killer app to the web, 
+                                Unikernels tuto
+                                Serverless tuto
+                                Container Orchestration tuto
+                                LinuxKit tuto
+                  Cfp until 1st Nov.
+      26-28 Jan:  DevConf.cz  - Unikernels, Serverless, combined?, deploying killer app to the web, 
+                                Unikernels tuto
+                                Serverless tuto
+                                Container Orchestration tuto
+                                LinuxKit tuto
+                  Cfp open until ??
+
+     IncludeOS demos - dashboard, NAT, f/w, ...
+     -> Serverless?
+
+     OSv + Serverless
+
+     Serverless over PaaS (Heroku, OpenShift, CloudFoundry, ... DDC?/DEE?, Deis? Azure?), 
+
+   - git/go, code contribution
+   - application scenarii, dev ops
+   - MVES
+
+   FIX
+
+
+DONE: 1. Generate, publish slides and PDF version
+
+2. Change agenda - no extra text
+   Add sections for cost, performance, portability issues, use cases, best suited scenario
+   Performance/Cost:
+   - Gather costs data
+   - Study language performance info
+
+   - Portability choices:
+     - use few platform specific functionalities
+     - abstract away platform specific functionalities
+     - deploy open source platform (on-premises, or on 1 or more cloud providers)
+           how to route between?
+           bursting load-balancer?
+
+   - Use cases / best scenarii
+     - latency tolerant (what latency?) - cause: container, JVM startup?
+     - unpredictable or seasonal (d/wk/m/qtr/yearly) workloads
+     - persistence/state -> container lifetime?
+     
+
+     - COMPANY IDEA: ServingU.com MCP ( multi-cloud-plexer )
+           Serverless load balancer/multi-cloud-plexer => burst out
+
+
+3. Watch Serverless videos ...
+
+4. Be explicit
+   - AWS: Amazon
+   - Azure: MS
+   - GCF: Google Cloud
+   - OpenWhisk -> Apache
+     IBM OpenWhisk -> IBM BlueMix PaaS
+
+   Mention Cloud Foundry?/Spring CLoud Functions
+
+4. Create my scenarii
+    - Chalice
+    - Kappa
+    - Apex
+    - Serverless
+        - Lambda
+        - Azure
+        - Google
+        - BlueMix
+        - Kubeless
+        - DotInst
+
+
+    - Iron.io
+    - Kubeless
+    - OpenFaaS
+    - Fission
+
+    - REAL USE CASES, external services, multiple functions, state, ...
+
+5. Prepare for possible disaster
+    Slides (PDF, html) to github
+
+    Make videos of demos
+    Archive to github
+
+    Save any login info needed (AWS, AF, GC, github, CIC/ssh-gw/monitoring)
+
+    Last slides update post DockerCon
+
+
+
+
+    
