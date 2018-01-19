@@ -82,8 +82,30 @@
 <tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
 <!-- -->
 
-<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+<tr bgcolor="#8080C0"> <td><b>2018</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
+<tr bgcolor="#8080C0">
+    <td><b> Flosscon v0, Grenoble</b></td>
+    <td> 19 January </td>
+    <td> Tutorial </td>
+    <td> <a href="https://www.flosscon.org/conferences/FLOSSCon2018/program/proposals/6"> Kubernetes Tutorial </a> </td>
+    <td> <a href=""> - </a> <hr/> <a href=""> Slides online </a> </td>
+    <td> <a href=""> Sources </a> </td>
+    <td> - </td>
+    <td> Michael Bright </td>
+</tr>
+<tr bgcolor="#8080C0">
+    <td><b> Flosscon v0, Grenoble</b></td>
+    <td> 19 January </td>
+    <td> Presentation </td>
+    <td> <a href="https://www.flosscon.org/conferences/FLOSSCon2018/program/proposals/8"> FaaS (aka Functions as a Service ou Serverless)  </a> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/2018-Jan-FLOSSCon_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/2018-Jan-FLOSSCon_Serverless/#slide=1"> Slides online </a> </td>
+    <td> <a href="https://github.com/mjbright/Talks/tree/master//2018-Jan-FLOSSCon_Serverless"> Sources </a> </td>
+    <td> - </td>
+    <td> Michael Bright </td>
+</tr>
+
+<tr bgcolor="#8080C0"> <td><b>2017</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr bgcolor="#8080C0">
     <td><b> Open Source Summit, Prague</b></td>
