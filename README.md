@@ -57,7 +57,7 @@
     <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
     <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
-    <td>Michael Bright, Mario Loriedo</td>
+    <td>Michael Bright</td>
 </tr>
 <tr>
     <td> DevConf.cz </td>
@@ -89,8 +89,8 @@
     <td> 19 January </td>
     <td> Tutorial </td>
     <td> <a href="https://www.flosscon.org/conferences/FLOSSCon2018/program/proposals/6"> Kubernetes Tutorial </a> </td>
-    <td> <a href=""> - </a> <hr/> <a href=""> Slides online </a> </td>
-    <td> <a href=""> Sources </a> </td>
+    <td> <a href=""> - </a> <hr/> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> Slides Online</a> </td> 
+    <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
     <td> - </td>
     <td> Michael Bright </td>
 </tr>
@@ -99,7 +99,7 @@
     <td> 19 January </td>
     <td> Presentation </td>
     <td> <a href="https://www.flosscon.org/conferences/FLOSSCon2018/program/proposals/8"> FaaS (aka Functions as a Service ou Serverless)  </a> </td>
-    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/2018-Jan-FLOSSCon_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/2018-Jan-FLOSSCon_Serverless/#slide=1"> Slides online </a> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/2018-Jan-FLOSSCon_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-FLOSSCon_Serverless/#slide=1"> Slides online </a> </td>
     <td> <a href="https://github.com/mjbright/Talks/tree/master//2018-Jan-FLOSSCon_Serverless"> Sources </a> </td>
     <td> - </td>
     <td> Michael Bright </td>
