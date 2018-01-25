@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CLEAN MARKUP = GOOD KARMA.
+      Hi source code lover,
+
+      you're a curious person and a fast learner ;)
+      Let's make something beautiful together. Contribute on Github:
+      https://github.com/webslides/webslides
+
+      Thanks,
+      @jlantunez.
+    -->
+
+    <!-- SEO -->
+    <title> FaaS (Functions as a Service) - aka Serverless </title>
+    <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
+
+
+    <!-- URL CANONICAL -->
+    <!-- <link rel="canonical" href="http://your-url.com/"> -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- FACEBOOK -->
+    <meta property="og:url" content="http://mjbright.github.io/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Serverless: Is it for your organization?">
+    <meta property="og:description" content="Serverless: Is it for your organization?">
+    <meta property="og:updated_time" content="2017-01-04T17:20:50"> <!-- EDIT -->
+    <meta property="og:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mjbright">
+    <meta name="twitter:creator" content="@mjbright">
+    <meta name="twitter:title" content="Serverless: Is it for your organization?"> <!-- EDIT -->
+    <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use."> <!-- EDIT -->
+    <meta name="twitter:image" content="static/images/share-webslides.jpg"> <!-- EDIT -->
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" sizes="16x16" href="static/images/favicons/favicon.png">
+    <link rel="shortcut icon" sizes="32x32" href="static/images/favicons/favicon-32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="static/images/favicons/favicon-76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="static/images/favicons/favicon-120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="static/images/favicons/favicon-152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="static/images/favicons/favicon-180.png">
+    <link rel="apple-touch-icon icon" sizes="192x192" href="static/images/favicons/favicon-192.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#333333">
+
+  </head>
+  <body>
+    <header role="banner">
+      <nav role="navigation">
+        <p class="logo"><a href="index.html" title="Serverless">Serverless</a></p>
+        <ul>
+          <li class="github">
+            <a rel="external" href="https://github.com/mjbright/" title="Github">
+              <svg class="fa-github">
+                <use xlink:href="#fa-github"></use>
+              </svg>
+              <em>WebSlides</em>
+            </a>
+          </li>
+          <li class="twitter">
+            <a rel="external" href="https://twitter.com/mjbright" title="Twitter">
+              <svg class="fa-twitter">
+                <use xlink:href="#fa-twitter"></use>
+              </svg>
+              <em>@WebSlides</em>
+            </a>
+          </li>
+          <!--  <li class="dribbble"><a rel="external" href="http://dribbble.com/webslides" title="Dribbble"><svg class="fa-dribbble"><use xlink:href="#fa-dribbble"></use></svg> <em>webslides</em></a></li> -->
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <article id="webslides" class="vertical">
+        <!-- Quick Guide
+          - Each parent <section> in the <article id="webslides"> element is an individual slide.
+          - Vertical sliding = <article id="webslides" class="vertical">
+          - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+        -->
+
+    <!-- START_SLIDES_MIKE -->
+        <section>
+          <!--.wrap = container (width: 90% -->
+          <div class="bg-gradient-h wrap aligncenter">
+            <h1><strong>FaaS (Functions as a Service) - aka Serverless</strong></h1>
+        <h5>
+		Michael Bright, 27 January 2018,<br/>DevConf.cz, Brno
+		<br/>
+		<br/>
+		These slides online at <a href="https://mjbright.github.io/Talks/2018-Jan-28_Devconf.cz_Serverless" > https://mjbright.github.io/Talks/2018-Jan-28_Devconf.cz_Serverless </a>
+
+        </h5>
+          </div>
+            <div class="grid vertical-align">
+              <div class="column">
+                 <img src="static/images/devconf.cz.jpg" width=300 />
+              </div> <!-- .end .column -->
+              <div class="column">
+                 <h3>Developer Evangelist @ </h3>
+                 <img src="static/images/containous.logo.png" width=600 />                                                                           
+              </div> <!-- .end .column -->
+            </div> <!-- .end .grid -->
+
+          <!-- DOWNLOAD BUTTON
+                <p> <a href="DOWN_URL" class="button zoomIn" title="Download">
+                  <svg class="fa-cloud-download"> <use xlink:href="#fa-cloud-download"></use> </svg>
+                  WebSlides
+                </a> </p>
+        <img width=400 src="static/images/OpenFaaS.png" />
+          -->
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section> <!--.wrap = container (width: 90%) -->
+          <div class="wrap size-50 aligncenter">
+            <h2><strong>Serverless Computing</strong></h2>
+        <!-- <p class="text-intro"><a href="demos/why-webslides.html" title="Why WebSlides?">Presentations</a>, <a href="demos/landings.html" title="Landings">landings</a>, <a href="demos/portfolios.html" title="Portfolios">portfolios</a>, and <a href="demos/longforms.html" title="Longforms">longforms</a>.</p> -->
+            <div class="bg-white shadow">
+              <ul class="flexblock reasons">
+        <li> <h2>What is Serverless?</h2> Your experiences? </li>
+	<li> <h2>Review of Cloud Provider Offerings.</h2> <div class="green"> +CNCF Serverless WG </div> </li>
+        <li> <h2>Serverless Tools</h2> </li>
+        <li> <h2>Serverless Platforms</h2> </li>
+        <li> <h2>Serverless In Action - demos</h2> </li>
+              </ul>
+            </div> <!-- .end .bg-white shadow -->
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/images/Proliant380g5_3_Wikimdia.jpeg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> What is Serverless </h1>
+            <h1> No more servers ?! </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_sunset.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> The path to Serverless </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - The making of ...</strong></h2>
+            <img src="static/images/HistoryOfServerless.PNG" />
+
+	<!-- 
+	   Continuum : to faster, lighter-weight cloud deployments.
+	   Serverless removes need for developers to worry about installation, maintenance or scaling of servers. 
+	-->
+
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - What is it? ...</strong></h2>
+	    <h4>At the peak of the Hype Cycle !!</h4>
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>Don't care about servers</h2>
+		  <br/>- Developers focus on apps
+		  <br/>- Servers are auto-scaled
+		  <br/>- No server provisioning
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>BaaS</h2>
+		  <ul>
+			  <li>Back-end as a Service - e.g. DB, messaging </li>
+			  <br/>
+			  Applications accessing other cloud services ...
+		  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>Now FaaS + BaaS</h2>
+		  <ul>
+			  <li>Functions as a Service - your stateless logic</li>
+			  <br/>
+			  Functions accessing other cloud services ...
+		  </ul>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>Pay as you go</h2>
+		  <br/>- Pay for real usage
+		  <br/>- No initial investment
+		  <br/>- Great for startups
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>Agile</h2>
+		  <br/>Short time to market
+		  <br/>Enables innovation
+                </div>
+              </li>
+              <li>
+                <div>
+  		<h2>Also a company!</h2>
+		<br/>Unfortunately!
+		<br/>
+		<br/>Serverless.com provide deployment tools
+		  
+                </div>
+              </li>
+	    </ul>
+	  </div>
+        </section>
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/images/Serverless_Resto.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> The future of fast-food is Serverless </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - Event Driven Architecture</strong></h2>
+            <ul class="flexblock gallery">
+            </ul>
+
+	    <center>
+            <img src="static/images/ServerlessEvents.PNG" width=80% />
+	    </center>
+	    <strong></strong>
+
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section> <div class="wrap">
+            <h2><strong>Serverless - What is it? ... Use Cases</strong></h2>
+           <figure>
+		   <center>
+			   <img src="static/images/UseCases.png" width=500 alt="AWS_Lambda">
+		   </center>
+	   </figure>
+        </div> <!-- .end .wrap --> </section>
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - What is it? ... Use Cases</strong></h2>
+	    <h4>Where it doesn't make sense to pay for always-on services</h4>
+	    <br/>
+
+            <ul class="flexblock features">
+              <li>
+                <div>
+                  <h2>Periodic</h2>
+		  <br/>- quarterly analyses
+		  <br/>- monthly payroll
+		  <br/>- weekly news
+		  <br/>- daily summaries
+		  </br/>
+		  </br/> - Bank checks
+		  <br/>&nbsp;&nbsp;&nbsp;(with image recognition)
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2> Domains </h2>
+		    - IoT
+		    <br/> - Banking
+		    <br/> - Glue-logic
+		    <br/>
+		    <br/>
+                </div>
+              </li>
+              <li>
+                <div>
+
+                  <h2> Characteristics </h2>
+		    - latency tolerant
+		    <br/>- event-driven
+		    <br/>- short-lived
+		    <br/>- periodic
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+       <!-- <section> <div class="wrap">
+            <h2><strong>Serverless - Advantages ...</strong></h2>
+            <ul class="flexblock gallery">
+              <li> AA </li>
+              <li> AA </li>
+              <li> AA </li>
+              <li> AA </li>
+            </ul>
+        <!--  </div> --> <!-- .end .wrap --> <!-- </section> -->
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_cloud.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> Serverless - Cloud Providers </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - Cloud Provider Offerings </strong></h2>
+            <ul class="flexblock gallery">
+              <li> <figure>
+                    <img alt="AWS / Lambda" src="static/images/aws_lambda.png" width=100 height=100>
+                    <figcaption> <h2>AWS Lambda</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="Azure / Azure Functions" src="static/images/azure-functions.png" width=100 height=100>
+                    <figcaption> <h2>Azure / Azure Functions</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="Google Cloud Functions" src="static/images/google-cloud-functions.png" width=100 height=100>
+                    <figcaption> <h2>Google / Google Cloud Functions</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="IBM Cloud Functions" src="static/images/IBM_Bluemix_logo.svg.png" width=100 height=100>
+                    <figcaption> <h2>IBM Cloud  Functions</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="Oracle Cloud / Fn" src="static/images/Oracle_FN.png" width=100 height=100>
+                    <figcaption> <h2>Oracle Cloud / Fn </h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="PIVOTAL???? Spring Cloud Functions" src="static/images/SpringCloudFunctions.jpg" width=100 height=100>
+                    <figcaption> <h2>Pivotal / Spring Cloud Functions </h2> </figcaption>
+              </figure> </li>
+            </ul>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://AWS-Lambda" title="AWS-Lambda AWS-Lambda">
+           <figure><img src="static/images/aws_lambda.png" width=100 alt="AWS_Lambda"></figure>
+             <blockquote>
+               <p>AWS Lambda</p><a href="https://aws.amazon.com/lambda" /> Overview </a>
+               <p><cite>
+		 Introduced &beta;eta in Nov 2014, stable version by end of 2015.
+		 <br/>Leader in developer uptake, back-end services and eco-system.
+		       <br/>
+		       <br/>
+		       <strong>Language choices:</strong>
+	       Node.js (JS), Python, Java 8, C#, VB/F#?
+	       <br/>(CSAR project)
+	       <br/><strong>NEW: Go on AWS Lamba</strong>
+	       <br/><strong>Cost:</strong> Free tier: 1 mn req/mth, then $0.00001667/GBy-sec
+	            <a href="https://aws.amazon.com/lambda/pricing/" > details </a>
+	       <br/><strong>Strengths:</strong> Created the space, enormous ecosystem, Cloud9 IDE?
+	       <br/><strong>Weaknesses:</strong> A little slow, limited languages, lock-in
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+				<!-- <a href="https://link" title="link_title TO_EDIT"> -->
+           <figure><img src="static/images/azure-functions.png" width=200 alt="TO_EDIT"></figure>
+             <blockquote>
+	     <p>Azure Functions</p><a href="https://azure.microsoft.com/en-us/services/functions/" /> Overview </a>
+               <p><cite>Introduced in May 2016
+		       <br/>
+		       <br/>
+		       <strong>Many language choices:</strong>
+	       JavaScript, C#, F#, Python, PHP, Bash, PowerShell ...
+	       <br/><strong>Cost:</strong> Free tier: 1 mn req/mth, then $0.000016/GBy-sec
+	            <a href="https://azure.microsoft.com/en-us/pricing/details/functions/?cdn=disable" > details </a>
+	       <br/><strong>Strengths:</strong> Win dev ecosystem, VStudio tools, Azure Stack 
+	       <br/><strong>Weaknesses:</strong> still young, lock-in
+	       </cite></p>
+             </blockquote>
+	     <!-- </a> -->
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+				<!-- <a href="https://link" title="link_title TO_EDIT"> -->
+           <figure><img src="static/images/google-cloud-functions.png" width=100 alt="TO_EDIT"></figure>
+             <blockquote>
+	       <p>Google Cloud Functions</p><a href="https://cloud.google.com/functions/" /> Overview </a>
+               <p><cite>Alpha release in Feb 2016.
+		       <br/>
+		       <br/>
+		       <strong>Language support:</strong> JavaScript only.
+	       <br/><strong>Cost:</strong> Free tier: 2mn req/mth, then $0.0000004/GBy-sec
+	            <a href="https://cloud.google.com/functions/pricing" > details </a>
+	       <br/><strong>Strengths:</strong> Google dev ecosystem, backend services
+	       <br/><strong>Weaknesses:</strong> Very young, Js only, commitment? Cost, lock-in
+	       </cite></p>
+             </blockquote>
+				<!-- </a> -->
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+				<!-- <a href="https://link" title="link_title TO_EDIT"> -->
+           <figure><img src="static/images/IBM_Bluemix_logo.svg.png" width=100 alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>IBM Cloud Functions</p><a href="https://www.ibm.com/cloud-computing/bluemix/openwhisk" /> Overview </a>
+               <p><cite>
+		       Experimental release in Feb 2016
+		       <br/>
+		       <br/>
+		       Open Sourced as Apache OpenWhisk
+		       <br/>
+		       <br/>
+		       <strong>Language support:</strong> Node.js, Swift or BYoC
+	       <br/><strong>Cost:</strong> Free tier: 2mn req/mth, then $0.0000004/GBy-sec
+	            <a href="https://www.ibm.com/cloud-computing/bluemix/pricing" > details </a>
+	       <br/><strong>Strengths:</strong> Open source community, RedHat/Adobe backing, Fast growth
+	       <br/><strong>Weaknesses:</strong> lock-in
+
+	       </cite></p>
+             </blockquote>
+				<!-- </a> -->
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE -->
+	<!--
+	<section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/Oracle_FN.png" width=100 alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Oracle Fn Project</p>
+               <p><cite>
+		       Announced/Open-Sourced Oct 2017 ????
+		       <br/>
+		       <br/>
+		       Previously Iron.io code-base ????
+		       <br/>
+		       <br/>
+		       <strong>Language support:</strong> ????
+
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div>
+	-->
+	<!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE -->
+	<!--
+	<section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/SpringCloudFunctions.jpg" width=200 alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Spring Cloud Functions</p>
+               <p><cite>
+		       ????
+		       <br/>
+		       <br/>
+		       ????
+		       <br/>
+		       <br/>
+		       <strong>Language support:</strong> ????
+
+	       </cite></p>
+             </blockquote>
+          </a>
+	<!-- .end .wrap --> </section>
+        </div> </div>
+	-->
+
+
+        <section class="bg-white aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+	  <!-- <span class="background" style="background-image:url('static/images/CloudOpen_VGA.png')"></span> -->
+          <div class="column">
+	      <img width=1024 src='static/images/CloudOpen_VGA.png' />
+          </div> <!-- .end .column -->
+	  <!--.wrap = container (width: 90%) <div class="wrap fadeInUp"> </div> -->
+          <!--.wrap = container (width: 90%) --> <div class="bg-brown fadeInUp">
+            <h1> But we need open Serverless for open Cloud </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h2><strong> The CNCF has a created a Serverless WG </strong></h2>
+	    <a href="https://raw.githubusercontent.com/cncf/landscape/master/landscape/CloudNativeLandscape_latest.jpg">
+            <img alt="CNCF Serverless" src="static/images/CNCF_Serverless_EventBased.png" width=300 height=60 />
+           </a>
+	  </div>
+	</section>
+
+        <section>
+          <div class="wrap">
+            <h2><strong> CNCF Serverless WG to </strong></h2>
+	    <ul class="flexblock">
+	        <li>
+			<strong>Provide clarity on the topic:</strong>
+		  <ul>
+                    <li> * Define common terminology </li>
+                    <li> * Define the scope of the space </li>
+                    <li> * Identify common use cases and patterns </li>
+                    <li> * Identify relation to PaaS and container orchestration </li>
+                  </ul>
+              <br/>
+              <li>
+		      <strong>Identify potential next steps for the community:</strong>
+                  <ul class="">
+                      <li> * Identify areas for harmonization or interop work </li>
+                  </ul>
+              </li>
+              <br/>
+              <li>
+		      <strong>Create a whitepaper on Serverless.</strong>
+              </li>
+            </ul>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <section>
+          <div class="wrap">
+            <h2><strong> CNCF Serverless WG Resources </strong></h2>
+	    <ul class="flexblock">
+                    <li> * Github repo
+                      <a rel="external" href="https://github.com/cncf/wg-serverless/" title="Github">
+                        <svg class="fa-github"> <use xlink:href="#fa-github"></use> </svg>
+                        <em>@cncf:wg-serverless</em>
+                      </a>
+		    </li>
+                    <li> * Whitepaper
+                      <a rel="external" href="https://docs.google.com/document/d/1UjW8bt5O8QBgQRILJVKZJej_IuNnxl20AJu9wA8wcdI/edit#heading=h.yiaul8is1ki" title="Github">
+                        <svg class="fa-google"> <use xlink:href="#fa-google"></use> </svg>
+                        <em>in Google Drive</em>
+                      </a>
+		    </li>
+                    <li> * Google Group
+                      <a rel="external" href="https://groups.google.com/forum/#!forum/cncf-wg-serverless" title="Github">
+                        <svg class="fa-google"> <use xlink:href="#fa-google"></use> </svg>
+                        <em>cncf-wg-serverless</em>
+                      </a>
+		    </li>
+                    <li> * Slack Channel
+                      <a rel="external" href="Url" title="Github">
+                        <svg class="fa-slack"> <use xlink:href="#fa-slack"></use> </svg>
+                        <em>WP</em>
+                      </a>
+		    </li>
+                    <li> * Meetings
+                      <a rel="external" href="https://www.youtube.com/playlist?list=PLj6h78yzYM2Ph7YoBIgsZNW_RGJvNlFOt" title="Github">
+                        <svg class="fa-youtube"> <use xlink:href="#fa-youtube"></use> </svg>
+                        <em>Video playlist</em>
+                      </a>
+                      <a rel="external" href="https://docs.google.com/document/d/1OVF68rpuPK5shIHILK9JOqlZBbfe91RNzQ7u_P7YCDE/edit#heading=h.vgkvn1hr5uor" title="Github">
+                        <em>Minutes</em>
+                      </a>
+		    </li>
+            </ul>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_tools.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> Serverless - Tools </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section>
+          <div class="wrap">
+            <h2><strong>Serverless - Open Source tooling  ...</strong></h2>
+            <ul class="flexblock gallery">
+              <li> <figure>
+                    <img alt="Serverless(.com)" src="static/images/serverless_logo_black.png" width=500 height=200>
+                    <figcaption> <h2>Serverless(.com)</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="Apex.run" src="static/images/apex_logo.png" width=500 height=200>
+                    <figcaption> <h2>apex(.com)</h2> </figcaption>
+              </figure> </li>
+            </ul>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="Serverless.com">
+           <figure><img src="static/images/serverless_logo_black.png" alt="Serverless.com"></figure>
+             <blockquote>
+	       <p><cite>Open Source project<br/>
+		       <br/>
+		       Deploy to various Cloud Providers:
+		       <ul>
+		       <li>- AWS Lambda</li>
+		       <li>- Azure</li>
+		       <li>- Google</li>
+		       <li>- OpenWhisk</li>
+		       <li>- Kubeless</li>
+		       <li>- SpotInst</li>
+		       </ul>
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="apex">
+           <figure><img src="static/images/apex_logo.png" alt="apex"></figure>
+             <blockquote>
+	       <p><cite>
+		       Up is platform-agnostic, supporting AWS Lambda and API Gateway as the first targets.
+		       <br/>
+		       <br/>
+		       Extends beyond Lambda's natively supported languages by supporting Golang
+
+		       <br/>
+		       <br/>
+		       Up focuses on deploying "vanilla" HTTP servers, using existing frameworks such as
+		       <br/>
+		       <br/>
+		       Express, Koa, Django, Golang net/http or others.
+
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_framework.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> Serverless - Open Source Frameworks </h1>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+        <section>
+          <div class="wrap">
+		  <h2><strong>Serverless - Open Source Frameworks <!-- for on-premises? --> </strong></h2>
+            <ul class="flexblock gallery">
+              <li> <figure>
+                    <img alt="Kubeless" src="static/images/kubeless_logo.png" width=80 height=80>
+                    <figcaption> <h2>Kubeless</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="Fission" src="static/images/fission_logo.png" width=80 height=80>
+                    <figcaption> <h2>Fission</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="Apache / OpenWhisk" src="static/images/apache_openwhisk.png" width=80 height=80>
+                    <figcaption> <h2>Apache OpenWhisk</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+                    <img alt="OpenFaaS" src="static/images/openfaas_logo.png" width=80 height=80>
+                    <figcaption> <h2>OpenFaaS</h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="Fn" src="static/images/Oracle_FN.png" width=80 height=80>
+                    <figcaption> <h2>Fn Project </h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="PIVOTAL???? Spring Cloud Functions" src="static/images/SpringCloudFunctions.jpg" width=80 height=80>
+                    <figcaption> <h2>Spring Cloud Functions </h2> </figcaption>
+              </figure> </li>
+			  <li> ...</li>
+	         </ul>
+          </div> <!-- .end .wrap -->
+        </section>
+
+        <!-- CARD SLIDE -->
+	<!-- 
+	 <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/kubeless_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Kubeless</p>
+               <p><cite>Bitnami</cite></p>
+             </blockquote>
+          </a>
+	</div> </div> <!-- .end .wrap --> </section> -->
+
+        <!-- CARD SLIDE -->
+	<!-- <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/fission_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Fission.io</p>
+               <p><cite>Platform 9</cite></p>
+             </blockquote>
+          </a>
+	</div> </div> <!-- .end .wrap --> </section> -->
+
+        <!-- CARD SLIDE -->
+	<!-- <section> <div class="wrap"> <div class="card-75">
+	 <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/apache_openwhisk.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Apache OpenWhisk</p>
+               <p><cite>Open Sourced by IBM</cite></p>
+             </blockquote>
+          </a>
+	</div> </div> <!-- .end .wrap --> </section> -->
+
+        <!-- CARD SLIDE -->
+	<!-- <section> <div class="wrap"> <div class="card-75">
+             <h2> Open Whisk: Demo - ???? </h2>
+           <figure><img src="static/images/Demo.gif" width=1200 alt="AWS_Lambda"></figure>
+	</div> </div> <!-- .end .wrap --> </section> -->
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images//openfaas_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>OpenFaaS</p>
+	       <br/> <br/>
+	       <ul>
+		       <li>- OpenFaaS runs on Docker-Swarm or Kubernetes</li>
+		       <li>- FaaS-Netes runs on Kubernetes</li>
+		       <li>- faas-cli: command-line tool</li>
+		       <li>- A young project with a vibrant community of volunteers</li>
+	       </ul>
+	       <br/> <br/>
+               <p><cite>Alex Ellis, Docker Captain</cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+             <blockquote>
+               <h2>To summarize</h2>
+	       <br/> <br/>
+	       <ul>
+		       <li>- Serverless is a new technology </li>
+		       <li>- It has a lot of promise for many workloads </li>
+		       <li>- All major Cloud players on investing in the technology </li>
+		       <li>- <strong> But we need an Open Cloud </strong> </li>
+		       <li>- "The ultimate Cloud Native" </li>
+		       <li>- There are many deployment choices today</li>
+		       <li>- As platforms mature we can expect more stable performance</li>
+	       </ul>
+	       <br/> <br/>
+               <p><cite></cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_treered.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+		  <h1> <svg class="fa-heart-o"> <use xlink:href="#fa-heart-o"></use> </svg> <strong>Thanks !</strong> </h1>
+          <p><br> <svg class="fa-twitter"> <use xlink:href="#fa-twitter"></use> </svg>
+	  <a href="https://twitter.com/mjbright"> <h2>@mjbright</h2></a></p>
+          </div> <!-- .end .wrap -->
+        </section>
+
+    <!-- TABLE --> <!-- section class="bg-gradient-v" -->
+        <section class="">
+          <div class="wrap">
+            <h2 class="aligncenter">Resources - 1</h2>
+	    <!-- <p class="aligncenter">Simple pricing. No credit card required!</p> -->
+            <table>
+              <thead> <tr> <th>Resource</th> <th>Description</th> <th>URL</th> </tr> </thead>
+              <tbody>
+                <tr>
+			 <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Lists </center> </td> </tr>
+                  <td>awesome-serverless</td>
+                  <td>Curated list of awesome services, solutions and resources for serverless / nobackend applications.</td>
+                  <td>
+			  <!-- <a href="https://github.com/anaibol/awesome-serverless"> https://github.com/anaibol/awesome-serverless </a> -->
+                           [github] <a href="https://github.com/anaibol/awesome-serverless"> anaibol/awesome-serverless </a>
+		  </td>
+                </tr>
+                <tr>
+                  <td>awesome-Serverless(.com)</td>
+		  <td>Curated list of resources related to serverless architectures and the <strong>Serverless Framework</strong></td>
+                  <td>
+			  <!-- <a href="https://github.com/JustServerless/awesome-serverless"> https://github.com/JustServerless/awesome-serverless </a> -->
+                           [github] <a href="https://github.com/JustServerless/awesome-serverless"> JustServerless/awesome-serverless </a>
+		  </td>
+                </tr>
+		 <tr>
+
+			 <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center>Tools</center></td> </tr>
+
+                <tr>
+                  <td>Serverless</td>
+                  <td>Tools for deploying to several Cloud Providers</td>
+		  <td>
+		  <!-- <a href="https://github.com/serverless/serverless"> https://github.com/serverless/serverless </a>-->
+                           [github] <a href="https://github.com/serverless/serverless"> serverless/serverless </a>
+                </td>
+                </tr>
+                <tr>
+                  <td>Apex</td>
+                  <td>Tools for deploying to AWS Lambda</td>
+		  <td>
+	<!-- <a href="https://github.com/apex/apex"> https://github.com/apex/apex </a></td> -->
+
+
+                           [github] <a href="https://github.com/apex/apex"> apex/apex </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+    <!-- TABLE --> <!-- section class="bg-gradient-v" -->
+        <section class="">
+          <div class="wrap">
+            <h2 class="aligncenter">Resources - 2 </h2>
+	    <!-- <p class="aligncenter">Simple pricing. No credit card required!</p> -->
+            <table>
+              <thead> <tr> <th>Resource</th> <th>Description</th> <th>URL</th> </tr> </thead>
+              <tbody>
+		 <tr>
+			 <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Cloud Providers</center> </td> </tr>
+				        
+                <tr>
+                  <td>AWS Lambda</td>
+                  <td>Amazon's Serverless Platform</td>
+		  <td><a href="https://aws.amazon.com/fr/lambda/"> https://aws.amazon.com/fr/lambda/</a></td>
+                </tr>
+                <tr>
+                  <td>Azure Functions</td>
+                  <td>Microsoft's Serverless Platform</td>
+		  <td><a href="https://azure.microsoft.com/en-us/services/functions/"> https://azure.microsoft.com/en-us/services/functions/ </a></td>
+                </tr>
+                <tr>
+                  <td>Google Cloud Functions</td>
+                  <td>Google's Serverless Platform</td>
+		  <td><a href="https://cloud.google.com/functions/"> https://cloud.google.com/functions/ </a></td>
+                </tr>
+                <tr>
+                  <td>IBM Cloud Functions</td>
+                  <td>IBM's Serverless Platform</td>
+		  <td><a href="https://www.ibm.com/cloud-computing/bluemix/openwhisk"> https://www.ibm.com/cloud-computing/bluemix/openwhisk </a></td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+    <!-- TABLE --> <!-- section class="bg-gradient-v" -->
+        <section class="">
+          <div class="wrap">
+            <h3 class="aligncenter">Resources - 3</h2>
+	    <!-- <p class="aligncenter">Simple pricing. No credit card required!</p> -->
+            <table>
+              <thead> <tr> <th>Resource</th> <th>Description</th> <th>URL</th> </tr> </thead>
+              <tbody>
+                <tr> <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Open Source Serverless Platforms </center> </td> </tr>
+                <tr>
+                  <td>Kubeless</td>
+                  <td>Serverless platform from Bitnami</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>Fission.io</td>
+                  <td>Serverless platform from Platform9</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>Apache OpenWhisk</td>
+                  <td>Serverless platform from IBM</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>OpenFaaS</td>
+                  <td>Serverless platform from Alex Ellis, Docker Captain</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+		 <tr> <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Serverless Python Frameworks </center> </td> </tr>
+				        
+                <tr>
+                  <td>Apex</td>
+                  <td>Serverless framework supporting Python and other languages</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>Chalice</td>
+                  <td>Serverless framework supporting Python / Flask</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>Lambdify</td>
+                  <td>Serverless framework supporting Python</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+                <tr>
+                  <td>Zappa</td>
+                  <td>Serverless framework supporting Python / WSGi</td>
+                  <td> <a href="url"> url </a> </td>
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+
+
+        <section class="bg-black aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.dark or .light -->
+          <span class="background" style="background-image:url('static/backgrounds/background_treered.jpg')"></span>
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+		  <h1> <svg class="fa-heart-o"> <use xlink:href="#fa-heart-o"></use> </svg> <strong>Thanks !</strong> </h1>
+          <p><br> <svg class="fa-twitter"> <use xlink:href="#fa-twitter"></use> </svg>
+	  <a href="https://twitter.com/mjbright"> <h2>@mjbright</h2></a></p>
+          </div> <!-- .end .wrap -->
+        </section>
+
+
+
+        <!-- CARD SLIDE -->
+	<!-- <section> <div class="wrap"> <div class="card-75">
+        <section> <div class="wrap">
+             <h2> OpenFaaS: Demo - ???? </h2>
+           <figure><img src="static/images/Demo.gif" width=1200 alt="AWS_Lambda"></figure>
+        </div> <!-- .end .wrap --> </section>
+	</div> </div> <!-- .end .wrap --> </section> -->
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/chalice_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Chalice</p>
+               <p><cite>Open sourced by AWS - Python/AWS &lambda;
+		       <br/> <br/>
+		       pip installable module, command-line tool
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/lambdify_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Lambdify</p>
+               <p><cite></cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
+         <a href="https://link" title="link_title TO_EDIT">
+           <figure><img src="static/images/zappa_logo.png" alt="TO_EDIT"></figure>
+             <blockquote>
+               <p>Zappa.io</p>
+               <p><cite>Open sourced by Gun.io - Python/AWS &lambda;
+		       <br/> <br/>
+		       pip installable module, command-line tool
+		       <br/> <br/>
+		       Can run Django ... serverless (?)
+	       </cite></p>
+             </blockquote>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+	<!--
+        <section class="bg-purple">
+          <div class="wrap size-50">
+            <ul class="flexblock plans blink">
+              <li>
+                <a href="#" title="Purchase">
+                  <h2>Resources</h2>
+                  <div>
+                    <!-- <span class="price"><sup>$</sup>40 <sup>/year</sup></span> -->
+                    <ul>
+                      <li>
+                        <svg class="fa-check">
+                          <use xlink:href="#fa-check"></use>
+                        </svg>
+                        <strong>awesome-serverless</strong> 
+			   <!-- https://github.com/anaibol/awesome-serverless -->
+                           [github] <a href="https://github.com/anaibol/awesome-serverless"> anaibol/awesome-serverless </a>
+                      </li>
+                      <li>
+                        <svg class="fa-check">
+                          <use xlink:href="#fa-check"></use>
+                        </svg>
+                        <strong>awesome-serverless(.com)</strong> 
+			<!-- https://github.com/JustServerless/awesome-serverless -->
+                           <!-- <a href="https://github.com/JustServerless/awesome-serverless"> https://github.com/JustServerless/awesome-serverless </a> -->
+                           [github] <a href="https://github.com/JustServerless/awesome-serverless"> JustServerless/awesome-serverless </a>
+                      </li>
+                      <!-- <li>
+                        <svg class="fa-check"> <use xlink:href="#fa-check"></use> </svg>
+                        <strong>Unlimited</strong> users
+                      </li> -->
+                    </ul>
+                    <!-- <span class="button">Select</span> -->
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- .end .wrap -->
+        </section>
+	-->
+
+
+
+    <!-- END_SLIDES_MIKE -->
+
+
+   <!-- A global footer
+
+     <footer role="contentinfo">
+      <div class="wrap">
+        <p>An <a href="https://github.com/webslides/webslides">open source solution</a>, by <a href="https://twitter.com/webslides">@webslides</a>.</p>
+      </div>
+    </footer>  -->
+
+    <!-- Required -->
+    <script src="static/js/webslides.js"></script>
+    <script>
+      window.ws = new WebSlides();
+    </script>
+
+    <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
+    <script defer src="static/js/svg-icons.js"></script>
+
+  </body>
+</html>
