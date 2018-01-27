@@ -197,9 +197,8 @@
                 <div>
                   <h2>BaaS</h2>
 		  <ul>
-			  <li>Back-end as a Service - e.g. DB, messaging </li>
-			  <br/>
-			  Applications accessing other cloud services ...
+			  <li>- Back-end as a Service - e.g. DB, messaging </li>
+			  <!-- <br/> Applications accessing other cloud services -->
 		  </ul>
                 </div>
               </li>
@@ -208,15 +207,14 @@
                   <h2>Now FaaS + BaaS</h2>
 		  <ul>
 			  <li>Functions as a Service - your stateless logic</li>
-			  <br/>
-			  Functions accessing other cloud services ...
+			  <!-- <br/> Functions accessing other cloud services ... -->
 		  </ul>
                 </div>
               </li>
               <li>
                 <div>
                   <h2>Pay as you go</h2>
-		  <br/>- Pay for real usage
+		  <br/>- Pay for real usage (theory)
 		  <br/>- No initial investment
 		  <br/>- Great for startups
                 </div>
@@ -224,19 +222,18 @@
               <li>
                 <div>
                   <h2>Agile</h2>
-		  <br/>Short time to market
-		  <br/>Enables innovation
+		  <br/>- Short time to market
+		  <br/>- Enables innovation
+		  <br/>- Massive scale on demand (theory)
                 </div>
               </li>
-              <li>
-                <div>
+              <li> <div>
   		<h2>Also a company!</h2>
 		<br/>Unfortunately!
-		<br/>
-		<br/>Serverless.com provide deployment tools
+		<br/>-Serverless(.com) provide deployment tools
+		<br/>-called Serverless !
 		  
-                </div>
-              </li>
+                </div> </li>
 	    </ul>
 	  </div>
         </section>
@@ -250,12 +247,9 @@
           </div> <!-- .end .wrap -->
         </section>
 
-
         <section>
           <div class="wrap">
             <h2><strong>Serverless - Event Driven Architecture</strong></h2>
-            <ul class="flexblock gallery">
-            </ul>
 
 	    <center>
             <img src="static/images/ServerlessEvents.PNG" width=80% />
@@ -263,6 +257,7 @@
 	    <strong></strong>
 
           </div> <!-- .end .wrap -->
+          API Gateway allows external access to functions ...
         </section>
 
         <section> <div class="wrap">
@@ -284,13 +279,21 @@
               <li>
                 <div>
                   <h2>Periodic</h2>
-		  <br/>- quarterly analyses
-		  <br/>- monthly payroll
+		  - monthly payroll
 		  <br/>- weekly news
 		  <br/>- daily summaries
 		  </br/>
-		  </br/> - Bank checks
+		  </br/> - Bank check processing
 		  <br/>&nbsp;&nbsp;&nbsp;(with image recognition)
+                </div>
+              </li>
+              <li>
+                <div>
+                  <h2>Unpredictable</h2>
+		  - git webhooks
+		  <br/>- user web requests
+		  <br/>- S3 file uploads
+		  <br/>- SMS reception
                 </div>
               </li>
               <li>
@@ -366,6 +369,10 @@
 		    <img alt="PIVOTAL???? Spring Cloud Functions" src="static/images/SpringCloudFunctions.jpg" width=100 height=100>
                     <figcaption> <h2>Pivotal / Spring Cloud Functions </h2> </figcaption>
               </figure> </li>
+              <li> <figure>
+		    <img alt="SpotInst" src="https://spotinst.com/app/uploads/2016/11/Spotinst-Logo.png" width=100 height=100> -->
+                    <figcaption> <h2>SpotInst</h2> </figcaption>
+              </figure> </li>
             </ul>
           </div> <!-- .end .wrap -->
         </section>
@@ -383,7 +390,7 @@
 		       <strong>Language choices:</strong>
 	       Node.js (JS), Python, Java 8, C#, VB/F#?
 	       <br/>(CSAR project)
-	       <br/><strong>NEW: Go on AWS Lamba</strong>
+	       <br/><strong>NEW: Go (static binaries) and .Net(C#)</strong>
 	       <br/><strong>Cost:</strong> Free tier: 1 mn req/mth, then $0.00001667/GBy-sec
 	            <a href="https://aws.amazon.com/lambda/pricing/" > details </a>
 	       <br/><strong>Strengths:</strong> Created the space, enormous ecosystem, Cloud9 IDE?
@@ -612,6 +619,10 @@
                     <img alt="Apex.run" src="static/images/apex_logo.png" width=500 height=200>
                     <figcaption> <h2>apex(.com)</h2> </figcaption>
               </figure> </li>
+              <li> <figure>
+                    <img alt="AWS Chalice(Python)" src="static/images/aws_chalice_icon.png" width=500 height=200>
+                    <figcaption> <h2>Chalice (AWS Lambda/Python)</h2> </figcaption>
+              </figure> </li>
             </ul>
           </div> <!-- .end .wrap -->
         </section>
@@ -622,14 +633,15 @@
              <blockquote>
 	       <p><cite>Open Source project<br/>
 		       <br/>
-		       Deploy to various Cloud Providers:
+		       Deploy to various Cloud Providers/Open Source Frameworks:
 		       <ul>
 		       <li>- AWS Lambda</li>
-		       <li>- Azure</li>
-		       <li>- Google</li>
+		       <li>- Azure Functions</li>
+		       <li>- Google Cloud Functions</li>
 		       <li>- OpenWhisk</li>
 		       <li>- Kubeless</li>
 		       <li>- SpotInst</li>
+		       <li>- Webtasks</li>
 		       </ul>
 	       </cite></p>
              </blockquote>
@@ -689,8 +701,12 @@
                     <figcaption> <h2>OpenFaaS</h2> </figcaption>
               </figure> </li>
               <li> <figure>
-		    <img alt="Fn" src="static/images/Oracle_FN.png" width=80 height=80>
+		    <img alt="Fn" src="static/images/Oracle_FN.png" width=160 height=160>
                     <figcaption> <h2>Fn Project </h2> </figcaption>
+              </figure> </li>
+              <li> <figure>
+		    <img alt="Fn" src="static/images/nuclio_icon.png" width=160 height=160>
+                    <figcaption> <h2>Nuclio </h2> </figcaption>
               </figure> </li>
               <li> <figure>
 		    <img alt="PIVOTAL???? Spring Cloud Functions" src="static/images/SpringCloudFunctions.jpg" width=80 height=80>
@@ -749,9 +765,12 @@
 	       <br/> <br/>
 	       <ul>
 		       <li>- OpenFaaS runs on Docker-Swarm or Kubernetes</li>
+		       <li>- <b>Bring Your Own Container</b>  </li>
 		       <li>- FaaS-Netes runs on Kubernetes</li>
 		       <li>- faas-cli: command-line tool</li>
-		       <li>- A young project with a vibrant community of volunteers</li>
+		       <li>- A young project with a <b>vibrant community</b> of volunteers</li>
+		       <li>- Easy to get started, many guides and blog posts from community</li>
+		       <!-- <li>- Innovative use cases </li> <ul> </ul> -->
 	       </ul>
 	       <br/> <br/>
                <p><cite>Alex Ellis, Docker Captain</cite></p>
@@ -759,6 +778,21 @@
           </a>
         </div> </div> <!-- .end .wrap --> </section>
 
+        <!-- CARD SLIDE --> <section> <div class="wrap">
+               <h1>OpenFaaS - Johhny Mkhael, Unleasing the Artist in you</h1><br/>
+<div class="card-75">
+         <a href="http://jmkhael.io/unleash-the-artist-within-tensorflow-and-openfaas/" title="OpenFaaS - JMkhael">
+           <figure><img src="static/images/openfaas_jmkhael.png" alt="TO_EDIT"></figure>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
+
+        <!-- CARD SLIDE --> <section> <div class="wrap">
+               <h1>OpenFaaS - Finnian Anderson, Colourising Video with OpenFaaS Serverless Functions</h1>
+<div class="card-75">
+         <a href="https://finnian.io/blog/colourising-video-with-openfaas-serverless-functions/" title="OpenFaaS - Colourising Video with OpenFaaS Serverless Functions">
+           <figure><img src="static/images/openfaas_finnian.png" alt="TO_EDIT"></figure>
+          </a>
+        </div> </div> <!-- .end .wrap --> </section>
 
         <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-75">
          <a href="https://link" title="link_title TO_EDIT">
