@@ -49,8 +49,8 @@
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <!-- -->
 <tr>
-    <td> DevConf.cz </td>
-    <td> 27 Jan 2018 </td>
+    <td> FLOSSAsia </td>
+    <td> Mar 2018 </td>
     <td>   Lab   </td>
     <td> Kubernetes Tutorial </td>
     <td> </td>
@@ -60,18 +60,8 @@
     <td>Michael Bright</td>
 </tr>
 <tr>
-    <td> DevConf.cz </td>
-    <td> 29 Jan 2018 </td>
-    <td>   Talk   </td>
-    <td> <a href="TODO" >Unikernels: In Action </a> </td>
-    <td> </td>
-    <td> <a href="TODO"> SRC(TODO) </a> </td> 
-    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
-    <td>Michael Bright</td>
-</tr>
-<tr>
-    <td> DevConf.cz </td>
-    <td> 29 Jan 2018 </td>
+    <td> FLOSSAsia </td>
+    <td> Mar 2018 </td>
     <td>   Talk   </td>
     <td> <a href="TODO" >Serverless</a> </td>
     <td> </td>
@@ -79,11 +69,46 @@
     <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
+
+
 <tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
 <!-- -->
 
 <tr bgcolor="#8080C0"> <td><b>2018</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
+<tr>
+    <td> DevConf.cz </td>
+    <td> 27 Jan 2018 </td>
+    <td>   Lab   </td>
+    <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Kubernetes Tutorial </td>
+    <td> </td>
+    <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
+    <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
+    <td> <a href="TODO"> </a> </td> 
+    <td>Michael Bright</td>
+</tr>
+
+<tr>
+    <td> DevConf.cz </td>
+    <td> 29 Jan 2018 </td>
+    <td>   Talk   </td>
+    <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Unikernels: In Action </a> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/2018-Jan-27_Devconf.cz_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/"> Slides online </a> </td>
+    <td> <a href="TODO"> </a> </td> 
+    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
+    <td>Michael Bright</td>
+</tr>
+
+<tr>
+    <td> DevConf.cz </td>
+    <td> 29 Jan 2018 </td>
+    <td>   Talk   </td>
+    <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Serverless</a> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/2018-Jan-28_Devconf.cz_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/"> Slides online </a> </td>
+    <td> <a href="TODO"> </a> </td> 
+    <td> <a href="TODO"> </a> </td> 
+    <td>Michael Bright</td>
+</tr>
 <tr bgcolor="#8080C0">
     <td><b> Flosscon v0, Grenoble</b></td>
     <td> 19 January </td>
