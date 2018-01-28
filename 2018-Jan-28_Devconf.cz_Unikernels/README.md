@@ -926,9 +926,19 @@ class: inverse, middle
 </center>
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
-.blue[IncludeOS]
+.green[IncludeOS]
 - building IncludeOS unikernels
+  - Native (could use Docker images)
+
 - deploying IncludeOS on OpenStack (KVM)
+
+.red[Past demos] include:
+- .pink[deferpanic.net] with rumpkernel/Python + remark.js slideset
+- .pink[runtimejs] under qemu
+- .pink[MirageOS] linux build/run, ukvm run, GCE run
+- .pink[OSv/capstan] tomcat
+
+
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td><td> .blue[30]</td> </tr> </table> </div>
 
