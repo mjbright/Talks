@@ -5,7 +5,6 @@ class: inverse, center, middle
 <!-- ![](images/unikernel.org.png) -->
 #Unikernels in Action
 ### 28 January 2018, DevConf.cz, Brno
-
 <table>
 <tr> <td width="70%">
 <b>Michael Bright, Developer Evangelist @</b>
@@ -14,8 +13,6 @@ class: inverse, center, middle
 </td> <td width="20%">
 </td> </tr>
 </table>
-
-<br/> <br/>
 
 <table>
 <tr> <td width="70%">
@@ -28,7 +25,9 @@ class: inverse, center, middle
 <img src="./images/IMG_Brno_CZ_20180127_Enhanced.jpg" width=200 />
 </td> </tr>
 </table>
-<br/> <br/>
+
+##### Slides online @ [https://mjbright.github.io/Talks/2018-Jan-28_Devconf.cz_Unikernels ](https://mjbright.github.io/Talks/2018-Jan-28_Devconf.cz_Unikernels)
+<br/>
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td> </tr> </table> </div>
 
