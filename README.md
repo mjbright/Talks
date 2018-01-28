@@ -102,7 +102,7 @@
     <td> 29 Jan 2018 </td>
     <td>   Talk   </td>
     <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Serverless</a> </td>
-    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/2018-Jan-28_Devconf.cz_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/"> Slides online </a> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/2018-Jan-27_Devconf.cz_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jan-27_Devconf.cz_Serverless/"> Slides online </a> </td>
     <td> <a href="TODO"> </a> </td> 
     <td> <a href="TODO"> </a> </td> 
     <td>Michael Bright</td>
