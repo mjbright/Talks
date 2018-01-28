@@ -7,8 +7,6 @@
 
     NOTE: In fact the determining factor for correct embedding of tags (whitelisted ones at least)
           is that any tagged attributes must be quoted, e.g. border="4", not border=4.
-   
-
 -->
 
 <table>
@@ -56,7 +54,7 @@
     <td> </td>
     <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
-    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
+    <td> <a href="TODO"> <b>Video </b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 <tr>
@@ -65,8 +63,8 @@
     <td>   Talk   </td>
     <td> <a href="TODO" >Serverless</a> </td>
     <td> </td>
-    <td> <a href="TODO"> SRC(TODO) </a> </td> 
-    <td> <a href="TODO"> <b>Video (TODO)</b> </a> </td> 
+    <td> <a href="TODO"> SRC</a> </td> 
+    <td> <a href="TODO"> <b>Video </b> </a> </td> 
     <td>Michael Bright</td>
 </tr>
 
@@ -80,7 +78,7 @@
     <td> DevConf.cz </td>
     <td> 27 Jan 2018 </td>
     <td>   Lab   </td>
-    <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Kubernetes Tutorial </td>
+    <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Kubernetes Tutorial </a></td>
     <td> </td>
     <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
