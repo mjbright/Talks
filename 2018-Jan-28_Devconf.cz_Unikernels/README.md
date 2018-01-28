@@ -2,15 +2,33 @@ name: title_inversed_whiteText
 layout: false
 class: inverse, center, middle
 
-![](images/unikernel.org.png)
+<!-- ![](images/unikernel.org.png) -->
 #Unikernels in Action
+### 28 January 2018, DevConf.cz, Brno
 
-###28 January 2018, DevConf.cz, Brno
-<img src="./images/devconf.cz.jpg" width=100 />
+<table>
+<tr> <td width="70%">
+<b>Michael Bright, Developer Evangelist @</b>
+</td> <td width="20%">
+<img src="./images/containous.logo.png" width=200 />
+</td> <td width="20%">
+</td> </tr>
+</table>
 
 <br/> <br/>
-Michael Bright, Developer Evangelist @
-<img src="./images/containous.logo.png" width=200 />
+
+<table>
+<tr> <td width="70%">
+</td> <td width="33%">
+</td> </tr>
+<tr> <td width="33%">
+<img src="./images/devconf.cz.jpg" width=100 />
+</td> <td width="33%">
+</td> <td width="33%">
+<img src="./images/IMG_Brno_CZ_20180127_Enhanced.jpg" width=200 />
+</td> </tr>
+</table>
+<br/> <br/>
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td> </tr> </table> </div>
 
@@ -36,11 +54,13 @@ class: left, middle
 
 - IncludeOS .blue[demo]
 
+<!--
 - What I predicted last year ... mea culpa
   - didn't really happen
   - but lot's happened
+-->
 
-- And so for 2018?
+- What can we expect to see in 2018?
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td> </tr> </table> </div>
 
@@ -72,7 +92,7 @@ class: inverse, center, middle
 
 ## “VMs aren't heavy, OSes are"
 
-### Alfred Bratterud, #includeOS
+### Alfred Bratterud, #IncludeOS
 
 ---
 name: section_overview
@@ -88,11 +108,10 @@ class: center, left
     <td style="width:100%; border: 1px solid black; background-color: #f1f1c1;">
 Specialized applications built with only the "OS" components they need.
 <hr/>
-
-A Unikernel is an image able to run
-<br/>directly as a VM
+A Unikernel image runs
+directly as a VM
 <br/>
-<br/>(on bare metal?)
+<br/>(or on bare metal?)
 <hr/>
 
 "OS" components such as
@@ -102,10 +121,10 @@ Device drivers
 are optional
 <hr/>
 
-typically, there is no filesystem.
+Typically, there is no filesystem.
 
-<br/>
-<br/>So configuration is stored in the unikernel application binary
+<hr/>
+Configuration is stored in the unikernel application binary
 
     </td>  <td> </td>
                                <td> <img src="images/unikernel_compare.png" width=500 /> </td>
@@ -121,7 +140,6 @@ class: left
 exclude: false
 
 ## Unikernels: What they are **not** ... General Purpose
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
 OS kernels with unneeded features e.g. floppy drivers, designed to run any software on any hardware are huge - **lines of code**
 
@@ -135,14 +153,14 @@ Unikernels are **not** *"top-down"* minified versions of General Purpose OSes ..
 name: section_overview
 layout: false
 class: left
-exclude: false
+exclude: true
 
 ## Unikernels: What they are **not** ...  minified OS
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
 ## Container hosts
 Minimal Linux distributions have been created with similar goals to Unikernels,
 aimed to be minimal host OS for container engines, e.g.
+- <img src="images/linuxkit.jpg" width=100 />
 - CoreOS Linux
 - Project Atomic
 - RancherOS
@@ -162,10 +180,9 @@ But these are still reduced versions of general purpose OSes and so have many un
 name: section_overview
 layout: false
 class: left
-exclude: false
+exclude: true
 
 ## Unikernels: What they are **not** ...  minified OS
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td><td> .blue[5]</td> </tr> </table> </div>
 
@@ -173,20 +190,14 @@ exclude: false
 <br/>
 In April 2017 Docker open sourced **LinuxKit** a way of building minimal Linux distributions for hosting containers.
 
---
-
 LinuxKit is also a specialized Container Host with
 - declarative specification of the system components to include
 - services and applications encapsulated in containers
 - MirageSDK ... .blue[looks interesting] ...
 
---
-
 LinuxKit is still based on a General Purpose Linux Kernel but allows for much customization of the base system.
 
 It's just one step closer to Unikernels ...
-
---
 
 ... who knows what Docker will do next **??** ...
 
@@ -196,7 +207,7 @@ It's just one step closer to Unikernels ...
 name: section_overview
 layout: false
 class: left
-exclude: false
+exclude: true
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td> </tr> </table> </div>
 
@@ -207,22 +218,14 @@ They are **not** minified **general purpose OS**
 - Not *&micro;-kernels*
 - Not *minified Linux* kernels or *Container OS*
 
---
-
 They are **not** real-time Oses
 - But they are very fast
-
---
 
 They are **not**
 - Multi-kernels (*though* HermitCore is !)
 - Multi-process (*though* Graphene is !)
 
---
-
 They are **not** all the same, but work on similar principles ...
-
---
 
 <table style="width:100%; border: 1px solid black; background-color: #f1f1c1;">
   <tr>  <th>  </th> <th></th> </tr>
@@ -247,12 +250,10 @@ class: left
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
 **Very small** compared to an application + OS
-- use few resources
+- use few resources - allows high density
 - immutable, suitable for micro-services
 - No legacy drivers
 - No unneeded .blue[shell] - **did I mention this?**
-
---
 
 Have no separate **kernel space**
 - No need to copy between kernel and **user space**
@@ -306,7 +307,7 @@ layout: false
 class: left
 <h2>.blue[IETF draft on Containers for NFV] .red[expired] Jan 2017</h2>
 
-Taken from: <a href="https://www.ietf.org/archive/id/draft-natarajan-nfvrg-containers-for-nfv-03.txt"> draft-natarajan-nfvrg-containers-for-nfv-03.txt </a>
+Taken from: <a href="https://www.ietf.org/archive/id/draft-natarajan-nfvrg-containers-for-nfv-03.txt"> draft-natarajan-nfvrg-containers-for-nfv-03.txt </a>,  <a href="https://datatracker.ietf.org/meeting/96/materials/slides-96-nfvrg-3/"> Slides  </a>
 
 4.2. Instantiation Times
 
@@ -454,10 +455,10 @@ class: left
   <tr>  <th> Clean-Slate </th> <th>  </th> <th>Legacy</th> </tr>
 <tbody text-align="true">
 <tr>
-    <td> - A minimalist approach </td>  <td> </td>
+    <td> - Minimalist approach </td>  <td> </td>
                                <td> - POSIX compatibility </td>
 </tr> <tr>
-    <td> - Re-implement all OS functions </td> <td> </td>
+    <td> - Re-implement needed OS functions </td> <td> </td>
                                <td> - Re-use existing libraries</td>
 </tr> <tr>
     <td> - Typically uses type safe language </td> <td> </td>
@@ -477,7 +478,7 @@ class: left
 <br/>
 <br/>
 
-This means that clean-slate Unikernels tend to be implemented solely in one high-level language (and possibly derived languages)
+<!-- This means that clean-slate Unikernels tend to be implemented solely in one high-level language (and possibly derived languages) -->
 
 --
 
@@ -516,7 +517,7 @@ class: left
                                <td> OSv </td>
 </tr> <tr>
     <td> HalVM (Haskell) </td> <td> </td>
-                               <td> Rumprun (+LKL) </td>
+                               <td> Rumprun (<b>+LKL</b>) </td>
 </tr> <tr>
     <td> LING (Erlang) </td> <td> </td>
                                <td> .red[Runtime.js] </td>
@@ -527,17 +528,18 @@ class: left
 </tr> <tr> <td> </td> <td> </td> <td> Graphene </td>
 </tr> <tr> <td> </td> <td> </td> <td> ClickOS </td>
 </tr> <tr> <td> </td> <td> </td> <td> Vorteil </td>
-</tr> <tr> <td> </td> <td> </td> <td> Clive </td>
-</tr> <tr> <td> </td> <td> </td> <td> Magnios </td>
-</tr> <tr> <td> </td> <td> </td> <td> Ultibo </td>
-</tr> <tr> <td> </td> <td> </td> <td> Drawbridge </td>
-</tr> <tr> <td> </td> <td> </td> <td> ... others ? ... </td>
+<tr>  <th> Tools </th> <td>  </td> <td>Clive</td> </tr>
+<!-- </tr> <tr> <td> </td> <td> </td> <td> Clive </td> -->
+</tr> <tr> <td> Solo5/ukvm </td> <td> </td> <td> Magnios </td>
+</tr> <tr> <td> Unik </td> <td> </td> <td> Ultibo </td>
+</tr> <tr> <td> Unikraft </td> <td> </td> <td> Drawbridge </td>
+</tr> <tr> <td> Minios </td> <td> </td> <td> ... others ? ... </td>
 </tr> <tr>
 </tr>
 </tbody>
 </table>
 
-There's some collaboration going on across projects especially to use some common underlying layers such as Minio, Solo5/ukvm and now .blue[Unikraft].
+<!-- Some collaboration going on across projects e.g. to use some common underlying layers such as Minio, Solo5/ukvm and now .blue[Unikraft]. -->
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td><td> .blue[10]</td> </tr> </table> </div>
 ---
@@ -705,7 +707,13 @@ class: left
 <hr/>
 C/C++
 <br/>
-<a href=="http://includeos.readthedocs.io/en/latest/FAQ.html"> FAQ </a>
+<!-- [FAQ](http://includeos.readthedocs.io/en/latest/FAQ.html) -->
+
+[includeos.
+readthedoc.io](http://includeos.readthedocs.io/)
+
+<a href="https://www.youtube.com/watch?v=h7D88U-5pKc"><img src="images/youtube_small.jpg" width=26 />CppCon 2017</a>
+
 ]
 
 .right-column[
@@ -713,20 +721,22 @@ Open source Unikernels written in C++ - ```#include <os>```
 
 Runs on hypervisors (KVM, VMWare) *maybe* baremetal (E1000 support recently added) ...
 
-Single-threaded, single-process, single-memory space
+Many features such as multi-threading, multi-cores can be compiled in (experimental today).
+Single-memory space.
 
 Delegates to route messages between TCP/IP stack components.
 
 No blocking POSIX calls implemented yet, only async i/o.
 
 Recent developments:
+- Currently integrating MUSL [musl-libc.org](https://www.musl-libc.org/)
+- Dashboard available as commercial product
 - NaCl DSL to define network configurations
   - allows to build firewalls, routers, load-balancers
-- 64-bit
-- ARM support
-- Solo5 (ukvm)
-- Working with Mender (mender.io) for OTA updates
-- Dashboard available as commercial product
+- Added Solo5 (ukvm) support
+- Became 64-bit
+- Added ARM support
+- Worked with Mender (mender.io) for OTA updates
 
 ]
 
@@ -882,6 +892,7 @@ Languages:
 name: section_tools
 layout: false
 class: left
+exclude: true
 ## Unikernel Tools
 
 Open Source tools help to advance the various projects.
@@ -925,6 +936,7 @@ class: inverse, middle
 name: section_overview
 layout: false
 class: inverse, middle
+exclude: True
 
 ## What I predicted last year ... mea culpa
 
@@ -943,6 +955,7 @@ class: inverse, middle
 name: section_containers
 layout: false
 class: left
+exclude: True
 ## .blue[Unikernels & Containers]: .magenta[My guess ...] Snowcamp.io Feb 2017
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
@@ -952,13 +965,13 @@ So what about Containers? ... and why did Docker buy Unikernel Systems?
 
 <!-- <a href="https://www.infoq.com/interviews/chaudhry-unikernels-docker" /> Info.Q / Amir, Aug 2016 </a> -->
 
---
+#--
 
 - Unikernel Systems are involved in MirageOS/Xen
 
 - Unikernels already used as specific functions in  "*Docker for Mac*" <!-- - VPNKit, DataKit -->
 
---
+#--
 
 Guessing:
 - **No-brainer**: Provide build/ship/run tools for Unikernels
@@ -969,7 +982,7 @@ Guessing:
   - **ship**: Docker registry extended to provide Unikernel images
   - **run**: Docker Swarm orchestrates **tasks** incl. Unikernels
 
---
+#--
 
 - Secure Container deployments through hybrid solutions
     - Secure front-ends made of unikernels
@@ -994,32 +1007,32 @@ So it's like an extreme form of specialization which is something we have alread
 name: section_overview
 layout: false
 class: left
-## What's coming? (JULY 2017 RMLL VIEW)
-<!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
+## What can we expect to see in 2018?
 
+More trials of **specialized** applications, e.g. networking components.
 
-Docker bought Unikernel Systems (main MirageOS developers) in Jan 2016
-- Unikernel technology *used* in Docker for Mac, Docker for Windows
+Unikernels becoming easier to use/deploy/debug
+- Solo5: More backend support
+- Unik as common unikernel compiler
+- Unikraft as a tool for building Unikernels
+- More Unikernel support from PaaS (kubernetes+virtlet)
 
-MirageOS v3 released in March 2017
-- improves MirageOS implementation (less code, more func)
-- New Solo5 backend: kvm via Solo5/ukvm
+IncludeOS
+- Becomes production ready, trial deployments
+- More capabilities around multi-thread, multi-core
+- Limited bare-metal support
+- More languages?
 
-Unikernels are becoming easier to use
-- Adoption of existing backends: Minios/Xen, Solo5/ukvm
-- LinuxKit/MirageSDK synergies with MirageOS?
-- Docker facilitates Build Ship and Run for Unikernel technologies
-- Unik project facilitates use of different Unikernel technologies
-- Cloud Foundry and Kubernetes look to deploy Unikernels
-- Solo.io "*Squash*" project producing debugger for &micro;-services and Unikernels
-
-Many Unikernel projects are advancing quickly ... and specialized deployment trials ongoing
+Docker / MirageOS ?
+- MirageOS to support ReactML ?
+- Progress on MirageSDK (part of LinuxKit)
 
 <div class="footnote"> <table style="color: lightgray" > <tr> <td> <img src="images/Twitter_Bird.svg" width=24 /> </td> <td>@mjbright</td> </tr> </table> </div>
 ---
 name: section_overview
 layout: false
 class: left
+exclude: true
 ## Unikernels: Usage? Baremetal?
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
@@ -1042,6 +1055,7 @@ May be appropriate for the smallest IoT devices (webcam, sensor)
 name: section_overview
 layout: false
 class: left
+exclude: true
 ## Unikernels: Conclusions ...
 <!-- .red[ TEST ]  .blue[TEST]  .green[TEST]  .yellow[TEST]  .magenta[TEST]  .cyan[TEST]  .pink[TEST] -->
 
@@ -1050,7 +1064,7 @@ A very **active research** area
 - mostly Open Source
 - healthy collaboration - common tooling possible
 
---
+#--
 
 Some projects adopt a "**Clean-Slate**" approach building up capabilities.
 - impose a particular language
@@ -1059,7 +1073,7 @@ Some projects adopt a "**Clean-Slate**" approach building up capabilities.
 
 Other projects trade off some of the Unikernel advantages for "ease of use".
 
---
+#--
 
 We will start to hear of deployments for **specific use cases**
 
