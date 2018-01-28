@@ -53,8 +53,8 @@
     <td> Kubernetes Tutorial </td>
     <td> </td>
     <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
-    <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
-    <td> <a href="TODO"> <b>Video </b> </a> </td> 
+    <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/FlossASIA2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
+    <td> Video </td>
     <td>Michael Bright</td>
 </tr>
 <tr>
@@ -63,8 +63,8 @@
     <td>   Talk   </td>
     <td> Serverless </td>
     <td> </td>
-    <td> <a href="TODO"> SRC</a> </td> 
-    <td> <a href="TODO"> <b>Video </b> </a> </td> 
+    <td> SRC </td> 
+    <td> Video </td>
     <td>Michael Bright</td>
 </tr>
 
