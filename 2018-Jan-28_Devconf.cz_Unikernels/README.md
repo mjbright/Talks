@@ -22,7 +22,7 @@ class: inverse, center, middle
 <img src="./images/devconf.cz.jpg" width=100 />
 </td> <td width="33%">
 </td> <td width="33%">
-<img src="./images/IMG_Brno_CZ_20180127_Enhanced.jpg" width=200 />
+<img src="./images/IMG_Brno_CZ_20180127_Enhanced.png" width=200
 </td> </tr>
 </table>
 
