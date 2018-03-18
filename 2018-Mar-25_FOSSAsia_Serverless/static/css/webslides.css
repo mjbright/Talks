@@ -1,7 +1,7 @@
 /*!
  * Name: WebSlides
- * Version: 1.4.1
- * Date: 2017-08-18
+ * Version: 1.5.0
+ * Date: 2017-09-16
  * Description: Making HTML presentations easy
  * URL: https://github.com/webslides/webslides#readme
  * Credits: @jlantunez, @LuisSacristan, @Belelros
@@ -363,10 +363,6 @@ webslides.js will add .ws-ready automatically. Don't worry :) -- */
   overflow-y: scroll; }
   #webslides::-webkit-scrollbar {
     display: none; }
-
-/* -- Prototype faster - Vertical rhythm  -- */
-.baseline {
-  background: url("../images/baseline.png") left top 0.8rem/0.8rem; }
 
 li li {
   margin-left: 1.6rem; }
@@ -2400,6 +2396,15 @@ CV / News
   .toc li a:hover .toc-page:before {
     border-bottom-width: 2px; }
 
+.chapter {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  padding-right: .8rem; }
+
+.toc-page {
+  float: right; }
+
 /*===========================================
 10. Cards
 ============================================= */
@@ -3218,24 +3223,16 @@ Slides - Backgrounds <section class="bg-primary">
 
 /*Horizontal Gradient*/
 .bg-gradient-h {
-  /*background: linear-gradient(134deg, #32b 0, #62b 100%); }*/
-  background: linear-gradient(134deg, #a2b 0, #22b 100%); }
+  background: linear-gradient(134deg, #32b 0, #62b 100%); }
 
 /*Vertical Gradient*/
 .bg-gradient-v {
-	/*
   background: -webkit-gradient(linear, left bottom, left top, from(#62b), to(#32b));
   background: linear-gradient(to top, #62b 0%, #32b 100%); }
-  */
-  background: -webkit-gradient(linear, left bottom, left top, from(#aad), to(#2ad));
-  background: linear-gradient(to top, #aad 0%, #2ad 100%); }
 
 /*Radial Gradient*/
 .bg-gradient-r {
-  background: radial-gradient(ellipse at center, #aad 0%, #2ad 100%);
-	/*
-  background: radial-gradient(ellipse at center, #62b 0%, #32b 100%);
-  */}
+  background: radial-gradient(ellipse at center, #62b 0%, #32b 100%); }
 
 /*White Gradient (vertical)*/
 .bg-gradient-white {
@@ -3707,8 +3704,6 @@ input[type='submit']:active {
 .bg-primary input,
 [class*='bg-gradient-'] .button,
 [class*='bg-'] a.button.ghost {
-  /*background-color: #333;
-  color: #333;*/
   border-color: #fff; }
 
 [class*='bg-'] a.button {
