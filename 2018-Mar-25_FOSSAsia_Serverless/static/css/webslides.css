@@ -423,7 +423,7 @@ footer nav {
     .wrap,
     header nav,
     footer nav {
-      width: 90%; } }
+      width: 100%; } }
 
 .frame,
 .shadow {
@@ -1278,7 +1278,8 @@ https://github.com/webslides/webslides/issues/57 -- */
 header,
 footer,
 #navigation {
-  padding: 2.4rem;
+  /*padding: 2.4rem;*/
+  padding: 0.0rem;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
   width: 100%; }
@@ -1609,7 +1610,8 @@ form[class*='bg-'] {
           animation: fadeIn 8s;
   bottom: 0;
   left: 0;
-  margin-left: auto;
+  #margin-left: auto;
+  margin-left: left;
   margin-right: auto;
   opacity: 0;
   position: fixed;
@@ -3470,7 +3472,7 @@ Gallery li+.overlay+image
   color: #333;
   text-shadow: none; }
 
-.flesblock.gallery li a footer {
+.flexblock.gallery li a footer {
   color: #aaa; }
 
 /*Arrow */
