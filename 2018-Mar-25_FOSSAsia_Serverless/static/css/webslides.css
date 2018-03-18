@@ -1310,9 +1310,11 @@ header,
   bottom: 0;
   top: auto; }
 
-header[role='banner'] {
-  opacity: 0; }
-  header[role='banner']:hover {
+/*header[role='banner'] {
+    opacity: 1;
+}*/
+
+header[role='banner']:hover {
     opacity: 1; }
 
 @media (max-width: 767px) {
