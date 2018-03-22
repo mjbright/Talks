@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="858.33691"
+   height="237.82812"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   sodipodi:docname="containous.logo.svg"
+   inkscape:export-filename="/home/emile/dev/logos/containous.logo.png"
+   inkscape:export-xdpi="495.80374"
+   inkscape:export-ydpi="495.80374">
+  <defs
+     id="defs4">
+    <font
+       horiz-adv-x="1024"
+       id="font3836"
+       inkscape:label="font 1"
+       horiz-origin-x="0"
+       horiz-origin-y="0"
+       vert-origin-x="45"
+       vert-origin-y="90"
+       vert-adv-y="90">
+      <font-face
+         units-per-em="1024"
+         id="font-face3838"
+         font-family="SVGFont 1" />
+      <missing-glyph
+         d="M0,0h1000v1024h-1000z"
+         id="missing-glyph3840" />
+      <glyph
+         glyph-name="glyph 1"
+         id="glyph3842"
+         unicode="C" />
+    </font>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="45.254835"
+     inkscape:cx="672.19235"
+     inkscape:cy="84.458744"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1023"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(120.47468,42.46843)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"
+       x="-53.309628"
+       y="122.33927"
+       id="text2985"><tspan
+         sodipodi:role="line"
+         id="tspan2987"
+         x="-53.309628"
+         y="122.33927"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:160px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#00b6ff;fill-opacity:1;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+           style="fill:#37abc8;fill-opacity:1;stroke:#37abc8;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="tspan3776">ontain</tspan><tspan
+           style="fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:5;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="tspan3893"><tspan
+   style="fill:#37abc8;fill-opacity:1;stroke:#37abc8;stroke-opacity:1"
+   id="tspan4150">o</tspan>us</tspan></tspan></text>
+    <g
+       style="font-size:72px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:172.00000286000002347%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#666666;fill-opacity:1;stroke:#666666;font-family:DejaVu Sans;-inkscape-font-specification:DejaVu Sans;stroke-width:1.275;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;stroke-linejoin:round;stroke-linecap:butt"
+       id="text3775"
+       transform="matrix(4,0,0,4,-926.08136,-229.33687)">
+      <path
+         d="m 246.2298,54.209297 -2.07812,2.68164 2.07812,4.806641 c -2.39067,-2.226519 -4.94536,-3.89058 -7.66407,-4.992187 -2.69534,-1.101516 -5.56643,-1.652296 -8.61328,-1.652344 -6.00002,4.8e-5 -10.59377,1.83989 -13.78125,5.519531 -3.18751,3.656289 -4.78126,8.953159 -4.78125,15.890625 -1e-5,6.914082 1.59374,12.210952 4.78125,15.890625 3.18748,3.656257 7.78123,5.48438 13.78125,5.484375 3.04685,5e-6 5.85865,-0.708775 8.61328,-1.652343 2.51818,-0.862572 2.35659,-0.821073 5.56485,-2.384732 l 2.14342,2.228481 -2.14342,4.570771 c -2.99266,0.9362 -3.02192,0.96439 -5.81094,1.80814 -2.76566,0.84375 -5.69534,1.26562 -8.78906,1.26562 -7.94534,0 -14.20314,-2.42578 -18.77344,-7.277343 -4.57032,-4.874989 -6.85547,-11.519513 -6.85547,-19.933594 0,-8.437465 2.28515,-15.08199 6.85547,-19.933593 4.5703,-4.874949 10.8281,-7.312447 18.77344,-7.3125 3.14059,5.3e-5 6.09371,0.421928 8.85937,1.265625 2.78902,0.820364 8.05119,3.454666 7.83985,3.726562"
+         style="line-height:172.00000286%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';fill:#666666;fill-opacity:1;stroke:#666666;stroke-width:1.27499998;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path5974"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccscssccccscscccc" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:0"
+       d="m 55.910637,117.77137 -3.04268,-6.84928 3.57716,-3.38889 c 1.96744,-1.86389 3.5798,-3.385 3.58304,-3.38023 0.012,0.02 -1.04256,20.43755 -1.05796,20.45191 -0.008,0.008 -1.38612,-3.06641 -3.05956,-6.83351 l 0,0 z"
+       id="path3846"
+       inkscape:connector-curvature="0" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3760"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:0.01%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
+         id="flowRegion3762"><rect
+           id="rect3764"
+           width="346"
+           height="349"
+           x="-72"
+           y="-74.171875" /></flowRegion><flowPara
+         id="flowPara3766"
+         style="font-size:40px;line-height:1.25"> </flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="544.20569"
+       y="136.66983"
+       id="text4164"><tspan
+         sodipodi:role="line"
+         id="tspan4166"
+         x="544.20569"
+         y="136.66983"
+         style="font-size:40px;line-height:1.25"> </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="526.55133"
+       y="124.6049"
+       id="text4172"><tspan
+         sodipodi:role="line"
+         id="tspan4174"
+         x="526.55133"
+         y="124.6049"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:159.3888855px;line-height:1.25;font-family:Saab;-inkscape-font-specification:Saab;fill:#666666;fill-opacity:1">.</tspan></text>
+  </g>
+</svg>
