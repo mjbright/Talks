@@ -3161,11 +3161,17 @@ Slides - Backgrounds <section class="bg-primary">
 .bg-blue {
   background-color: #346; }
 
+.bg-cyan {
+  background-color: #3af; }
+
 .bg-brown {
   background-color: #f9f8f2; }
 
 .bg-gray {
   background-color: #d5d9e2; }
+
+.bg-green-gray {
+  background-color: #d5ffe2; }
 
 .bg-green {
   background-color: #077; }
