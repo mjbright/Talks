@@ -11958,9 +11958,17 @@ We will look at just 3 ways
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="NodePort"> </a></p>
-<h3 id="NodePort">NodePort<a class="anchor-link" href="#NodePort">&#182;</a></h3><p><img src="images/Service_Access_NodePort.svg.png" width="800" /></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+<p><a name="NodePort"> </a><h4> NodePort </h4></p>
+<center><table align="center" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/Service_Access_NodePort.svg.png" width="600" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff">
+        <pre style='align:normal; font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+Simple, not recommended for production<br/>
+- Only one service per port
+- Limited to use ports 30000 - 32767
+- User must directly address Node IP</pre>
+    </td></tr>
+</table></center><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
@@ -11970,9 +11978,18 @@ We will look at just 3 ways
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="LoadBalancer"> </a></p>
-<h3 id="LoadBalancer">LoadBalancer<a class="anchor-link" href="#LoadBalancer">&#182;</a></h3><p><img src="images/Service_Access_LoadBalancer.svg.png" width="800" /></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+<p><a name="LoadBalancer"> </a><h4> LoadBalancer </h4></p>
+<center><table align="center" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/Service_Access_LoadBalancer.svg.png" width="600" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff">
+        <pre style='align:normal; font-family:"Courier New", Courier, monospace; font-size:90%; bottom:0px;'>
+Uses 'Infrastructure Provider' LoadBalancer
+<br/>
+OK for deployment, but
+- LoadBalancer and IP per service
+</pre>
+    </td></tr>
+</table></center><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
@@ -11982,9 +11999,44 @@ We will look at just 3 ways
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a name="IngressController"> </a></p>
-<h3 id="Ingress-Controller">Ingress Controller<a class="anchor-link" href="#Ingress-Controller">&#182;</a></h3><p><img src="images/Service_Access_Ingress.svg.png" width="800" /></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+<p><a name="IngressController"> </a><h4> Ingress Controller </h4></p>
+<center><table align="center" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/Service_Access_Ingress.svg.png" width="600" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff">
+        <pre style='align:normal; font-family:"Courier New", Courier, monospace; font-size:90%; bottom:0px;'>
+Capabilities depend upon Ingress Controller
+<br/>
+- Kubernetes limited to http(s) currently
+- Generally, path-based routing is allowed
+to Services
+</pre>
+    </td></tr>
+</table></center><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr>
+    <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/traefik.logo.png" width="60" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td>
+    </tr>
+    </table></p>
+
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4> Traefik - as an Ingress Controller </h4><table align="left" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/Service_Access_Ingress.svg.png" width="300" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff">
+        <p style='align:left; font-family:"Courier New", Courier, monospace; font-size:90%; bottom:0px;'>
+Let's look at the use of Traefik which allows
+<br/>
+- Extensive Host, Path, Port-based routing to Services<br/>
+- Hot configuration reloads<br/>
+- Let's Encrypt Support (Automated HTTPS with renewal)<br/>
+</p>
+    </td></tr>
+</table><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr>
     <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/traefik.logo.png" width="60" /> </td>
     <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td>
