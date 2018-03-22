@@ -11907,10 +11907,9 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
 <h2 id="3.-Running-Pods,-Deployments">3. Running Pods, Deployments<a class="anchor-link" href="#3.-Running-Pods,-Deployments">&#182;</a></h2><p><pre style="align:center" >
-For this section of the lab we will continue to work with our 3-node cluster comprised of 1 Master and 2 Workers.
-</pre>
-<img src="images/KubeNodes_1m_2w.svg.png" width="400" /></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+In this section we will work with a 3-node cluster comprised of 1 Master and 2 Workers.
+</pre></p>
+<center><img src="images/KubeNodes_1m_2w.svg.png" width="600" /></center><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
@@ -11920,13 +11919,6 @@ For this section of the lab we will continue to work with our 3-node cluster com
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="3.-Running-Pods,-Deployments">3. Running Pods, Deployments<a class="anchor-link" href="#3.-Running-Pods,-Deployments">&#182;</a></h1><pre style="align:center" >
-
-<p><strong>In this section</strong> we will see how we can launch pods directly from the command-line using 'kubectl run' and how it creates several resources.</p>
-<p>This is useful for experimentation but it is not declarative.
-We will also see how we can create resources from a yaml file using the 'kubectl create' command, and how we can create several containers in a Pod.</p>
-<p>We will look at how to scale Pods, and what happens when a Pod fails
-&lt;/pre&gt;</p>
 <p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
@@ -11948,34 +11940,10 @@ We will also see how we can create resources from a yaml file using the 'kubectl
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>. ./.shell.functions
+CLEANUP
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Loading bash helper functions, new functions added:
--- checkPresent 
--- checkState 
--- cont 
--- untilNotPresent 
--- untilNotState 
--- untilPresent 
--- untilState 
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -11985,44 +11953,6 @@ We will also see how we can create resources from a yaml file using the 'kubectl
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>checkPresent pod    <span class="m">2</span>-containers-in-a-pod <span class="o">&amp;&amp;</span>
-    kubectl delete po/2-containers-in-a-pod
-checkPresent deploy k8s-demo              <span class="o">&amp;&amp;</span>
-    kubectl delete deploy k8s-demo
-checkPresent svc    k8s-demo              <span class="o">&amp;&amp;</span>
-    kubectl delete service k8s-demo-service
-cont
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>No resources found.
-No resources found.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl get all
 </pre></div>
 
@@ -12041,7 +11971,7 @@ No resources found.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
+svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   2d
 </pre>
 </div>
 </div>
@@ -12054,57 +11984,17 @@ svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Deploying-Pods-via-'kubectl-run'">Deploying Pods via 'kubectl run'<a class="anchor-link" href="#Deploying-Pods-via-'kubectl-run'">&#182;</a></h2><p><pre style="align:center" >
-We've seen how we can interrogate our cluster server using the kubectl tool, obtaining information about Resources such as Pods, Nodes in the system.</p>
-<p>Now let's create our own pods using 'kubectl run'.  We will see that this actually creates a Deployment and a ReplicaSet, as the example below:</p>
-<p><img src="images/KubernetesArchi_Deploy.svg.png" width="600" /></p>
+<h2 id="Deploying-Pods-via-'kubectl-run'">Deploying Pods via 'kubectl run'<a class="anchor-link" href="#Deploying-Pods-via-'kubectl-run'">&#182;</a></h2><p><!--We've seen how we can interrogate our cluster server using the kubectl tool, obtaining information about Resources such as Pods, Nodes in the system.--></p>
+<p><pre style="align:center" >
+Now let's create our own pods using 'kubectl run'.
+We will see that this actually creates a Deployment and a ReplicaSet, as the example below:
+<img src="images/KubernetesArchi_Deploy.svg.png" width="800" /></p>
 <p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="http://www.icon100.com/up/3011/128/Twitter-alt.png" width="40"> </td><td bgcolor="#ffffff" color="#ffffff" > @containous </td></tr></table></p>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>
 </div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We want to see what Resources are created, so let's just check again what exists already ... by running 'kubectl get all'</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get all
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12113,10 +12003,10 @@ svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
 
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl run k8s-demo -l <span class="s2">&quot;app=k8s-demo&quot;</span> --image<span class="o">=</span>mjbright/k8s-demo:1 --replicas<span class="o">=</span><span class="m">2</span> --port<span class="o">=</span><span class="m">8080</span>
@@ -12151,11 +12041,11 @@ NAME                     DESIRED   CURRENT   READY     AGE
 rs/k8s-demo-6b76bd84d7   2         2         0         1s
 
 NAME                           READY     STATUS              RESTARTS   AGE
-po/k8s-demo-6b76bd84d7-56b49   0/1       ContainerCreating   0          1s
-po/k8s-demo-6b76bd84d7-9rfnw   0/1       ContainerCreating   0          1s
+po/k8s-demo-6b76bd84d7-fpt4k   0/1       ContainerCreating   0          1s
+po/k8s-demo-6b76bd84d7-s5t2p   0/1       ContainerCreating   0          1s
 
 NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
+svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   2d
 </pre>
 </div>
 </div>
@@ -12166,11 +12056,11 @@ svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>untilState pod k8s-demo Running -q <span class="o">&amp;&amp;</span>
-    kubectl get all
+    kubectl get pods
 </pre></div>
 
 </div>
@@ -12187,24 +12077,9 @@ svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   2         2         2            2           6s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   2         2         2         6s
-
-NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   2         2         2            2           6s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   2         2         2         6s
-
-NAME                           READY     STATUS    RESTARTS   AGE
-po/k8s-demo-6b76bd84d7-56b49   1/1       Running   0          6s
-po/k8s-demo-6b76bd84d7-9rfnw   1/1       Running   0          6s
-
-NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
+<pre>NAME                        READY     STATUS    RESTARTS   AGE
+k8s-demo-6b76bd84d7-fpt4k   1/1       Running   0          6s
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running   0          6s
 </pre>
 </div>
 </div>
@@ -12224,691 +12099,7 @@ svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get all -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES                SELECTOR
-deploy/k8s-demo   2         2         2            2           6s        k8s-demo     mjbright/k8s-demo:1   app=k8s-demo
-
-NAME                     DESIRED   CURRENT   READY     AGE       CONTAINERS   IMAGES                SELECTOR
-rs/k8s-demo-6b76bd84d7   2         2         2         6s        k8s-demo     mjbright/k8s-demo:1   app=k8s-demo,pod-template-hash=2632684083
-
-NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES                SELECTOR
-deploy/k8s-demo   2         2         2            2           6s        k8s-demo     mjbright/k8s-demo:1   app=k8s-demo
-
-NAME                     DESIRED   CURRENT   READY     AGE       CONTAINERS   IMAGES                SELECTOR
-rs/k8s-demo-6b76bd84d7   2         2         2         6s        k8s-demo     mjbright/k8s-demo:1   app=k8s-demo,pod-template-hash=2632684083
-
-NAME                           READY     STATUS    RESTARTS   AGE       IP           NODE
-po/k8s-demo-6b76bd84d7-56b49   1/1       Running   0          6s        10.192.2.1   kube-node-1
-po/k8s-demo-6b76bd84d7-9rfnw   1/1       Running   0          6s        10.192.3.1   kube-node-2
-
-NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE       SELECTOR
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h        &lt;none&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note in the above output we can see that our k8s-demo pods are running on kube-node-1 and kube-node-2.</p>
-<h2 id="Creating-resources-using-yaml-specifications">Creating resources using yaml specifications<a class="anchor-link" href="#Creating-resources-using-yaml-specifications">&#182;</a></h2><h3 id="Obtaining-yaml-as-output">Obtaining yaml as output<a class="anchor-link" href="#Obtaining-yaml-as-output">&#182;</a></h3><p>Using the option '-o yaml' to any 'kubectl get' command we can obtain a yaml definition, so instead of</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get deploy/k8s-demo -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES                SELECTOR
-k8s-demo   2         2         2            2           6s        k8s-demo     mjbright/k8s-demo:1   app=k8s-demo
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>we get ...</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get deploy/k8s-demo -o yaml
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  annotations:
-    deployment.kubernetes.io/revision: &#34;1&#34;
-  creationTimestamp: 2018-03-18T19:58:49Z
-  generation: 1
-  labels:
-    app: k8s-demo
-  name: k8s-demo
-  namespace: default
-  resourceVersion: &#34;4154&#34;
-  selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/k8s-demo
-  uid: c68cfe52-2ae6-11e8-acfc-02420ac00002
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: k8s-demo
-  strategy:
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
-    type: RollingUpdate
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: k8s-demo
-    spec:
-      containers:
-      - image: mjbright/k8s-demo:1
-        imagePullPolicy: IfNotPresent
-        name: k8s-demo
-        ports:
-        - containerPort: 8080
-          protocol: TCP
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-      dnsPolicy: ClusterFirst
-      restartPolicy: Always
-      schedulerName: default-scheduler
-      securityContext: {}
-      terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 2
-  conditions:
-  - lastTransitionTime: 2018-03-18T19:58:54Z
-    lastUpdateTime: 2018-03-18T19:58:54Z
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: &#34;True&#34;
-    type: Available
-  observedGeneration: 1
-  readyReplicas: 2
-  replicas: 2
-  updatedReplicas: 2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Creating-resources-from-a-yaml-file">Creating resources from a yaml file<a class="anchor-link" href="#Creating-resources-from-a-yaml-file">&#182;</a></h2><p>This is the usual way in which we would create Resources on our cluster as it is declarative and repeatable.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Obtaining-the-example-yaml">Obtaining the example yaml<a class="anchor-link" href="#Obtaining-the-example-yaml">&#182;</a></h2><p>If you are using one of the VMS created for this lab then the example code will have been placed under:
-~/src/git/ContainerOrchestration.Labs/Orchestration-Kubernetes/</p>
-<p>If you are running in your own environment, or under play-with-kubernetes.com, you will first need to clone the repository:</p>
-<p><code>git clone https://github.com/ContainerOrchestration/Labs</code></p>
-<p><strong>NOTE</strong>: You may also need to checkout the current branch, e.g.:FOSSAsia2018</p>
-<p><code>git checkout FOSSAsia2018</code></p>
-<h2 id="Inspecting-the-example">Inspecting the example<a class="anchor-link" href="#Inspecting-the-example">&#182;</a></h2><p>In the example yaml below, we see that we specify a Pod to be created (this is the smallest unit of execution in a Kubernetes cluster) which will contains 2 containers.</p>
-<p>The yaml specifies which Kubernetes api version to use, the "<em>kind</em>" of object to be managed, and it's name.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>cat examples/3.pod_example.yaml
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>
-apiVersion: v1
-kind: Pod
-metadata:
-  name: 2-containers-in-a-pod
-spec:
-  containers:
-  - name: k8s-demo
-    image: mjbright/k8s-demo:1
-    ports:
-    - containerPort: 9876
-  - name: shell
-    image: alpine
-    command:
-      - &#34;bin/sh&#34;
-      - &#34;-c&#34;
-      - &#34;while true; do date; sleep 1; done&#34;
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's first cleanup by verifying that this pod isn't already running.</p>
-<p>We can use our yaml definition to delete any instances which may be running:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>checkPresent pod <span class="m">2</span>-containers-in-a-pod <span class="o">&amp;&amp;</span> <span class="o">{</span>
-    echo<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;-- Deleting pod:&quot;</span>
-    kubectl delete -f examples/3.pod_example.yaml
-
-    echo<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;-- Waiting for pod to terminate:&quot;</span>
-    untilNotPresent pod <span class="m">2</span>-containers-in-a-pod 
-    <span class="o">}</span>
-cont
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If we deleted any instances of "<em>2-containers-in-a-pod</em>" we need to wait for them to have terminated:</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get all
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   2         2         2            2           8s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   2         2         2         8s
-
-NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   2         2         2            2           8s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   2         2         2         8s
-
-NAME                           READY     STATUS    RESTARTS   AGE
-po/k8s-demo-6b76bd84d7-56b49   1/1       Running   0          8s
-po/k8s-demo-6b76bd84d7-9rfnw   1/1       Running   0          8s
-
-NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we can create our pod as follows:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl create -f examples/3.pod_example.yaml
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>pod &#34;2-containers-in-a-pod&#34; created
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get po/2-containers-in-a-pod
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                    READY     STATUS              RESTARTS   AGE
-2-containers-in-a-pod   0/2       ContainerCreating   0          0s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>untilState pod <span class="m">2</span>-containers-in-a-pod Running <span class="o">&amp;&amp;</span>
-    kubectl get po/2-containers-in-a-pod
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                    READY     STATUS    RESTARTS   AGE
-2-containers-in-a-pod   2/2       Running   0          5s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl describe po/2-containers-in-a-pod
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Name:         2-containers-in-a-pod
-Namespace:    default
-Node:         kube-node-2/10.192.0.4
-Start Time:   Sun, 18 Mar 2018 19:58:57 +0000
-Labels:       &lt;none&gt;
-Annotations:  &lt;none&gt;
-Status:       Running
-IP:           10.192.3.2
-Containers:
-  k8s-demo:
-    Container ID:   docker://d7cbed7e43c39529dcd3378ce8967530e643738c40bd7253438d62c741fbf546
-    Image:          mjbright/k8s-demo:1
-    Image ID:       docker-pullable://mjbright/k8s-demo@sha256:6d84d697796e0a529028808ba76e92482c4ca0c408e9f9eae8aba6f23c173264
-    Port:           9876/TCP
-    State:          Running
-      Started:      Sun, 18 Mar 2018 19:58:59 +0000
-    Ready:          True
-    Restart Count:  0
-    Environment:    &lt;none&gt;
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-6qqm4 (ro)
-  shell:
-    Container ID:  docker://18395509dbf6941d9d62a2368ad48509dc4f3fb5d9dcf103c79eb5fb96544422
-    Image:         alpine
-    Image ID:      docker-pullable://alpine@sha256:7b848083f93822dd21b0a2f14a110bd99f6efb4b838d499df6d04a49d0debf8b
-    Port:          &lt;none&gt;
-    Command:
-      bin/sh
-      -c
-      while true; do date; sleep 1; done
-    State:          Running
-      Started:      Sun, 18 Mar 2018 19:59:00 +0000
-    Ready:          True
-    Restart Count:  0
-    Environment:    &lt;none&gt;
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-6qqm4 (ro)
-Conditions:
-  Type           Status
-  Initialized    True 
-  Ready          True 
-  PodScheduled   True 
-Volumes:
-  default-token-6qqm4:
-    Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-6qqm4
-    Optional:    false
-QoS Class:       BestEffort
-Node-Selectors:  &lt;none&gt;
-Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
-                 node.kubernetes.io/unreachable:NoExecute for 300s
-Events:
-  Type    Reason                 Age   From                  Message
-  ----    ------                 ----  ----                  -------
-  Normal  Scheduled              6s    default-scheduler     Successfully assigned 2-containers-in-a-pod to kube-node-2
-  Normal  SuccessfulMountVolume  6s    kubelet, kube-node-2  MountVolume.SetUp succeeded for volume &#34;default-token-6qqm4&#34;
-  Normal  Pulled                 4s    kubelet, kube-node-2  Container image &#34;mjbright/k8s-demo:1&#34; already present on machine
-  Normal  Created                4s    kubelet, kube-node-2  Created container
-  Normal  Started                4s    kubelet, kube-node-2  Started container
-  Normal  Pulling                4s    kubelet, kube-node-2  pulling image &#34;alpine&#34;
-  Normal  Pulled                 3s    kubelet, kube-node-2  Successfully pulled image &#34;alpine&#34;
-  Normal  Created                3s    kubelet, kube-node-2  Created container
-  Normal  Started                3s    kubelet, kube-node-2  Started container
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl <span class="nb">exec</span> -it <span class="m">2</span>-containers-in-a-pod -n default <span class="nb">echo</span> hello world
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Defaulting container name to k8s-demo.
-Use &#39;kubectl describe pod/2-containers-in-a-pod -n default&#39; to see all of the containers in this pod.
-hello world
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl logs <span class="m">2</span>-containers-in-a-pod shell <span class="p">|</span> head -3
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Sun Mar 18 19:59:00 UTC 2018
-Sun Mar 18 19:59:01 UTC 2018
-Sun Mar 18 19:59:02 UTC 2018
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl delete po/2-containers-in-a-pod
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>pod &#34;2-containers-in-a-pod&#34; deleted
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pods
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS        RESTARTS   AGE
-2-containers-in-a-pod       2/2       Terminating   0          7s
-k8s-demo-6b76bd84d7-56b49   1/1       Running       0          15s
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          15s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-happens-if-a-pod-dies?">What happens if a pod dies?<a class="anchor-link" href="#What-happens-if-a-pod-dies?">&#182;</a></h2>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
@@ -12928,629 +12119,9 @@ k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          15s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS        RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       2/2       Terminating   0          7s        10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-56b49   1/1       Running       0          15s       10.192.2.1   kube-node-1
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          15s       10.192.3.1   kube-node-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When we deleted the 2-containers-in-a-pod Pod it just died.</p>
-<p>If we delete one of our k8s-demo Pods we will see that a new Pod is created automatically, this is because it is managed by a ReplicaSet.</p>
-<p>Running a Pod via "kubectl run" creates a Deployment which then creates a ReplicaSet.</p>
-<p>Let's kill one of our Pods and see what happens</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pod <span class="p">|</span> grep k8s-demo <span class="p">|</span> head -1 <span class="p">|</span> awk <span class="s1">&#39;{ print $1;}&#39;</span>
-
-<span class="nv">POD1</span><span class="o">=</span><span class="k">$(</span>kubectl get pod <span class="p">|</span> grep k8s-demo <span class="p">|</span> head -1 <span class="p">|</span> awk <span class="s1">&#39;{ print $1;}&#39;</span><span class="k">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>k8s-demo-6b76bd84d7-56b49
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl delete pod <span class="nv">$POD1</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>pod &#34;k8s-demo-6b76bd84d7-56b49&#34; deleted
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS              RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       2/2       Terminating         0          9s        10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-56b49   0/1       Terminating         0          17s       10.192.2.1   kube-node-1
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running             0          17s       10.192.3.1   kube-node-2
-k8s-demo-6b76bd84d7-zp4vk   0/1       ContainerCreating   0          1s        &lt;none&gt;       kube-node-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>sleep <span class="m">10</span><span class="p">;</span> kubectl get pods -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS        RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       2/2       Terminating   0          19s       10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          27s       10.192.3.1   kube-node-2
-k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          11s       10.192.2.2   kube-node-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We see that our Pod was deleted but that a new one was created, this is what we expect when our Pod is managed by a ReplicaSet.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Labels-and-Selectors">Labels and Selectors<a class="anchor-link" href="#Labels-and-Selectors">&#182;</a></h1><p>Labels can be applied to any Kubernetes generated objects and this can be useful to be able to apply operations to only selected objects based on their labels.</p>
-<p>We can see that our k8s-demo Deployment earlier had labels automatically assigned to it.</p>
-<p>We can create other Deployments, or Pods with a specific label.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl describe deploy k8s-demo <span class="c1">#| grep Labels:</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Name:                   k8s-demo
-Namespace:              default
-CreationTimestamp:      Sun, 18 Mar 2018 19:58:49 +0000
-Labels:                 app=k8s-demo
-Annotations:            deployment.kubernetes.io/revision=1
-Selector:               app=k8s-demo
-Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
-StrategyType:           RollingUpdate
-MinReadySeconds:        0
-RollingUpdateStrategy:  1 max unavailable, 1 max surge
-Pod Template:
-  Labels:  app=k8s-demo
-  Containers:
-   k8s-demo:
-    Image:        mjbright/k8s-demo:1
-    Port:         8080/TCP
-    Environment:  &lt;none&gt;
-    Mounts:       &lt;none&gt;
-  Volumes:        &lt;none&gt;
-Conditions:
-  Type           Status  Reason
-  ----           ------  ------
-  Available      True    MinimumReplicasAvailable
-OldReplicaSets:  &lt;none&gt;
-NewReplicaSet:   k8s-demo-6b76bd84d7 (2/2 replicas created)
-Events:
-  Type    Reason             Age   From                   Message
-  ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  27s   deployment-controller  Scaled up replica set k8s-demo-6b76bd84d7 to 2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now let's create a 2nd deployment with a label we assign:</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl run k8s-demo-test -l <span class="s2">&quot;mylabel=testing-v3&quot;</span> --image<span class="o">=</span>mjbright/k8s-demo:3
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>deployment &#34;k8s-demo-test&#34; created
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get po <span class="p">|</span> grep k8s-demo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>k8s-demo-6b76bd84d7-9rfnw       1/1       Running             0          28s
-k8s-demo-6b76bd84d7-zp4vk       1/1       Running             0          12s
-k8s-demo-test-c5d55945b-wzfnl   0/1       ContainerCreating   0          1s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we can choose to operate on, e.g. delete, only objects matching a label - note we must delete the Deployment itself no the Pods else they will be recreated.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl delete deploy -l <span class="s2">&quot;mylabel=testing-v3&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>deployment &#34;k8s-demo-test&#34; deleted
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get po <span class="p">|</span> grep k8s-demo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          31s
-k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          15s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is an extremely important concept in Kubernetes allowing a loose coupling of elements, where Controllers can keep track of elements of the cluster and request resources based on their labels.</p>
-
-</div>
-</div>
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="What-happens-if-a-node-dies?">What happens if a node dies?<a class="anchor-link" href="#What-happens-if-a-node-dies?">&#182;</a></h2><p>We should see similar behaviour is a Node dies.</p>
-<p>Anyone want to try this?</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Scaling-our-application">Scaling our application<a class="anchor-link" href="#Scaling-our-application">&#182;</a></h1><p>As our Pods are managed by a <strong>ReplicaSet</strong> we can scale the number of replicas by using the scale command on the <strong>Deployment</strong>:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl scale --replicas<span class="o">=</span><span class="m">3</span> deploy/k8s-demo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>deployment &#34;k8s-demo&#34; scaled
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get all
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   3         3         3            2           33s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   3         3         2         33s
-
-NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deploy/k8s-demo   3         3         3            2           33s
-
-NAME                     DESIRED   CURRENT   READY     AGE
-rs/k8s-demo-6b76bd84d7   3         3         2         33s
-
-NAME                           READY     STATUS              RESTARTS   AGE
-po/2-containers-in-a-pod       2/2       Terminating         0          25s
-po/k8s-demo-6b76bd84d7-9rfnw   1/1       Running             0          33s
-po/k8s-demo-6b76bd84d7-qg982   0/1       ContainerCreating   0          0s
-po/k8s-demo-6b76bd84d7-zp4vk   1/1       Running             0          17s
-
-NAME             TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
-svc/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP   1h
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS              RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       2/2       Terminating         0          26s       10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running             0          34s       10.192.3.1   kube-node-2
-k8s-demo-6b76bd84d7-qg982   0/1       ContainerCreating   0          1s        &lt;none&gt;       kube-node-1
-k8s-demo-6b76bd84d7-zp4vk   1/1       Running             0          18s       10.192.2.2   kube-node-1
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Scaling-down">Scaling down<a class="anchor-link" href="#Scaling-down">&#182;</a></h3><p>We can of course scale back down:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl scale --replicas<span class="o">=</span><span class="m">2</span> deploy/k8s-demo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>deployment &#34;k8s-demo&#34; scaled
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>untilNotState pod k8s-demo Terminating
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>k8s-demo-6b76bd84d7-qg982   0/1       Terminating   0          2s
-k8s-demo-6b76bd84d7-qg982   0/1       Terminating   0          11s
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS        RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       0/2       Terminating   0          44s       10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          52s       10.192.3.1   kube-node-2
-k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          36s       10.192.2.2   kube-node-1
+<pre>NAME                        READY     STATUS    RESTARTS   AGE       IP           NODE
+k8s-demo-6b76bd84d7-fpt4k   1/1       Running   0          6s        10.192.2.6   kube-node-1
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running   0          6s        10.192.3.6   kube-node-2
 </pre>
 </div>
 </div>
@@ -13573,7 +12144,7 @@ This would have the advantage of being able to address a virtual ip address for 
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
@@ -13593,10 +12164,9 @@ This would have the advantage of being able to address a virtual ip address for 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS        RESTARTS   AGE       IP           NODE
-2-containers-in-a-pod       0/2       Terminating   0          45s       10.192.3.2   kube-node-2
-k8s-demo-6b76bd84d7-9rfnw   1/1       Running       0          53s       10.192.3.1   kube-node-2
-k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          37s       10.192.2.2   kube-node-1
+<pre>NAME                        READY     STATUS    RESTARTS   AGE       IP           NODE
+k8s-demo-6b76bd84d7-fpt4k   1/1       Running   0          7s        10.192.2.6   kube-node-1
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running   0          7s        10.192.3.6   kube-node-2
 </pre>
 </div>
 </div>
@@ -13607,7 +12177,7 @@ k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          37s       10.192.
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span><span class="nv">POD1</span><span class="o">=</span><span class="k">$(</span>kubectl get pod -o wide --no-headers <span class="p">|</span> grep k8s-demo <span class="p">|</span> head -1 <span class="p">|</span> awk <span class="s1">&#39;{print $1;}&#39;</span><span class="k">)</span>
@@ -13633,8 +12203,8 @@ k8s-demo-6b76bd84d7-zp4vk   1/1       Running       0          37s       10.192.
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>POD1=k8s-demo-6b76bd84d7-9rfnw POD1_IP=10.192.3.1
-POD2=k8s-demo-6b76bd84d7-zp4vk POD2_IP=10.192.2.2
+<pre>POD1=k8s-demo-6b76bd84d7-fpt4k POD1_IP=10.192.2.6
+POD2=k8s-demo-6b76bd84d7-s5t2p POD2_IP=10.192.3.6
 </pre>
 </div>
 </div>
@@ -13654,7 +12224,7 @@ POD2=k8s-demo-6b76bd84d7-zp4vk POD2_IP=10.192.2.2
 </div></div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl get pod <span class="nv">$POD1</span> -o yaml
@@ -13677,12 +12247,12 @@ POD2=k8s-demo-6b76bd84d7-zp4vk POD2_IP=10.192.2.2
 <pre>apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: 2018-03-18T19:58:49Z
+  creationTimestamp: 2018-03-22T09:52:14Z
   generateName: k8s-demo-6b76bd84d7-
   labels:
     app: k8s-demo
     pod-template-hash: &#34;2632684083&#34;
-  name: k8s-demo-6b76bd84d7-9rfnw
+  name: k8s-demo-6b76bd84d7-fpt4k
   namespace: default
   ownerReferences:
   - apiVersion: extensions/v1beta1
@@ -13690,10 +12260,10 @@ metadata:
     controller: true
     kind: ReplicaSet
     name: k8s-demo-6b76bd84d7
-    uid: c68ec24a-2ae6-11e8-acfc-02420ac00002
-  resourceVersion: &#34;4146&#34;
-  selfLink: /api/v1/namespaces/default/pods/k8s-demo-6b76bd84d7-9rfnw
-  uid: c69250c2-2ae6-11e8-acfc-02420ac00002
+    uid: b30eb5f3-2db6-11e8-ad88-02420ac00002
+  resourceVersion: &#34;281435&#34;
+  selfLink: /api/v1/namespaces/default/pods/k8s-demo-6b76bd84d7-fpt4k
+  uid: b3109c58-2db6-11e8-ad88-02420ac00002
 spec:
   containers:
   - image: mjbright/k8s-demo:1
@@ -13707,10 +12277,10 @@ spec:
     terminationMessagePolicy: File
     volumeMounts:
     - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-      name: default-token-6qqm4
+      name: default-token-797bq
       readOnly: true
   dnsPolicy: ClusterFirst
-  nodeName: kube-node-2
+  nodeName: kube-node-1
   restartPolicy: Always
   schedulerName: default-scheduler
   securityContext: {}
@@ -13727,26 +12297,26 @@ spec:
     operator: Exists
     tolerationSeconds: 300
   volumes:
-  - name: default-token-6qqm4
+  - name: default-token-797bq
     secret:
       defaultMode: 420
-      secretName: default-token-6qqm4
+      secretName: default-token-797bq
 status:
   conditions:
   - lastProbeTime: null
-    lastTransitionTime: 2018-03-18T19:58:49Z
+    lastTransitionTime: 2018-03-22T09:52:14Z
     status: &#34;True&#34;
     type: Initialized
   - lastProbeTime: null
-    lastTransitionTime: 2018-03-18T19:58:54Z
+    lastTransitionTime: 2018-03-22T09:52:17Z
     status: &#34;True&#34;
     type: Ready
   - lastProbeTime: null
-    lastTransitionTime: 2018-03-18T19:58:49Z
+    lastTransitionTime: 2018-03-22T09:52:14Z
     status: &#34;True&#34;
     type: PodScheduled
   containerStatuses:
-  - containerID: docker://98378b591abafa7f608aeb463198c546131c31b470d2d0689f7c346c93f19a74
+  - containerID: docker://86f9035cacb317501bad8b8863e4097aecca25f137647b61f013193f62eb2439
     image: mjbright/k8s-demo:1
     imageID: docker-pullable://mjbright/k8s-demo@sha256:6d84d697796e0a529028808ba76e92482c4ca0c408e9f9eae8aba6f23c173264
     lastState: {}
@@ -13755,12 +12325,12 @@ status:
     restartCount: 0
     state:
       running:
-        startedAt: 2018-03-18T19:58:54Z
-  hostIP: 10.192.0.4
+        startedAt: 2018-03-22T09:52:17Z
+  hostIP: 10.192.0.3
   phase: Running
-  podIP: 10.192.3.1
+  podIP: 10.192.2.6
   qosClass: BestEffort
-  startTime: 2018-03-18T19:58:49Z
+  startTime: 2018-03-22T09:52:14Z
 </pre>
 </div>
 </div>
@@ -13781,7 +12351,7 @@ status:
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>curl http://<span class="nv">$POD1_IP</span>:8080
@@ -13829,7 +12399,7 @@ status:
 
 </span>
 
-Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6b76bd84d7-9rfnw</span>
+Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6b76bd84d7-fpt4k</span>
 Using image mjbright/k8s-demo:1
 </pre>
 </div>
@@ -13841,7 +12411,7 @@ Using image mjbright/k8s-demo:1
 </div></section></section><section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>curl http://<span class="nv">$POD2_IP</span>:8080
@@ -13889,7 +12459,7 @@ Using image mjbright/k8s-demo:1
 
 </span>
 
-Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6b76bd84d7-zp4vk</span>
+Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6b76bd84d7-s5t2p</span>
 Using image mjbright/k8s-demo:1
 </pre>
 </div>
@@ -13903,11 +12473,208 @@ Using image mjbright/k8s-demo:1
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Note:</strong> In a real deployment of course the actual Pod ips would not be externally accessible so we would want some way of making the nodes available on a well known address.</p>
+<h2 id="What-happens-if-a-pod-dies?">What happens if a pod dies?<a class="anchor-link" href="#What-happens-if-a-pod-dies?">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
+</pre></div>
 
 </div>
 </div>
-</div></section></section>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NAME                        READY     STATUS    RESTARTS   AGE       IP           NODE
+k8s-demo-6b76bd84d7-fpt4k   1/1       Running   0          9s        10.192.2.6   kube-node-1
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running   0          9s        10.192.3.6   kube-node-2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<!-- When we deleted the 2-containers-in-a-pod Pod it just died. -->
+
+<p>If we delete one of our k8s-demo Pods we will see that a new Pod is created automatically, this is because it is managed by a ReplicaSet.</p>
+<p>Running a Pod via "kubectl run" creates a Deployment which then creates a ReplicaSet.</p>
+<p>Let's kill one of our Pods and see what happens</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>kubectl get pod <span class="p">|</span> grep k8s-demo <span class="p">|</span> head -1 <span class="p">|</span> awk <span class="s1">&#39;{ print $1;}&#39;</span>
+
+<span class="nv">POD1</span><span class="o">=</span><span class="k">$(</span>kubectl get pod <span class="p">|</span> grep k8s-demo <span class="p">|</span> head -1 <span class="p">|</span> awk <span class="s1">&#39;{ print $1;}&#39;</span><span class="k">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>k8s-demo-6b76bd84d7-fpt4k
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>kubectl delete pod <span class="nv">$POD1</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>pod &#34;k8s-demo-6b76bd84d7-fpt4k&#34; deleted
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NAME                        READY     STATUS              RESTARTS   AGE       IP           NODE
+k8s-demo-6b76bd84d7-4z7mm   0/1       ContainerCreating   0          0s        &lt;none&gt;       kube-node-1
+k8s-demo-6b76bd84d7-fpt4k   1/1       Terminating         0          10s       10.192.2.6   kube-node-1
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running             0          10s       10.192.3.6   kube-node-2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span>sleep <span class="m">10</span><span class="p">;</span> kubectl get pods -o wide
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>NAME                        READY     STATUS    RESTARTS   AGE       IP           NODE
+k8s-demo-6b76bd84d7-4z7mm   1/1       Running   0          11s       10.192.2.7   kube-node-1
+k8s-demo-6b76bd84d7-s5t2p   1/1       Running   0          21s       10.192.3.6   kube-node-2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We see that our Pod was deleted but that a new one was created, this is what we expect when our Pod is managed by a ReplicaSet.</p>
+
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Kubernetes.ipynb">INDEX</a>  <a href="3.pods.ipynb">NEXT</a></p>
+<p><strong>Note:</strong> In a real deployment of course the actual Pod ips would not be externally accessible so we would want some way of making the nodes available on a well known address.</p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
+
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 

@@ -11906,28 +11906,21 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
-<h2 id="5.-Maintenance-Operations">5. Maintenance Operations<a class="anchor-link" href="#5.-Maintenance-Operations">&#182;</a></h2><p><!-- <br/><br/><br/><br/> --></p>
-<p><pre style="align:center" >
-In this section we look at practical aspects of deploying applications to a Kubernetes cluster.</p>
-<p>What happens when we want to upgrade the current version of the application, how we can we be sure that the upgrade has been successful and how to rollback to the previous version if needed&lt;/pre&gt;</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
+<h2 id="4.-Maintenance-Operations">4. Maintenance Operations<a class="anchor-link" href="#4.-Maintenance-Operations">&#182;</a></h2><!-- <br/><br/><br/><br/> -->
+<!-- Upgrading the version of an application, how we can we be sure that the upgrade has been successful and how to rollback to the previous version if needed
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will look at</p>
-<ul>
-<li>Rolling upgrade</li>
-<li>Readystatus and health checks</li>
-<li>Rollback</li>
-<li>Node cordoning</li>
-</ul>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+We will look at
+- Rolling upgrade
+- Readystatus and health checks
+- Rollback
+- Node cordoning-->
+
+<p><pre style="align:center" >
+In this section we look at practical aspects of deploying applications to a cluster.
+We will look at how we can roll out a new version of our application.
+We will work with a 3-node cluster comprised of 1 Master and 2 Workers.
+</pre></p>
+<center><img src="images/KubeNodes_1m_2w.svg.png" width="800" /></center><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
@@ -11946,7 +11939,11 @@ In this section we look at practical aspects of deploying applications to a Kube
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get deploy k8s-demo
+<div class=" highlight hl-bash"><pre><span></span>CLEANUP
+
+kubectl run k8s-demo -l <span class="s2">&quot;app=k8s-demo&quot;</span> --image<span class="o">=</span>mjbright/k8s-demo:1 --replicas<span class="o">=</span><span class="m">2</span> --port<span class="o">=</span><span class="m">8080</span>
+
+kubectl get deploy k8s-demo
 </pre></div>
 
 </div>
@@ -11963,8 +11960,9 @@ In this section we look at practical aspects of deploying applications to a Kube
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-k8s-demo   3         3         3            3           50m
+<pre>deployment &#34;k8s-demo&#34; created
+NAME       DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+k8s-demo   2         2         2            0           1s
 </pre>
 </div>
 </div>
@@ -11997,11 +11995,11 @@ k8s-demo   3         3         3            3           50m
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Name:                   k8s-demo
 Namespace:              default
-CreationTimestamp:      Mon, 12 Mar 2018 11:11:19 +0000
+CreationTimestamp:      Thu, 22 Mar 2018 12:07:06 +0000
 Labels:                 app=k8s-demo
 Annotations:            deployment.kubernetes.io/revision=1
 Selector:               app=k8s-demo
-Replicas:               3 desired | 3 updated | 3 total | 3 available | 0 unavailable
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
 StrategyType:           RollingUpdate
 MinReadySeconds:        0
 RollingUpdateStrategy:  1 max unavailable, 1 max surge
@@ -12019,13 +12017,11 @@ Conditions:
   ----           ------  ------
   Available      True    MinimumReplicasAvailable
 OldReplicaSets:  &lt;none&gt;
-NewReplicaSet:   k8s-demo-6b76bd84d7 (3/3 replicas created)
+NewReplicaSet:   k8s-demo-6b76bd84d7 (2/2 replicas created)
 Events:
-  Type    Reason             Age                From                   Message
-  ----    ------             ----               ----                   -------
-  Normal  ScalingReplicaSet  50m                deployment-controller  Scaled up replica set k8s-demo-6b76bd84d7 to 2
-  Normal  ScalingReplicaSet  49m                deployment-controller  Scaled down replica set k8s-demo-6b76bd84d7 to 2
-  Normal  ScalingReplicaSet  32m (x2 over 49m)  deployment-controller  Scaled up replica set k8s-demo-6b76bd84d7 to 3
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  5s    deployment-controller  Scaled up replica set k8s-demo-6b76bd84d7 to 2
 </pre>
 </div>
 </div>
@@ -12110,15 +12106,10 @@ kubectl rollout status deploy k8s-demo
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>deployment &#34;k8s-demo&#34; image updated
-Waiting for rollout to finish: 1 out of 3 new replicas have been updated...
-Waiting for rollout to finish: 1 out of 3 new replicas have been updated...
-Waiting for rollout to finish: 2 out of 3 new replicas have been updated...
-Waiting for rollout to finish: 2 out of 3 new replicas have been updated...
 Waiting for rollout to finish: 1 old replicas are pending termination...
 Waiting for rollout to finish: 1 old replicas are pending termination...
-Waiting for rollout to finish: 1 old replicas are pending termination...
-Waiting for rollout to finish: 1 old replicas are pending termination...
-Waiting for rollout to finish: 2 of 3 updated replicas are available...
+Waiting for rollout to finish: 1 of 2 updated replicas are available...
+Waiting for rollout to finish: 1 of 2 updated replicas are available...
 deployment &#34;k8s-demo&#34; successfully rolled out
 </pre>
 </div>
@@ -12138,7 +12129,7 @@ deployment &#34;k8s-demo&#34; successfully rolled out
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
@@ -12167,11 +12158,10 @@ deployment &#34;k8s-demo&#34; successfully rolled out
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>NAME                        READY     STATUS    RESTARTS   AGE       IP            NODE
-k8s-demo-6f66d87f98-5475d   1/1       Running   0          1m        10.192.3.27   kube-node-2
-k8s-demo-6f66d87f98-m7t9s   1/1       Running   0          1m        10.192.3.28   kube-node-2
-k8s-demo-6f66d87f98-txnt8   1/1       Running   0          1m        10.192.2.20   kube-node-1
-POD1_IP=10.192.3.27
-POD2_IP=10.192.2.20
+k8s-demo-6f66d87f98-pd6xf   1/1       Running   0          12s       10.192.3.10   kube-node-2
+k8s-demo-6f66d87f98-thxkr   1/1       Running   0          12s       10.192.2.12   kube-node-1
+POD1_IP=10.192.3.10
+POD2_IP=10.192.2.12
 </pre>
 </div>
 </div>
@@ -12191,7 +12181,7 @@ POD2_IP=10.192.2.20
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>curl <span class="nv">$POD1_IP</span>:8080
@@ -12239,7 +12229,7 @@ POD2_IP=10.192.2.20
 
 </span>
 
-Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6f66d87f98-5475d</span>
+Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6f66d87f98-pd6xf</span>
 Using image mjbright/k8s-demo:2
 </pre>
 </div>
@@ -12251,7 +12241,7 @@ Using image mjbright/k8s-demo:2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre><span></span>curl <span class="nv">$POD2_IP</span>:8080
@@ -12299,7 +12289,7 @@ Using image mjbright/k8s-demo:2
 
 </span>
 
-Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6f66d87f98-txnt8</span>
+Served from container <span class="ansi-yellow-intense-fg ansi-bold">k8s-demo-6f66d87f98-thxkr</span>
 Using image mjbright/k8s-demo:2
 </pre>
 </div>
@@ -12323,6 +12313,8 @@ Using image mjbright/k8s-demo:2
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="Kubernetes.ipynb">INDEX</a>  <a href="6.tools.ipynb">NEXT</a></p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>

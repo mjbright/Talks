@@ -11907,8 +11907,9 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
 <h2 id="Kubernetes-History">Kubernetes History<a class="anchor-link" href="#Kubernetes-History">&#182;</a></h2><p><br/><br/>
-Kubernetes - Greek for Helmsman - is an Open Source project gouverned by the Cloud Native Computing Foundation.</p>
-<p>Kubernetes was originally a Google-led project created from scratch as an Open Source project.  Built upon the principles of the internal Borg and Omega projects which Google uses to manage containers in it's internal infrastructure.</p>
+Kubernetes is an Open Source project gouverned by the Cloud Native Computing Foundation.</p>
+<p>Originally a Google-led project created from scratch as an Open Source project.</p>
+<p>Builds upon the principles of the internal Borg and Omega projects used in it's internal infrastructure.</p>
 <p>Kubernetes was announced in 2014, and v1.0 released in July 2015.</p>
 <p>Kubernetes is currently at it's 1.9 release.</p>
 <p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
@@ -11924,7 +11925,7 @@ Kubernetes - Greek for Helmsman - is an Open Source project gouverned by the Clo
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
 <h2 id="Kubernetes-Concepts---Container-Orchestration-Trends">Kubernetes Concepts - Container Orchestration Trends<a class="anchor-link" href="#Kubernetes-Concepts---Container-Orchestration-Trends">&#182;</a></h2><p><script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/1328_RC04/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"kubernetes","geo":"","time":"today 5-y"},{"keyword":"docker swarm","geo":"","time":"today 5-y"},{"keyword":"mesos","geo":"","time":"today 5-y"}],"category":0,"property":""}, {"exploreQuery":"date=today%205-y&q=kubernetes,docker%20swarm,mesos","guestPath":"https://trends.google.fr:443/trends/embed/"}); </script> 
 <img src="images/TRENDS_Containers_2018.png" width="1200" height="500" /></p>
-<p>The chart shows the popularity of major <em>Container Orchestrators</em>: Docker Swarm, Apache Mesos and Kubernetes over the last few years.</p>
+<p>Popularity trend of major <em>Container Orchestrators</em>: Docker Swarm, Apache Mesos and Kubernetes.</p>
 <p>Guess which colour represents <font color="#0000ff"> Kubernetes </font> !!
 <br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
@@ -11938,28 +11939,29 @@ Kubernetes - Greek for Helmsman - is an Open Source project gouverned by the Clo
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
 <h2 id="Trends---2017:">Trends - 2017:<a class="anchor-link" href="#Trends---2017:">&#182;</a></h2><ul>
-<li>Adoption of Kubernetes by<ul>
-<li>AWS (EKS, Fargate), Docker</li>
-</ul>
+<li><p>Adoption of Kubernetes by AWS, Docker</p>
 </li>
-<li>new Managed Kubernetes services from<ul>
-<li>Microsoft (AKS), HPE (OneSphere), RedHat (OpenShift dedicated), ...</li>
-</ul>
+<li><p>new Managed Kubernetes services from Microsoft, HPE</p>
 </li>
-<li>Progression of other Kubernetes distributions<ul>
-<li>OpenShift (RedHat PaaS), Tectonic (CoreOS), Canonical ...</li>
-</ul>
+<li><p>Progression of other Kubernetes distributions</p>
 </li>
-<li>New tools (becoming prominent)<ul>
-<li>Helm, Brigade, Sonobuoy, Prometheus 2.0, ...</li>
-<li>CLI tools: kubectx, ...</li>
-</ul>
-</li>
-<li>Serverless platforms on Kubernetes<ul>
-<li>Kubenetes, OpenFaaS (faas-netes), Fission, Nuclio, ...</li>
-</ul>
+<li><p>New tools such as Helm becoming prominent (1st Helm Summit)</p>
 </li>
 </ul>
+<!--
+- Adoption of Kubernetes by
+  - AWS (EKS, Fargate), Docker
+- new Managed Kubernetes services from
+  - Microsoft (AKS), HPE (OneSphere), RedHat (OpenShift dedicated), ...
+- Progression of other Kubernetes distributions
+  - OpenShift (RedHat PaaS), Tectonic (CoreOS), Canonical ...
+- New tools (becoming prominent)
+  - Helm, Brigade, Sonobuoy, Prometheus 2.0, ...
+  - CLI tools: kubectx, ...
+- Serverless platforms on Kubernetes
+  - Kubenetes, OpenFaaS (faas-netes), Fission, Nuclio, ...
+-->
+
 <!-- 
 - AWS finally adopting Kubernetes, proposing EKS (and Fargate)
 - Microsoft pushing ACS (Azure Container Services - supporting Kubernetes, as well as Docker Swarm and Apache Mesos) and AKS (Managed Kubernetes Service)
@@ -12095,98 +12097,9 @@ Note that all containers in a pod share the same ip address and must not use con
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.--Kubernetes-Components">3.  Kubernetes Components<a class="anchor-link" href="#3.--Kubernetes-Components">&#182;</a></h2><p>Refer to the Wikipedia Kubernetes <a href="https://en.wikipedia.org/wiki/Kubernetes#Design">#design</a> page for more information.</p>
-<h3 id="Cluster">Cluster<a class="anchor-link" href="#Cluster">&#182;</a></h3><p>The Kubernetes cluster is made up of a set of Master nodes which schedule tasks to the Worker nodes</p>
-<h3 id="Namespace">Namespace<a class="anchor-link" href="#Namespace">&#182;</a></h3><p>Kubernetes objects are associated with a namespace.</p>
-<p>There is a '<em>default</em>' namespace for user containers, or new namespaces can be created and used.</p>
-<p>Kubernetes system services run within the '<em>kube-system</em>' namespace.</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.--Kubernetes-Components">3.  Kubernetes Components<a class="anchor-link" href="#3.--Kubernetes-Components">&#182;</a></h2><h3 id="Deployment">Deployment<a class="anchor-link" href="#Deployment">&#182;</a></h3><p>Declaratively manage ReplicaSets, allows to perform rolling upgrades.</p>
-<h3 id="ReplicaSet">ReplicaSet<a class="anchor-link" href="#ReplicaSet">&#182;</a></h3><p>Ensures that a given number of pods are running even if pods or nodes fail.
-(replaces older Replication Controller)</p>
-<h3 id="Pod">Pod<a class="anchor-link" href="#Pod">&#182;</a></h3><p>smallest unit: 1 or more containers on the same IP</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.--Kubernetes-Components">3.  Kubernetes Components<a class="anchor-link" href="#3.--Kubernetes-Components">&#182;</a></h2><p><img src="images/KubernetesArchi_Deploy.svg.png" alt=""></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.--Kubernetes-Components---Workload-API">3.  Kubernetes Components - Workload API<a class="anchor-link" href="#3.--Kubernetes-Components---Workload-API">&#182;</a></h2><p><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#-strong-workloads-strong-">Workloads Documentation</a></p>
-<h3 id="Deployment">Deployment<a class="anchor-link" href="#Deployment">&#182;</a></h3><p>Declaratively manages ReplicaSets, allows to perform rolling upgrades.</p>
-<h3 id="DaemonSet">DaemonSet<a class="anchor-link" href="#DaemonSet">&#182;</a></h3><p>Ensures that a pod runs on all (or subset of) nodes</p>
-<h3 id="StatefulSet">StatefulSet<a class="anchor-link" href="#StatefulSet">&#182;</a></h3><p>Manages stateful applications - similar to a deployment but pod identifiers are maintained across any rescheduling.</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.--Kubernetes-Components---Batch-Workload-API">3.  Kubernetes Components - Batch Workload API<a class="anchor-link" href="#3.--Kubernetes-Components---Batch-Workload-API">&#182;</a></h2><h3 id="Job">Job<a class="anchor-link" href="#Job">&#182;</a></h3><p>Short-lived pods, e.g. for batch jobs. <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#cronjob-v1beta1-batch">'Job' Documentation</a></p>
-<h3 id="CronJob">CronJob<a class="anchor-link" href="#CronJob">&#182;</a></h3><p>Scheduled jobs. <a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.9/#job-v1-batch">'CronJob' Documentation</a></p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Service">Service<a class="anchor-link" href="#Service">&#182;</a></h3><p>addressable IP, load-balancing</p>
-<h3 id="Endpoints">Endpoints<a class="anchor-link" href="#Endpoints">&#182;</a></h3><h3 id="Ingress">Ingress<a class="anchor-link" href="#Ingress">&#182;</a></h3><h3 id="Secret">Secret<a class="anchor-link" href="#Secret">&#182;</a></h3><p>Small amounts of sensitive info (certs., keys, ..)</p>
-<h3 id="ConfigMap">ConfigMap<a class="anchor-link" href="#ConfigMap">&#182;</a></h3><p>Dynamically loadable config (k-v pairs, or json)</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Labels">Labels<a class="anchor-link" href="#Labels">&#182;</a></h3><p>Key/value pairs which can be attached to objects</p>
-<h3 id="Selectors">Selectors<a class="anchor-link" href="#Selectors">&#182;</a></h3><p>Used to select a group of objects by label</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <p><a href="Kubernetes.ipynb">INDEX</a>  <a href="2.5.KubernetesDashboard.ipynb">NEXT</a></p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>

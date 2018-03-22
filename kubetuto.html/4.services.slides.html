@@ -11906,10 +11906,13 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img align="left" src="https://avatars1.githubusercontent.com/u/13629408?s=400&v=4" width="60" /></p>
-<h2 id="4.-Kubernetes-Services">4. Kubernetes Services<a class="anchor-link" href="#4.-Kubernetes-Services">&#182;</a></h2><h1 id="Exposing-applications-as-a-Service">Exposing applications as a Service<a class="anchor-link" href="#Exposing-applications-as-a-Service">&#182;</a></h1><p><pre style="align:center" >
-For this section of the lab we will continue to work with our 3-node cluster comprised of 1 Master and 2 Workers.
-</pre>
-<img src="images/KubeNodes_1m_2w.svg.png" width="400" /></p>
+<h2 id="5.-Kubernetes-Services">5. Kubernetes Services<a class="anchor-link" href="#5.-Kubernetes-Services">&#182;</a></h2><h1 id="Exposing-applications-as-a-Service">Exposing applications as a Service<a class="anchor-link" href="#Exposing-applications-as-a-Service">&#182;</a></h1><p><pre style="align:center" >
+In this section we will work with a Minikube-based single-node cluster.
+</pre></p>
+<p><center><img src="images/KubeNodes_1mw_Minikube.svg.png" width="600" /></center></p>
+<p><pre style="align:center" >
+Nevertheless the following architecture diagrams will depict the more general multi-node case.
+</pre></p>
 <p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
@@ -11920,605 +11923,97 @@ For this section of the lab we will continue to work with our 3-node cluster com
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Services-allow-to-abstract-away-Pod-details">Services allow to abstract away Pod details<a class="anchor-link" href="#Services-allow-to-abstract-away-Pod-details">&#182;</a></h2><p>As mentioned earlier exposing our application as a Service allows to access the application at a single virtual ip address and port - without having to know the ip addresses of the individual pods which may change ip address as pods are scaled up/down or as pods or nodes fail or come on line.</p>
-<p>It can also allow load-balancing across pods.</p>
-<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
-    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>. ./.shell.functions
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Loading bash helper functions, new functions added:
--- checkPresent 
--- checkState 
--- cont 
--- untilNotPresent 
--- untilNotState 
--- untilPresent 
--- untilState 
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Accessing-our-application---via-a-Service-NodePort">Accessing our application - via a Service NodePort<a class="anchor-link" href="#Accessing-our-application---via-a-Service-NodePort">&#182;</a></h2><p>We can expose our service using different types.</p>
-<p>The first type we will consider is called NodePort and has the effect of exposing our Service on the same port on each Kubernetes node - and so with the ip address of that node.</p>
-<p>Let's try that with our service:</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>checkPresent svc k8s-demo-service <span class="o">&amp;&amp;</span>
-    kubectl delete svc/k8s-demo-service
-    
-kubectl expose deploy k8s-demo --type<span class="o">=</span>NodePort --name<span class="o">=</span>k8s-demo-service
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>k8s-demo-service   NodePort    10.111.29.175   &lt;none&gt;        8080:32102/TCP   5m
-service &#34;k8s-demo-service&#34; deleted
-service &#34;k8s-demo-service&#34; exposed
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get svc/k8s-demo-service -o wide
-
-<span class="nv">EXPOSED_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl get --no-headers<span class="o">=</span><span class="nb">true</span> svc/k8s-demo-service <span class="p">|</span> awk <span class="s1">&#39;{ FS=&quot;:&quot;; $0=$5; FS=&quot;/&quot;; $0=$2; print $1;}&#39;</span><span class="k">)</span>
-<span class="nv">CLUSTER_IP</span><span class="o">=</span><span class="k">$(</span>kubectl get --no-headers<span class="o">=</span><span class="nb">true</span> svc/k8s-demo-service <span class="p">|</span> awk <span class="s1">&#39;{ print $3;}&#39;</span><span class="k">)</span>
-
-echo<span class="p">;</span> <span class="nb">echo</span> <span class="s2">&quot;----&quot;</span>
-<span class="nb">echo</span> <span class="nv">EXPOSED_PORT</span><span class="o">=</span><span class="nv">$EXPOSED_PORT</span>
-<span class="nb">echo</span> <span class="nv">CLUSTER_IP</span><span class="o">=</span><span class="nv">$CLUSTER_IP</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME               TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE       SELECTOR
-k8s-demo-service   NodePort   10.108.8.95   &lt;none&gt;        8080:31897/TCP   1m        app=k8s-demo
-
-----
-EXPOSED_PORT=31897
-CLUSTER_IP=10.108.8.95
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl scale --replicas<span class="o">=</span><span class="m">3</span> deploy/k8s-demo
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>deployment &#34;k8s-demo&#34; scaled
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get all -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES                SELECTOR
-deploy/k8s-demo   3         3         3            3           52m       k8s-demo     mjbright/k8s-demo:1   app=k8s-demo
-
-NAME                     DESIRED   CURRENT   READY     AGE       CONTAINERS   IMAGES                SELECTOR
-rs/k8s-demo-6b76bd84d7   3         3         3         52m       k8s-demo     mjbright/k8s-demo:1   app=k8s-demo,pod-template-hash=2632684083
-
-NAME              DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE       CONTAINERS   IMAGES                SELECTOR
-deploy/k8s-demo   3         3         3            3           52m       k8s-demo     mjbright/k8s-demo:1   app=k8s-demo
-
-NAME                     DESIRED   CURRENT   READY     AGE       CONTAINERS   IMAGES                SELECTOR
-rs/k8s-demo-6b76bd84d7   3         3         3         52m       k8s-demo     mjbright/k8s-demo:1   app=k8s-demo,pod-template-hash=2632684083
-
-NAME                           READY     STATUS    RESTARTS   AGE       IP           NODE
-po/k8s-demo-6b76bd84d7-4rfz5   1/1       Running   0          52m       10.192.2.3   kube-node-1
-po/k8s-demo-6b76bd84d7-7ljmj   1/1       Running   0          4m        10.192.3.4   kube-node-2
-po/k8s-demo-6b76bd84d7-bvsxh   1/1       Running   0          52m       10.192.3.2   kube-node-2
-
-NAME                   TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE       SELECTOR
-svc/k8s-demo-service   NodePort    10.108.8.95   &lt;none&gt;        8080:31897/TCP   3s        app=k8s-demo
-svc/kubernetes         ClusterIP   10.96.0.1     &lt;none&gt;        443/TCP          11h       &lt;none&gt;
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="NOTE:-No-pods-are-scheduled-to-the-Master-node">NOTE: No pods are scheduled to the Master node<a class="anchor-link" href="#NOTE:-No-pods-are-scheduled-to-the-Master-node">&#182;</a></h2><p>We would need to have a "tainted" Master node to allow Pods to be scheduled there (Minikube which is a single-node cluster obviously allows this).</p>
-<p>Note below that the pods are deployed to Worker nodes kube-node-1 and kube-node-2.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get pods -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NAME                        READY     STATUS    RESTARTS   AGE       IP           NODE
-k8s-demo-6b76bd84d7-4rfz5   1/1       Running   0          52m       10.192.2.3   kube-node-1
-k8s-demo-6b76bd84d7-7ljmj   1/1       Running   0          4m        10.192.3.4   kube-node-2
-k8s-demo-6b76bd84d7-bvsxh   1/1       Running   0          52m       10.192.3.2   kube-node-2
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's try to access the Pods directly on the Worker nodes:</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="nv">NODE1_IP</span><span class="o">=</span><span class="k">$(</span>kubectl describe node kube-node-1 <span class="p">|</span> grep InternalIP: <span class="p">|</span> sed <span class="s1">&#39;s/.*: *//&#39;</span><span class="k">)</span>
-<span class="nv">NODE2_IP</span><span class="o">=</span><span class="k">$(</span>kubectl describe node kube-node-2 <span class="p">|</span> grep InternalIP: <span class="p">|</span> sed <span class="s1">&#39;s/.*: *//&#39;</span><span class="k">)</span>
-
-<span class="nb">echo</span> <span class="s2">&quot;NODE1_IP=</span><span class="nv">$NODE1_IP</span><span class="s2">&quot;</span>
-<span class="nb">echo</span> <span class="s2">&quot;NODE2_IP=</span><span class="nv">$NODE2_IP</span><span class="s2">&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>NODE1_IP=10.192.0.3
-NODE2_IP=10.192.0.4
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="m">10</span>.111.29.175:32102
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
+<h2 id="Services-allow-to-hide-Pod-location">Services allow to hide Pod location<a class="anchor-link" href="#Services-allow-to-hide-Pod-location">&#182;</a></h2><p><img src="images/Service_Access.svg.png" width="800" /></p>
 <pre>
-</pre>
-</div>
-</div>
+During their lifecycle the ip addresses of Pods change (due to scaling, failures ...).
+
+Exposing our application as a Service allows to access at a known stable address.
+
+It can also allow load-balancing across pods.
+</pre><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="m">10</span>.111.29.175:8080
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="nv">$NODE2_IP</span>:<span class="nv">$EXPOSED_PORT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>curl: (7) Failed to connect to 10.192.0.4 port 31897: Connection refused
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre></pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="nv">$NODE1_IP</span>:<span class="nv">$EXPOSED_PORT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>curl: (7) Failed to connect to 10.192.0.3 port 31897: Connection refused
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre></pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl describe svc/k8s-demo-service
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="For-more-information-about-using-NodePort-see-HERE">For more information about using NodePort see <a href="https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/">HERE</a><a class="anchor-link" href="#For-more-information-about-using-NodePort-see-HERE">&#182;</a></h4><p><strong>Note</strong>: Although there is a Cluster IP there is no Service IP assigned, because we are using NodePort</p>
-<p>So we can access our Pods by connecting to the hosting node but not to the Service ... so far ...</p>
+<h2 id="Accessing-application-Pods-via-a-Service">Accessing application Pods via a Service<a class="anchor-link" href="#Accessing-application-Pods-via-a-Service">&#182;</a></h2><pre>
+There exist several types of Service which may be used to safely expose Pods
+for external (or internal to the Cluster).
+
+We will look at just 3 ways
+- NodePort
+- LoadBalancer (requires an external LoadBalancer)
+- Ingress Controller
+</pre><p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a name="NodePort"> </a></p>
+<h3 id="NodePort">NodePort<a class="anchor-link" href="#NodePort">&#182;</a></h3><p><img src="images/Service_Access_NodePort.svg.png" width="800" /></p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
+
+</div>
+</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><a name="LoadBalancer"> </a></p>
-<h2 id="Accessing-our-application---via-a-Service-LoadBalancer">Accessing our application - via a Service LoadBalancer<a class="anchor-link" href="#Accessing-our-application---via-a-Service-LoadBalancer">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="c1">#kubectl delete svc/k8s-demo-service</span>
-kubectl delete svc/k8s-demo-service-lb
-<span class="c1">#kubectl expose deploy k8s-demo --type=LoadBalancer --name=k8s-demo-service-lb</span>
-
-<span class="nv">RS_K8SDEMO</span><span class="o">=</span><span class="k">$(</span>kubectl get rs <span class="p">|</span> grep k8s-demo <span class="p">|</span> awk <span class="s1">&#39;{ print $1;}&#39;</span><span class="k">)</span>
-
-<span class="c1">#kubectl expose deploy k8s-demo --type=LoadBalancer --name=k8s-demo-service-lb</span>
-
-kubectl expose rs <span class="nv">$RS_K8SDEMO</span> --type<span class="o">=</span><span class="s2">&quot;LoadBalancer&quot;</span> --name<span class="o">=</span><span class="s2">&quot;k8s-demo-service-lb&quot;</span>
-</pre></div>
+<h3 id="LoadBalancer">LoadBalancer<a class="anchor-link" href="#LoadBalancer">&#182;</a></h3><p><img src="images/Service_Access_LoadBalancer.svg.png" width="800" /></p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
 </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl get svc -o wide
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="LoadBalancer-not-working-with-kubeadm/minikube">LoadBalancer not working with kubeadm/minikube<a class="anchor-link" href="#LoadBalancer-not-working-with-kubeadm/minikube">&#182;</a></h3><p>As described <a href="https://forums.manning.com/posts/list/42097.page">here</a> currently Kubernetes implementations created with kubeadm (which was used to prepare this cluster) and minikube do not yet implement tLoadBalancer Service.</p>
+<p><a name="IngressController"> </a></p>
+<h3 id="Ingress-Controller">Ingress Controller<a class="anchor-link" href="#Ingress-Controller">&#182;</a></h3><p><img src="images/Service_Access_Ingress.svg.png" width="800" /></p>
+<p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
+    <tr>
+    <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/traefik.logo.png" width="60" /> </td>
+    <td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td>
+    </tr>
+    </table></p>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span><span class="c1">#untilNotState svc k8s-demo-service-lb pending</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl describe svc/k8s-demo-service-lb
-
-<span class="nv">LB_EXPOSED_PORT</span><span class="o">=</span><span class="k">$(</span>kubectl get --no-headers<span class="o">=</span><span class="nb">true</span> svc/k8s-demo-service-lb <span class="p">|</span> awk <span class="s1">&#39;{ FS=&quot;:&quot;; $0=$5; FS=&quot;/&quot;; $0=$2; print $1;}&#39;</span><span class="k">)</span>
-<span class="nv">LB_CLUSTER_IP</span><span class="o">=</span><span class="k">$(</span>kubectl get --no-headers<span class="o">=</span><span class="nb">true</span> svc/k8s-demo-service-lb <span class="p">|</span> awk <span class="s1">&#39;{ print $3;}&#39;</span><span class="k">)</span>
-
-<span class="nb">echo</span>
-<span class="nb">echo</span> <span class="nv">LB_EXPOSED_PORT</span><span class="o">=</span><span class="nv">$LB_EXPOSED_PORT</span>
-<span class="nb">echo</span> <span class="nv">LB_CLUSTER_IP</span><span class="o">=</span><span class="nv">$LB_CLUSTER_IP</span>
-<span class="nb">echo</span> <span class="nv">MASTER_IP</span><span class="o">=</span><span class="nv">$MASTER_IP</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="si">${</span><span class="nv">LB_CLUSTER_IP</span><span class="si">}</span>:<span class="nv">$LB_EXPOSED_PORT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>curl <span class="si">${</span><span class="nv">MASTER_IP</span><span class="si">}</span>:<span class="nv">$EXPOSED_PORT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre><span></span>kubectl describe no/kube-master <span class="p">|</span> grep <span class="s2">&quot;InternalIP:&quot;</span>
-
-<span class="nv">MASTER_IP</span><span class="o">=</span><span class="k">$(</span>kubectl describe no/kube-master <span class="p">|</span> grep <span class="s2">&quot;InternalIP:&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/.*: *//&#39;</span><span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">MASTER_IP</span><span class="o">=</span><span class="nv">$MASTER_IP</span>
-<span class="nv">WORKER1_IP</span><span class="o">=</span><span class="k">$(</span>kubectl describe no/kube-node-1 <span class="p">|</span> grep <span class="s2">&quot;InternalIP:&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/.*: *//&#39;</span><span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">WORKER1_IP</span><span class="o">=</span><span class="nv">$WORKER1_IP</span>
-<span class="nv">WORKER2_IP</span><span class="o">=</span><span class="k">$(</span>kubectl describe no/kube-node-2 <span class="p">|</span> grep <span class="s2">&quot;InternalIP:&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s/.*: *//&#39;</span><span class="k">)</span>
-<span class="nb">echo</span> <span class="nv">WORKER2_IP</span><span class="o">=</span><span class="nv">$WORKER2_IP</span>
-
-<span class="c1">#curl $MASTER_IP:8080</span>
-curl <span class="nv">$WORKER2_IP</span>:8080
-curl <span class="nv">$WORKER2_IP</span>:<span class="nv">$EXPOSED_PORT</span>
-curl <span class="nv">$WORKER1_IP</span>:8080
-curl <span class="nv">$WORKER1_IP</span>:<span class="nv">$EXPOSED_PORT</span>
-curl <span class="nv">$MASTER_IP</span>:<span class="nv">$EXPOSED_PORT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="For-more-information-about-using-LoadBalancer-see-HERE">For more information about using LoadBalancer see <a href="https://kubernetes.io/docs/tasks/access-application-cluster/load-balance-access-application-cluster/">HERE</a><a class="anchor-link" href="#For-more-information-about-using-LoadBalancer-see-HERE">&#182;</a></h4><p><a href="Kubernetes.ipynb">INDEX</a>  <a href="4.5.Traefik.ipynb">NEXT</a></p>
+<!--
+#### For more information about using NodePort see [HERE](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
+#### For more information about using LoadBalancer see [HERE](https://kubernetes.io/docs/tasks/access-application-cluster/load-balance-access-application-cluster/)
+-->
+
+<table style="font-family:Arial, Verdana, sans-serif; font-size: 20px;">
+<tr>
+   <td bgcolor="#ffffff" color="#ffffff" style="float:left "><img src="images/traefik.logo.png" width="100" /></td>
+    <td bgcolor="#ffffff" color="#ffffff" style='float:middle;font-family:"Courier New", Courier, monospace; font-size:100%;' ><b>Traefik</b> see [https://traefik.io](https://traefik.io/)</td>
+    </tr><tr>
+    <td bgcolor="#ffffff" color="#ffffff" style='float:middle;font-family:"Courier New", Courier, monospace; font-size:100%;' ><img src="images/containous.logo.png" width="120" style="float:left" /></td>
+    <td bgcolor="#ffffff" color="#ffffff" style="float:left" ><b>Containous</b>, the creators of Traefik, see [https://containo.us](https://containo.us)</td>
+  </tr>
+</table><p><a href="Kubernetes.ipynb">INDEX</a>  <a href="4.5.Traefik.ipynb">NEXT</a></p>
+<p><img src="" width="80" style="float:left" />
+<br/></p>
 <p><br/><table align="right" style='font-family:"Courier New", Courier, monospace; font-size:100%; bottom:0px;'>
     <tr><td bgcolor="#ffffff" color="#ffffff"></td><td bgcolor="#ffffff" color="#ffffff"> <img src="images/containous.logo.png" width="100" /> </td></tr></table></p>
 
