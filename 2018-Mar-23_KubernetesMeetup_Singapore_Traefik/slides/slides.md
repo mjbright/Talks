@@ -291,7 +291,9 @@ Note:
 
 ---
 
-# THANK YOU <!-- .element: style="margin-bottom: 100px;"-->
+## THANK YOU <!-- .element: style="margin-bottom: 100px;"-->
+<img src="slides/images/containous.logo.png" width="160" style="border:none;align:right" /> <!-- .element: style="border:none;align:right" -->
+### We're Hiring !
 
 [traefik.io](http://traefik.io)
 </BR>
@@ -302,4 +304,4 @@ Note:
 Slides at
 [2018-Mar-23_Kubernetes_Singapore](https://mjbright.github.io/Talks/2018-Mar-23_Kubernetes_Singapore)
 </BR>
-Derived from [slides](https://nmengin.github.io/madrid-20180117) from Nicolas Mengin of Containous
+<!-- Derived from [slides](https://nmengin.github.io/madrid-20180117) of Nicolas Mengin of Containous -->
