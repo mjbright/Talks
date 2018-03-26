@@ -111,14 +111,14 @@ Note:
 * Træfik v1.1 - camembert <!-- .element: style=" margin-left:-400px"-->
   * Cluster mode
   * Swarm mode
-  * Generic mesos,
+  * Generic Mesos,
   * Basic Authentication (Global)
-  * Session Affinity
+  <!-- TODO: * Session Affinity -->
 * Træfik v1.2 - morbier  <!-- .element: style=" margin-top:20px; margin-left:-400px"-->
   * Rancher
   * Eureka
   * Prometheus
-  * Healthcheks
+  * Healthchecks
   * Traefik bug
 
 ![Features](./slides/images/wordcloud.png) <!-- .element: style="border:none; float: right; width: 50%; margin-top: -550px; margin-right:-150px"-->
