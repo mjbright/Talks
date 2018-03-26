@@ -149,7 +149,7 @@ Note:
 
 ## Træfik versions
 
-* Træfik v1.6 - cancoillotte <!-- .element: style=" margin-left:-400px"-->
+* Træfik v1.5 - cancoillotte <!-- .element: style=" margin-left:-400px"-->
   * Rate Limiting
   * ETCD V3
   * Dynamic TLS certificates
