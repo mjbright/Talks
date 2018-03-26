@@ -718,6 +718,63 @@
         </section>
 
 
+        <-- SLIDE 5.3 -->
+        <section class="bg-green aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.light -->
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> Demo - Adding Traefik Service into Docker-Compose file - 1</h1>
+          <pre style="font-size: 22px !important; color: #ffa;">
+services:
+    traefik:
+        image: traefik:v1.5
+        command: --docker
+            --docker.swarmmode
+            --docker.domain=traefik
+            --docker.watch
+            --api
+            --api.dashboard
+            --debug
+            --defaultEntryPoints='http,https'
+            --entryPoints='Name:http Address::80 Redirect.EntryPoint:https'
+            --entryPoints='Name:https Address::443 TLS:/ssl/wildcard.crt,/ssl/wildcard.key'
+
+</pre>
+        </section>
+
+        <-- SLIDE 5.4 -->
+        <section class="bg-blue aligncenter">
+          <!-- Overlay/Opacity: [class*="bg-"] > .background.light -->
+          <!-- background with a frame --> <span class="background frame"></span>
+          <!--.wrap = container (width: 90%) --> <div class="wrap fadeInUp">
+            <h1> Demo - Adding Traefik Service into Docker-Compose file - 2</h1>
+<pre style="font-size: 22px !important; color: #ffa;">
+    # colorize images:
+    colorise:
+        image: alexellis2/openfaas-colorization:0.4.0
+        labels:
+            function: "true"
+        networks:
+            - functions
+        environment:
+            fprocess: "python -u index.py"
+            no_proxy: "gateway"
+            https_proxy: $https_proxy
+            url_mode: "true"
+        deploy:
+            placement:
+                constraints:
+                    - 'node.platform.os == linux'
+            labels:
+                - "traefik.port=8080"
+                - "traefik.enable=true"
+                - "traefik.frontend.rule=Host:colorise.fn.faas"
+
+</pre>
+        </section>
+
+
+
         <-- SLIDE 6.1 -->
         <!-- CARD SLIDE --> <section class="bg-blue"> <div class="wrap"> <div class="card-75">
          <a href="https://link" title="link_title TO_EDIT">
