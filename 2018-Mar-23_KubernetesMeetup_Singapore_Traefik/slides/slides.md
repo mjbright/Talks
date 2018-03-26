@@ -166,7 +166,7 @@ Note:
 
 Note:
 
----
+<!-- ---
 
 ## Let's talk about Security...
 
@@ -242,6 +242,8 @@ OnHostRule = true
 ![LE](./slides/images/letsencrypt-logo.svg) <!-- .element: style="display:none" class="fragment" data-fragment-index="4" -->
 
 Note:
+
+-->
 
 ---
 
