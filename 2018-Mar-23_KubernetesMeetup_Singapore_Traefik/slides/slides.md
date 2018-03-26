@@ -6,6 +6,19 @@ Singapore Kubernetes Meetup - 2018-Mar-23
 
 <small>[Michael Bright](http://twitter.com/mjbright) - [Containous](http://twitter.com/containous)</small>
 
+<!-- ![Traefik](./slides/images/containous.logo.png) <!-- .element: style="border:none;width=80;" --> 
+<img src="slides/images/containous.logo.png" width="160" style="border:none;align:right" /> <!-- .element: style="border:none;align:right" -->
+
+<!-- 
+containous.io
+<img src="slides/images/traefik.logo.bright.svg" width="40" />
+<img src="slides/images/letsencrypt-logo.svg" width="40" />
+<img src="slides/images/traefik.logo.bright.svg width="40" />
+<img src="slides/images/traefik-logo.svg" width="40" />
+<img src="slides/images/traefik.horizontal.logo.bright.svg" width="40" />
+-->
+
+
 
 ---
 
