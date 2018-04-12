@@ -47,12 +47,21 @@
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <!-- -->
 <tr>
+    <td> CodeEurope.pl </td>
+    <td> Apr 2018 </td>
+    <td>   Talk   </td>
+    <td> Developing Micro-services with Kubernetes </td>
+    <td> </td>
+    <td> TODO </td> 
+    <td> Video </td>
+    <td>Michael Bright</td>
+</tr>
+<tr>
     <td> FLOSSAsia </td>
     <td> Mar 2018 </td>
     <td>   Lab   </td>
     <td> Kubernetes Tutorial </td>
     <td> </td>
-    <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/FlossASIA2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
     <td> Video </td>
     <td>Michael Bright</td>
