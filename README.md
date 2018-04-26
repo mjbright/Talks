@@ -51,9 +51,9 @@
     <td> Apr 2018 </td>
     <td>   Talk   </td>
     <td> Developing Micro-services with Kubernetes </td>
-    <td> <a href="https://mjbright.github.io/Talks/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes/"> Slides online </a> </td>
-    <td> https://github.com/mjbright/codeeurope-microservices </td> 
-    <td> Video </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes.pdf"> PDF </a> (TODO) <hr/> <a href="https://mjbright.github.io/Talks/2018-Apr-26_CodeEurope_DevMicroServicesWithKubernetes/"> Slides online </a> </td>
+    <td> <a href="https://github.com/mjbright/codeeurope-microservices"> Demo source </a> </td> 
+    <td> Video (TODO) </td>
     <td>Michael Bright</td>
 </tr>
 <tr>
