@@ -46,6 +46,11 @@
 
 <tr bgcolor="#8080C0"> <td><b>Future Talks</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <!-- -->
+
+<tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
+<!-- -->
+
+<tr bgcolor="#8080C0"> <td><b>2018</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
     <td> CodeEurope.pl </td>
     <td> Apr 2018 </td>
@@ -77,11 +82,6 @@
     <td>Michael Bright</td>
 </tr>
 
-
-<tr bgcolor="#8080C0"> <td><b> - </b></td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> <td> - </td> </tr>
-<!-- -->
-
-<tr bgcolor="#8080C0"> <td><b>2018</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 
 <tr>
     <td> DevConf.cz </td>
