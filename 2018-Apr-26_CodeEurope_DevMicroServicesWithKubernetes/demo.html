@@ -1,0 +1,30 @@
+<html>
+<head>
+    <script>
+        function refreshIframe(frame) {
+            var ifr = document.getElementsByName(frame)[0];
+            ifr.src = ifr.src;
+        }
+    </script>
+</head>
+
+<body>
+
+<button onclick="refreshIframe('flask-app');"><b>GET "flask-app"</b> http://192.168.99.100:31455 </button>
+
+<div style="display:block;position:absolute;top:0px;left:0px;border:1px solid red;">
+  <iframe name="flask-app" src="http://192.168.99.100:31455" allowtransparency="yes" scrolling="no" style="width:920px; height:26px; position:absolute; left:280px;top:0px;margin:0;padding:0;" > </iframe>
+</div>
+
+<div style="display:block;position:absolute;top:32px;border:1px solid blue;">
+    <iframe name="terminal" src="http://127.0.0.1:9001" allowtransparency="yes" scrolling="yes" style="width:1000px; height:90px; position:absolute; left:2px;top:0px;margin:0;padding:0;" > </iframe>
+</div>
+
+<div style="display:block;position:absolute;top:124px;border:1px solid blue;">
+    <iframe name="visualizer" src="http://127.0.0.1:8001" allowtransparency="yes" scrolling="yes" style="width:1000px; height:900px; position:absolute; left:2px;top:0px;margin:0;padding:0;" > </iframe>
+</div>
+
+</body>
+</html>
+
+
