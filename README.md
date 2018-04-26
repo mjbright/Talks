@@ -38,7 +38,7 @@
     <th> Contribution </th>
     <th> Title (URL) </th> 
     <th> PDF </th> 
-    <th> -</th> 
+    <th> Source Code</th> 
     <th> Video <img src="images/youtube_small.jpg" /> </th> 
     <th> Speakers </th>
 </tr>
