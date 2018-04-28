@@ -1,4 +1,7 @@
 
+
+<script src="https://my.hellobar.com/241d2f74995c6c3f5fc28101daaf0c3e3732f525.js" type="text/javascript" charset="utf-8" async="async"></script>
+
 <!--
     This post may or may not help to figure out github markdown rules for embedded html,
      i.e. to understand which html tags are allowed through as is (whitelisted)
