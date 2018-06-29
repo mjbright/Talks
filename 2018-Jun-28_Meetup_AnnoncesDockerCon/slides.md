@@ -168,11 +168,11 @@ background-color: lightblue
 <table><tr>
 <td>
 .slistitem[ Docker Captains ]
-.img-80[ ![]( images/TWEET_DockerCaptains.PNG ) ]
+.img-80[ ![]( images/TWEET_DockerCaptains.png ) ]
 </td>
 <td>
 .slistitem[ Community Leaders ]
-.img-80[ ![](images/TWEET_CommunityLeaders.PNG) ]
+.img-80[ ![](images/TWEET_CommunityLeaders.png) ]
 </td>
 </tr></table>
 
@@ -182,17 +182,17 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
-<!-- images/0_Videos_Keynotes_CoolHacks.PNG -->
+<!-- images/0_Videos_Keynotes_CoolHacks.png -->
 
 .smenuitem[ 2hr Keynote: ]
-<img src="images/KEYNOTE1_1.PNG" />
+<img src="images/KEYNOTE1_1.png" />
 
 ---
 template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
-<img src="images/KEYNOTE1_2_DockerDesktop.PNG" />
+<img src="images/KEYNOTE1_2_DockerDesktop.png" />
 <b> SIGN UP </b> FOR Docker Desktop BETA
 
 ---
@@ -200,7 +200,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
-<img src="images/KEYNOTE1_3_DockerDesktop.PNG" />
+<img src="images/KEYNOTE1_3_DockerDesktop.png" />
 
 ---
 template: nofootertl
@@ -211,21 +211,21 @@ background-color: lightblue
 <!-- .menuitem[ McKesson use case ... ] -->
 
 .menuitem[ The Promise of Choice ]
-<img src="images/KEYNOTE1_4_Choice.PNG" />
+<img src="images/KEYNOTE1_4_Choice.png" />
 
 ---
 template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
-<img src="images/KEYNOTE1_5_Microsoft.PNG" />
+<img src="images/KEYNOTE1_5_Microsoft.png" />
 
 ---
 template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
-<img src="images/KEYNOTE1_6_Choice.PNG" />
+<img src="images/KEYNOTE1_6_Choice.png" />
 
 <b> SIGN UP </b> FOR Docker Enterprise BETA
 - Choice of app definition (k8s or compose yaml)
@@ -240,7 +240,7 @@ background-color: lightblue
 
 .listitem[Day1: KeyNote/Breakouts, Community Theatre]
 <br/>
-<img src="images/KEYNOTE1_7_Federated.PNG" />
+<img src="images/KEYNOTE1_7_Federated.png" />
 <b> SIGN UP </b> FOR Docker Federation BETA
 
 <b> Demo </b>: <b> Docker EE </b>
@@ -258,7 +258,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/7_Videos_BlackBelt.PNG" height="500" />
+<img src="images/7_Videos_BlackBelt.png" height="500" />
 
 <!-- A Vision of Persistence
 - Container Orchestration from Theory to Practice
@@ -277,7 +277,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/5_Videos_ContributeCollaborate.PNG" />
+<img src="images/5_Videos_ContributeCollaborate.png" />
 
 <!-- .smenuitem[ Breakouts - contribute-collaborate ]
 - Cloud Native Projects SIG Session
@@ -291,7 +291,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/2_Videos_DockerDockerDocker.PNG" />
+<img src="images/2_Videos_DockerDockerDocker.png" />
 
 <!-- .smenuitem[ Breakouts - docker-docker-docker ]
 - Docker Enterprise Edition - An Architecture and Operations Overview
@@ -307,7 +307,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/1_Videos_DockerInProduction.PNG" />
+<img src="images/1_Videos_DockerInProduction.png" />
 
 <!-- .smenuitem[ Breakouts - docker-in-production ]
 - All Roads Lead to the Cloud - Liberty Mutual’s Journey with Docker EE
@@ -323,7 +323,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/4_Videos_Innovation.PNG" width="600" />
+<img src="images/4_Videos_Innovation.png" width="600" />
 
 <!-- .smenuitem[ Breakouts - innovation ]
 - Accelerating Development Velocity of Production ML Systems with Docker
@@ -343,7 +343,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/6_Videos_Transform.PNG" width="600" />
+<img src="images/6_Videos_Transform.png" width="600" />
 
 <!-- .smenuitem[ Breakouts - transform ]
 - bigwhale - An Unexpected Journey into Containerization @ Lockheed Martin–Part 1
@@ -362,7 +362,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day1: Breakouts ]
-<img src="images/3_Videos_UsingDocker.PNG" />
+<img src="images/3_Videos_UsingDocker.png" />
 
 <!-- .smenuitem[ Breakouts - using-docker ]
 - 5 Patterns for Success for Application Transformation
@@ -399,7 +399,7 @@ background-color: lightblue
 .smenuitem[ 1hr Keynote: ]
 <!-- DockerCon 2018 SF - Day 2 General Session - June 14, 2018-gBTPeAewu6M.mp4 -->
 
-<img src="images/KEYNOTE2_1_Betty.PNG" />
+<img src="images/KEYNOTE2_1_Betty.png" />
 
 ---
 template: nofootertl
@@ -409,7 +409,7 @@ background-color: lightblue
 
 .smenuitem[ 1hr Keynote: ]
 <!-- DockerCon 2018 SF - Day 2 General Session - June 14, 2018-gBTPeAewu6M.mp4 -->
-<img src="images/KEYNOTE2_2_Innovate.PNG" />
+<img src="images/KEYNOTE2_2_Innovate.png" />
 
 - Liberty Mutual
 
@@ -425,7 +425,7 @@ background-color: lightblue
 
 Christopher Heistand presented how they use Docker to perform hardware testing for the DART Satellite mission.  DART is an attempt to <em> "Save the World" </em> by shooting down asteroids before they can hit earth.
 
-<img src="images/CoolHack1_APL_DART.PNG" width="600" />
+<img src="images/CoolHack1_APL_DART.png" width="600" />
 <!-- Tweets, Photos -->
 
 ---
@@ -436,7 +436,7 @@ background-color: lightblue
 
 .smenuitem[ Cool Hack 2 - Google - Machine Learning with KubeFlow ]
 
-<img src="images/CoolHack2_Google_KubeFlow.PNG" />
+<img src="images/CoolHack2_Google_KubeFlow.png" />
 <!-- Tweets, Photos -->
 
 ---
@@ -447,7 +447,7 @@ background-color: lightblue
 
 .smenuitem[ Cool Hack 3 - Idit Levine, Solo.io - Gloo ]
 
-<img src="images/CoolHack3_Solo.io_GLOO_1.PNG" />
+<img src="images/CoolHack3_Solo.io_GLOO_1.png" />
 <!-- Tweets, Photos -->
 
 ---
@@ -458,7 +458,7 @@ background-color: lightblue
 
 .smenuitem[ Cool Hack 3 - Idit Levine, Solo.io - Gloo ]
 
-<img src="images/CoolHack3_Solo.io_GLOO_2.PNG" />
+<img src="images/CoolHack3_Solo.io_GLOO_2.png" />
 <!-- Tweets, Photos -->
 
 ---
@@ -501,7 +501,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day3: Rerun of best presentations]
-<img src="images/BEST_VIDEO_1.PNG" />
+<img src="images/BEST_VIDEO_1.png" />
 
 .ssmenuitem["Demystifying Container Connectivity with Kubernetes in Docker"]
 
@@ -513,7 +513,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day3: Rerun of best presentations]
-<img src="images/BEST_VIDEO_2.PNG" />
+<img src="images/BEST_VIDEO_2.png" />
 
 .ssmenuitem["Message-Based Microservices Architectures Driven with Docker "]
 
@@ -525,7 +525,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day3: Rerun of best presentations]
-<img src="images/BEST_VIDEO_3.PNG" />
+<img src="images/BEST_VIDEO_3.png" />
 
 .ssmenuitem["Docker Storage: Designing a Platform for Persistent Data"]
 
@@ -537,7 +537,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day3: Rerun of best presentations]
-<img src="images/BEST_VIDEO_4.PNG" />
+<img src="images/BEST_VIDEO_4.png" />
 
 .ssmenuitem["Istio: Managing, Securing, and Observing Microservices"]
 
@@ -548,7 +548,7 @@ template: nofootertl
 background-color: lightblue
 
 .listitem[Day3: Rerun of best presentations]
-<img src="images/BEST_VIDEO_5.PNG" />
+<img src="images/BEST_VIDEO_5.png" />
 
 .ssmenuitem["Tips and Tricks of the Docker Captains"]
 
