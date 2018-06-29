@@ -55,6 +55,17 @@
 
 <tr bgcolor="#8080C0"> <td><b>2018</b></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
 <tr>
+    <td> Docker Meetup </td>
+    <td> 28 Jun 2018 </td>
+    <td>   Talk   </td>
+    <td> DockerCon Recap: Les Annonces </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Jun-28_Meetup_AnnoncesDockerCon/2018-Jun-28_Meetup_AnnoncesDockerCon.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Jun-28_Meetup_AnnoncesDockerCon/"> Slides online </a> </td>
+    <td> </td> 
+    <td> </td>
+    <td>Michael Bright</td>
+</tr>
+
+<tr>
     <td> CodeEurope.pl </td>
     <td> Apr 2018 </td>
     <td>   Talk   </td>
