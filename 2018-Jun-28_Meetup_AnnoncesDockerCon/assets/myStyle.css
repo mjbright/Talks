@@ -1,0 +1,335 @@
+
+/* ----------------  color theme  ---------------- */
+
+element {
+  --main-bg-color: brown;
+}
+
+.bg {background-color: var(--main-bg-color);}
+
+/* ----------------  Table Border ---------------- */
+td, th {
+    border: 1px solid grey
+}
+
+/* ---------------- Fonts ------------------------- */
+
+body {
+     font-family: 'Overpass';
+}
+h1, h2, h3 {
+     font-family: 'Overpass';
+     font-weight: bold;
+     margin-bottom: 0;
+
+}
+.remark-slide-content h1 { font-size: 3em; }
+.remark-slide-content h2 { font-size: 2em; }
+.remark-slide-content h3 { font-size: 1.6em; }
+
+.footnote {
+     position: absolute;
+     bottom: 3em;
+     #bottom: 1em;
+}
+
+li p { line-height: 1.25em; }
+.red { color: #fa0000; }
+.green { color: #008000; }
+.large { font-size: 2em; }
+a, a > code {
+     color: rgb(249, 38, 114);
+     text-decoration: none;
+}
+code {
+     background: #e7e8e2;
+     border-radius: 5px;
+}
+.remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+.remark-code-line-highlighted     { background-color: #373832; }
+.pull-left {
+     float: left;
+     width: 47%;
+}
+.pull-right {
+     float: right;
+     width: 47%;
+}
+.pull-right ~ p {
+     clear: both;
+}
+#slideshow .slide .content code {
+     font-size: 0.8em;
+}
+#slideshow .slide .content pre code {
+     font-size: 0.9em;
+     padding: 15px;
+}
+.inverse {
+     background: #272822;
+     //color: #777872;
+     color: #373872;
+     /*text-shadow: 0 0 20px #333;*/
+}
+.inverse h1, .inverse h2, .inverse h3 {
+     color: #f3f3f3;
+     line-height: 0.8em;
+}
+.colorheaders h1, .colorheaders h2 {
+     /*background-color: yellow;
+     background-color: grey;
+     color: darkblue;*/
+     background-color: darkcyan;
+     color: white;
+     line-height: 0.8em;
+}
+.largebullets li {
+     color: var(--main-bg-color);
+     line-height: 1.6em;
+     font-size: 30px;
+}
+
+/* Slide-specific styling */
+/*#slide-inverse .footnote {
+     bottom: 12px;
+     left: 20px;
+}*/
+#slide-how .slides {
+     font-size: 0.9em;
+     position: absolute;
+     top:  151px;
+     right: 140px;
+}
+#slide-how .slides h3 {
+     margin-top: 0.2em;
+}
+#slide-how .slides .first, #slide-how .slides .second {
+     padding: 1px 20px;
+     height: 90px;
+     width: 120px;
+     -moz-box-shadow: 0 0 10px #777;
+     -webkit-box-shadow: 0 0 10px #777;
+     box-shadow: 0 0 10px #777;
+}
+#slide-how .slides .first {
+     background: #fff;
+     position: absolute;
+     top: 20%;
+     left: 20%;
+     z-index: 1;
+}
+#slide-how .slides .second {
+     position: relative;
+     background: #fff;
+     z-index: 0;
+}
+
+/* Two-column layout */
+.left-column {
+     color: #777;
+     width: 20%;
+     /*height: 92%;*/
+     float: left;
+}
+
+   /* highlight last list values: */
+.left-column h2:last-of-type, .left-column h3:last-child {
+       color: #000;
+}
+
+.right-column {
+     width: 75%;
+     float: right;
+     padding-top: 1em;
+}
+
+/* Equal left/right Two-column layout */
+.left-half {
+     width: 50%;
+     float: left;
+}
+.right-half {
+     width: 50%;
+     float: right;
+     padding-top: 1em;
+}
+
+.img-10 img { width: 10%; }
+.img-25 img { width: 25%; }
+.img-33 img { width: 33%; }
+.img-50 img { width: 50%; }
+.img-66 img { width: 66%; }
+.img-75 img { width: 75%; }
+
+.img-w100 img { width: 100px; }
+.img-w200 img { width: 200px; }
+.img-w300 img { width: 300px; }
+.img-w400 img { width: 400px; }
+.img-w500 img { width: 500px; }
+.img-w600 img { width: 600px; }
+.img-w700 img { width: 700px; }
+.img-w800 img { width: 800px; }
+
+/* Limit images to their container size: */
+img {
+    max-width: 100%;
+}
+
+/* ---------------- coloured backgrounds ---------------- */
+
+/* colors:
+//  https://www.w3schools.com/colors/colors_names.asp
+.dbluebg {background-color:#00008B;}
+*/
+
+.dbluebg {background-color: darkblue;}
+.gbluebg {background-color: cadetblue;}
+
+.redbg {background-color:#822;}
+.greenbg {background-color:#282;}
+.bluebg {background-color:#228;}
+
+/* ---------------- global footers ---------------- */
+
+#UNUSED:
+#.myfooter { position: absolute; bottom: 5px; left: 5px; height: 20px; width: 20px; }
+
+/* Create my own footer class with "low" positioning: */
+#.footer { position: absolute; bottom: 12px; left: -50% }
+.footer { position: absolute; bottom: 12px; left: 75%; color: black; }
+.wfooter { position: absolute; bottom: 12px; left: 75%; color: white; }
+
+.leftfooter { position: absolute; bottom: 12px; left: 10%; color: black; }
+.wleftfooter { position: absolute; bottom: 12px; left: 10%; color: white; }
+.wleftfooter a { color: white; }
+
+.centerfooter {
+    position:fixed;
+    bottom: 20px;
+    left:50%;
+    width:800px;
+    //height:100px;
+    margin-left:-400px; /*negative half width */
+    color: white;
+    //background:red;
+}
+.centerfooter a { color: white; }
+
+.inverse .footer {
+color: white; }
+
+/* Impose footer on all slides:
+.remark-slide-content:after {
+    #content: "Footer text";
+    content: "@mjbright";
+    #content: url("../../images/Twitter_Bird.svg");
+    position: absolute;
+    bottom: 5px;
+    right: 85px;
+    height: 40px;
+    width: 120px;
+    #background-repeat: no-repeat;
+    #background-repeat: repeat;
+    #background-size: contain;
+    #background-image: url("../../images/small.png");
+    #background-image: url("../../images/Twitter_Bird.svg");
+    #background-image: url("../../images/Twitter_logo_blue.png");
+}
+*/
+
+/* ---------------- rounded corners ---------------- */
+
+.listitem {
+  line-height:1.2em;
+  #background-color: lightblue;
+  background-color: #8af;
+  #background:linear-gradient(180deg,#fcc 0,#ccc 1.2em,#fee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  #padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:35px;
+}
+
+.slistitem {
+  line-height:1.2em;
+  #background-color: lightblue;
+  background-color: #8af;
+  #background:linear-gradient(180deg,#fcc 0,#ccc 1.2em,#fee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  #padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:35px;
+}
+
+.menuitem-sel {
+  line-height:1.2em;
+  #background-color: lightblue;
+  background-color: #8af;
+  #background:linear-gradient(180deg,#fcc 0,#ccc 1.2em,#fee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  #padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:35px;
+}
+
+.menuitem {
+  line-height:1.2em;
+  background-color: aliceblue;
+  #background:linear-gradient(180deg,#ccc 0,#ccc 1.2em,#eee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:35px;
+}
+
+.smenuitem {
+  line-height:1.2em;
+  background-color: aliceblue;
+  #background:linear-gradient(180deg,#ccc 0,#ccc 1.2em,#eee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:28px;
+}
+
+.ssmenuitem {
+  line-height:1.2em;
+  background-color: aliceblue;
+  #background:linear-gradient(180deg,#ccc 0,#ccc 1.2em,#eee 0);
+  background-size:2.4em 2.4em;
+  background-origin:content-box;
+  border-radius: 10px;
+  
+  /* some extra styles*/
+  padding:0 20px;
+  text-align:justify;
+  font-family:calibri,arial,sans-serif;
+  font-size:24px;
+}
+
+
