@@ -76,6 +76,18 @@
     <td> Video (TODO) </td>
     <td>Michael Bright</td>
 </tr>
+
+<tr>
+    <td> Singapore Kubernetes Meetup </td>
+    <td> Mar 2018 </td>
+    <td>   Talk   </td>
+    <td> Traefik Reverse Proxy </td>
+    <td> </td>
+    <td> Slides (TODO) </td>
+    <td> - </td>
+    <td>Michael Bright</td>
+</tr>
+
 <tr>
     <td> FOSSAsia </td>
     <td> Mar 2018 </td>
