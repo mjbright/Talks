@@ -76,7 +76,7 @@
     <td>Michael Bright</td>
 </tr>
 <tr>
-    <td> FLOSSAsia </td>
+    <td> FOSSAsia </td>
     <td> Mar 2018 </td>
     <td>   Lab   </td>
     <td> Kubernetes Tutorial </td>
@@ -86,7 +86,7 @@
     <td>Michael Bright</td>
 </tr>
 <tr>
-    <td> FLOSSAsia </td>
+    <td> FOSSAsia </td>
     <td> Mar 2018 </td>
     <td>   Talk   </td>
     <td> Serverless </td>
