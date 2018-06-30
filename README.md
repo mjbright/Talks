@@ -104,7 +104,6 @@
     <td>   Lab   </td>
     <td> <a href="https://devconfcz2018.sched.com/speaker/redhat6" >Kubernetes Tutorial </a></td>
     <td> </td>
-    <!-- <td> <a href="https://github.com/ContainerOrchestration/Labs/Kubernetes"> </a> </td>  -->
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/DevConf2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
     <td> <a href="TODO"> </a> </td> 
     <td>Michael Bright</td>
