@@ -90,7 +90,7 @@
     <td> Mar 2018 </td>
     <td>   Talk   </td>
     <td> Serverless </td>
-    <td> </td>
+    <td> <a href="https://mjbright.github.io/Talks/2018-Mar-25_FOSSAsia_Serverless/2018-Mar-25_FOSSAsia_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Mar-25_FOSSAsia_Serverless/"> Slides online </a> </td>
     <td> SRC </td> 
     <td> Video </td>
     <td>Michael Bright</td>
