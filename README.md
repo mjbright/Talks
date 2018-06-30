@@ -82,9 +82,10 @@
     <td> Kubernetes Tutorial </td>
     <td> </td>
     <td> <a href="https://github.com/ContainerOrchestration/Labs/blob/FlossASIA2018/Orchestration-Kubernetes/Kubernetes.md"> TUTORIAL</a> </td> 
-    <td> Video </td>
+    <td> <a href="https://www.youtube.com/watch?v=eKWxDE3U2xA"> Video </a> </td>
     <td>Michael Bright</td>
 </tr>
+
 <tr>
     <td> FOSSAsia </td>
     <td> Mar 2018 </td>
@@ -92,7 +93,7 @@
     <td> Serverless </td>
     <td> <a href="https://mjbright.github.io/Talks/2018-Mar-25_FOSSAsia_Serverless/2018-Mar-25_FOSSAsia_Serverless.pdf"> PDF </a> <hr/> <a href="https://mjbright.github.io/Talks/2018-Mar-25_FOSSAsia_Serverless/"> Slides online </a> </td>
     <td> SRC </td> 
-    <td> Video </td>
+    <td> <a href="https://www.youtube.com/watch?v=TWpMQ_Dbr3I"> Video </a> </td>
     <td>Michael Bright</td>
 </tr>
 
