@@ -1,0 +1,67 @@
+!<doctype html>
+<html>
+<body>
+    
+    <h1> Visualization tool, "<i>KubeView</i>" - EARLY DEMO VIDEO</h1>
+
+    A demonstration of an early version of a Kubernetes cluster visualization tool <a href="https://github.com/mjbright/kubeview" > "<i>KubeView</i>" </a>  which I intend to use in Conferences and Meetups to demonstrate Kubernetes, Docker, Micro-service principles and possibly even Serverless (at least to show live an OpenFaaS architecture on Kubernetes).
+
+    <br/>
+
+    I will use this tool in particular for my Kubernetes tutorials as the tool greatly helps to understand what's going on under the covers:
+    <br/>
+
+    <ul>
+        <li> Live visualization of Nodes, Pods, Deployments, ReplicaSets, Services across 1 or more nodes as they live and die, scale, upgrade, rollback </li>
+
+        <li> Displays one namespace at a time (selectable by dropdown) </li>
+
+        <li> Modal dialogs on each obect (Node/Pod/Deploy/RepSet/Service) allow to 
+            <ul>
+                <li> see object labels, attributes, annotations </li>
+                <li> link to object in API (displaying json result in browser) </li>
+                <li> send requests / display results from Service ports. </li>
+            </ul>
+        </li>
+
+        <li> Colours objects, according to running image version/status </li>
+            <ul>
+                <li> Pods go orange when they are Pending, other when Running, red when Error </li>
+                <li> Once running the image version (1,v1,2,v2, ... latest) can determine colour </li>
+                <li> ReplicaSets  are also coloured according to image version unless there are no running pods (due to upgrades) are coloured grey - allowing to easily see effect of rolling upgrades. </li>
+            </ul>
+
+    </ul>
+
+    <h4> Kube-system namespace seen by "<i>KubeView</i>" </h4>
+    <a href="https://www.youtube.com/watch?v=uyxHvMYCID0" >
+        <div style="display:inline" />
+            <div style="text-align:center;display:inline;" >       <img src="../images/youtube_small.jpg" />
+            </div><div style="display:inline;" > Link to video on YouTube
+            </div><div style="display:inline;" > <img width="400" src="images/KubernetesVisualizationForCFPs_kubesystem.PNG" />
+            </div>
+        </div>
+    </a>
+
+    <h4> Service being upgraded from v2 to v3 seen by "<i>KubeView</i>" </h4>
+    <a href="https://www.youtube.com/watch?v=uyxHvMYCID0" >
+        <div style="display:inline" />
+            <div style="text-align:center;display:inline;" >       <img src="../images/youtube_small.jpg" />
+            </div><div style="display:inline;" > Link to video on YouTube
+	    </div><div style="display:inline;" ><img width="400" src="images/KubernetesVisualizationForCFPs_serviceUpgrading.PNG" />
+            </div>
+        </div>
+    </a>
+
+    <h4> Service being tested using "<i>KubeView</i>" </h4>
+    <a href="https://www.youtube.com/watch?v=uyxHvMYCID0" >
+        <div style="display:inline" />
+            <div style="text-align:center;display:inline;" >       <img src="../images/youtube_small.jpg" />
+            </div><div style="display:inline;" > Link to video on YouTube
+	    </div><div style="display:inline;" ><img width="400" src="images/KubernetesVisualizationForCFPs_serviceUpgrade.PNG" />
+            </div>
+        </div>
+    </a>
+
+</body>
+</html>
