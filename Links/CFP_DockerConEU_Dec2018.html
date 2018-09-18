@@ -1,0 +1,49 @@
+!<doctype html>
+<html>
+<body>
+    
+    <h1>"Desktop to Micro-Services, Monolith to Micro-services" - demo video</h1>
+
+    <h2>"Desktop to Micro-Services, Monolith to Micro-services" - demo video (EARLY VERSION!)</h2>
+
+    This video demonstrates the same visualization tool, as below, but with dialog specific to the proposed "Desktop to Micro-Services, Monolith to Micro-services" talk for DockerCon Europe 2018.
+
+    Whilst this is a demonstration of a tool, I'm confident that with a good workflow scenario using Docker Desktop, "Docker App" and Docker Enterprise we can provide a visually rich demonstration of MTA principles.
+
+
+    <a href="https://youtu.be/tM-7PtN_mOk" > Link to video on YouTube </a>
+
+
+    <h1>"Visualization tool" EARLY DEMO VIDEO</h1>
+
+    A demonstration of an early version of a Kubernetes cluster visualization tool <a href="https://github.com/mjbright/kubeview" > "KubeView" </a>  which I intend to use in Conferences and Meetups to demonstrate Kubernetes, Docker, Micro-service principles and possibly even Serverless (at least to show live an OpenFaaS architecture on Kubernetes).
+
+    <br/>
+
+    I will use this tool in particular for my Kubernetes tutorials as the tool greatly helps to understand what's going on under the covers:
+    <br/>
+
+    <ul>
+        <li> Live visualization of Nodes, Pods, Deployments, ReplicaSets, Services across 1 or more nodes as they live and die, scale, upgrade, rollback </li>
+
+        <li> Displays one namespace at a time (selectable by dropdown) </li>
+
+        <li> Modal dialogs on each obect (Node/Pod/Deploy/RepSet/Service) allow to 
+            <ul>
+                <li> see object labels, attributes, annotations </li>
+                <li> link to object in API (displaying json result in browser) </li>
+                <li> send requests / display results from Service ports. </li>
+            </ul>
+        </li>
+
+        <li> Colours objects, according to running image version/status </li>
+            <ul>
+                <li> Pods go orange when they are Pending, other when Running, red when Error </li>
+                <li> Once running the image version (1,v1,2,v2, ... latest) can determine colour </li>
+                <li> ReplicaSets  are also coloured according to image version unless there are no running pods (due to upgrades) are coloured grey - allowing to easily see effect of rolling upgrades. </li>
+            </ul>
+
+    </ul>
+
+</body>
+</html>
