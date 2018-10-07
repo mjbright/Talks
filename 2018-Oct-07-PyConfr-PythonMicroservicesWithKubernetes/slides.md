@@ -1208,6 +1208,10 @@ background-color: darkcyan
 
 .menuitem[ Hands-on with Kubernetes online or Minikube(<b>*</b>) ]
 
+.menuitem[ Kubernetes Visualization with KubeView ]
+
+.menuitem[ https://github.com/mjbright/kubeview ]
+
 
 ---
 template: wseparator
