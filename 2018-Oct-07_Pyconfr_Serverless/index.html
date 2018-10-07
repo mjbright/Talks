@@ -15,6 +15,14 @@
       @jlantunez.
     -->
 
+<!-- background colors: EXTRACTED USING:
+     grep ^.bg-[a-z] static/css/webslides.css |awk ' { print $1; }' |sort |uniq -u
+.bg-apple, .bg-black .bg-black-blue .bg-blue, .bg-cyan .bg-demo .bg-facebook,
+.bg-gradient-gray .bg-gradient-h .bg-gradient-r .bg-gradient-v
+.bg-gray .bg-green, .bg-green-gray .bg-purple, .bg-red,
+.bg-secondary, .bg-trans-dark, .bg-trans-gradient, .bg-trans-light
+-->
+
     <!-- SEO -->
     <title> Serverless Computing </title>
     <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features.">
@@ -157,7 +165,7 @@
                 <li> <h2>Open Source Tools</h2>
 	             <div class="green"> Demo of Chalice/Lambda </div> </li>
 
-                <li> <h2>Open Source Platforms</h2> 
+                <li> <h2>Open Source Platforms</h2>
 	             <div class="green"> Demo of OpenFaaS </div> </li>
               </ul>
             </span>
@@ -288,6 +296,7 @@
         </section>
 
         <-- SLIDE 1.4 -->
+<!--
         <section class="bg-blue">
           <div class="wrap">
             <h2><strong>Serverless - What is it? ... Use Cases</strong></h2>
@@ -345,7 +354,7 @@
           </div>
           <!-- .end .wrap -->
         </section>
-
+-->
 
         <-- SLIDE 2.1 -->
         <section class="bg-black aligncenter">
@@ -429,7 +438,8 @@
       </div>
     </section>
 
-        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-50">
+        <!-- CARD SLIDE -->
+        <section class="bg-green-gray"> <div class="wrap"> <div class="card-50">
          <a href="https://link" title="link_title TO_EDIT">
            <figure><img src="static/images/azure-functions.png" width=200 alt="TO_EDIT"></figure>
              <blockquote>
@@ -452,7 +462,8 @@
           </a>
         </div> </div> <!-- .end .wrap --> </section>
 
-        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-50">
+        <!-- CARD SLIDE --> <section class="bg-facebook">
+        <div class="wrap"> <div class="card-50">
          <a href="https://link" title="link_title TO_EDIT">
            <figure><img src="static/images/google-cloud-functions.png" width=200 alt="TO_EDIT"></figure>
              <blockquote>
@@ -465,7 +476,8 @@
           </a>
         </div> </div> <!-- .end .wrap --> </section>
 
-        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-50">
+        <!-- CARD SLIDE --> <section class="bg-apple" >
+       <div class="wrap"> <div class="card-100">
          <a href="https://link" title="link_title TO_EDIT">
            <figure><img src="static/images/IBM_Bluemix_logo.svg.png" width=200 alt="TO_EDIT"></figure>
              <blockquote>
@@ -477,14 +489,23 @@
 		       Open Sourced as Apache OpenWhisk
 		       <br/>
 		       <br/>
-		       <strong>Runtime/Events support:</strong> Any
-                <img src="static/images/IBM_CF_Runtimes.PNG" width=400 />
-                <hr/>
-                <img src="static/images/IBM_CF_Events.PNG" width=400 />
-
 	       </cite></p>
+
+            <table>
+                <tr><td>
+                    <strong> Runtime support: </strong>
+                </td> <td>
+                    <strong> Events support: </strong>
+                </td> </tr>
+                <tr><td>
+                    <img src="static/images/IBM_CF_Runtimes.PNG" width=400 />
+                </td> <td>
+                    <img src="static/images/IBM_CF_Events.PNG" width=400 />
+                </td> </tr>
+            </table>
              </blockquote>
           </a>
+
         </div> </div> <!-- .end .wrap --> </section>
 
         <section> <div class="wrap">
@@ -496,10 +517,10 @@
         <-- SLIDE 2.4 -->
         <section> <div class="wrap bg-light">
             <h3> Potentially <strong>huge</strong> cost savings for your business, or not ...
+            <strong> Source: <a href="https://medium.com/@amiram_26122/the-hidden-costs-of-serverless-6ced7844780b"> "The hidden costs of serverless" </a> </strong>
  <!-- you need to be aware of the pitfalls of vendor pricing models --> </h3>
            <p>
             <span style="align: top; font-size: 33px !important; color: #848;">
-            <strong> Source: <a href="https://medium.com/@amiram_26122/the-hidden-costs-of-serverless-6ced7844780b"> "The hidden costs of serverless" </a> </strong>
             <img src="https://cdn-images-1.medium.com/max/2000/1*b8TwNuk1TpcBu-q4pSbCSg.png" width="800" />
 </p>
             </span>
@@ -636,8 +657,9 @@
         <-- SLIDE 3.2 ... -->
         <!-- CARD SLIDE --> <section>
 <!-- <div class="wrap"> -->
+          <span class="background" style="background-image:url('static/backgrounds/background_tools.jpg')"></span>
           <div class="wrap bg-blue">
-<div class="card-75">
+         <div class="card-75">
           <span style="font-size: 33px !important; color: #fff;">
            <div>
             <a href="https://link" title="Serverless.com">
@@ -669,7 +691,8 @@
         </section>
 
 
-        <section>
+        <!-- CARD SLIDE --> <section class="bg-facebook">
+          <span class="fg-white background" style="background-image:url('static/backgrounds/background_tools.jpg')"></span>
           <div class="wrap">
             <h2><strong>Serverless Python Frameworks ...</strong></h2>
             <ul class="flexblock gallery">
@@ -703,7 +726,7 @@
         </section>
 
         <!-- CARD SLIDE -->
-        <!-- <section> <div class="wrap"> <div class="card-50">
+        <!-- <section> <div class="wrap"> <div class="card-100">
          <a href="https://link" title="link_title TO_EDIT">
            <figure><img src="static/images/apex_logo.png" alt="TO_EDIT"></figure>
              <blockquote>
@@ -713,7 +736,15 @@
           </a>
         </div> </div> </section> -->
 
-        <!-- CARD SLIDE --> <section> <div class="wrap"> <div class="card-50">
+<!-- background colors: EXTRACTED USING:
+.bg-apple .bg-black-blue .bg-blue .bg-cyan .bg-demo .bg-facebook,
+.bg-gradient-gray .bg-gradient-h .bg-gradient-r .bg-gradient-v
+.bg-gray .bg-green, .bg-green-gray .bg-purple, .bg-red,
+.bg-secondary, .bg-trans-dark, .bg-trans-gradient, .bg-trans-light
+          <span class="fg-white background" style="background-image:url('static/backgrounds/background_tools.jpg')"></span>
+-->
+        <!-- CARD SLIDE --> <section class="bg-facebook">
+        <div class="wrap"> <div class="card-100">
          <a href="https://link" title="link_title TO_EDIT">
            <figure><img src="static/images/chalice_logo.png" alt="TO_EDIT"></figure>
              <blockquote>
@@ -721,6 +752,7 @@
                <p><cite>Open sourced by AWS - Python/AWS &lambda;
                        <br/> <br/>
                        pip installable module, command-line tool
+                       <br/> <br/>
                </cite></p>
              </blockquote>
           </a>
@@ -912,7 +944,7 @@
               <tbody>
 		 <tr>
 			 <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Cloud Providers</center> </td> </tr>
-				        
+				
                 <tr>
                   <td>AWS Lambda</td>
                   <td>Amazon's Serverless Platform</td>
@@ -974,7 +1006,7 @@
                 </tr>
 
 		 <tr> <!-- -------- DIVIDER --------- --> <td colspan="3" class="divider"><center> Serverless Python Frameworks </center> </td> </tr>
-				        
+				
                 <tr>
                   <td>Apex</td>
                   <td>Serverless framework supporting Python and other languages</td>
