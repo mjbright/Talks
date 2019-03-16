@@ -882,7 +882,7 @@ background-color: darkcyan
 
 <table><tr>
 <td>
-.img-80[ ![]( images/DEMO_KubeNodes_1mw_DockerDesktop.svg ) ]
+.img-80[ ![](images/DEMO_KubeNodes_1mw_DockerDesktop.svg) ]
 </td>
 <td>
 .img-80[ ![](images/DEMO_UPGRADE.svg) ]
@@ -914,6 +914,7 @@ Ref: [Kubernetes Liveness, Readiness Probes Documentation](https://kubernetes.io
 ---
 template: wseparator
 class: left, top
+
 ## Operations - Healthchecks
 
 ## Liveness probes
@@ -937,10 +938,10 @@ class: left, top
 - Probe types are as for Liveness probes
 
 
-
 ---
 template: wseparator
 class: left, top
+
 ## Operations - Liveness probes
 
 ```yaml
@@ -972,7 +973,8 @@ template: wseparator
 class: left, top
 ## Operations - Readiness probes
 
-It is sufficient to replace ```yaml livenessProbe:``` by ```yaml readinessProbe:```
+It is sufficient to replace 'livenessProbe:' by 'readinessProbe:' in the yaml
+
 
 ```yaml
 readinessProbe:
@@ -984,20 +986,27 @@ readinessProbe:
   periodSeconds: 5
 ```
 
-
 ---
 template: wseparator
 class: left, top
+
 # How to Migrate to Micro-services ?
 
 ** Problem:** We may not have the luxury of a *Greenfield* deployment !!
 
 So how can we migrate an existing Monolith to Micro-services ?
-
-It's a monolith after all ?
-
-Do we wait 6 months before having a new implementation (*with no extra features!*) ?
 --
+
+
+It's a monolith after all !
+--
+
+
+Do we wait 6 months before having a new implementation
+
+    (*with no extra features!*) ?
+--
+
 
 The ** Strangler ** Pattern provides a possible solution.
 
@@ -1005,18 +1014,20 @@ The ** Strangler ** Pattern provides a possible solution.
 ---
 template: wseparator
 class: left, top
-## Operations - Strangler Pattern
+## Migration - Strangler Pattern
 
 The Strangler is a pattern used in the initial migration from a Monolithic architecture to a Micro-services architecture
 
+Ref: [Azure Docs - "*Strangler pattern*"](https://docs.microsoft.com/en-us/azure/architecture/patterns/strangler)
 
-
+![](https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/strangler.png)
 
 
 ---
 template: wseparator
 class: left, top
 exclude: true
+
 # Component Design Patterns
 
 as proposed by Microsoft "Design patterns for micro-services"
@@ -1059,6 +1070,9 @@ https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/
 
 From: https://azure.microsoft.com/en-us/blog/design-patterns-for-microservices/
 
+https://www.martinfowler.com/bliki/StranglerApplication.html
+
+
 ---
 template: wseparator
 class: left, top
@@ -1089,11 +1103,15 @@ class: left, top
 exclude: false
 ## Micro-service - Architecture Design Patterns
 
-We are not concerned with:
+Here, we are not concerned with:
 
-.listitem[ Standard Component Patterns ]
+.listitem[ Standard Component *Design Patterns* ]
+
+
 
 .listitem[ Micro-services themselves (!) - Fine-grained SOA ]
+
+
 
 .listitem[ Sidecar ]
 
@@ -1109,29 +1127,75 @@ We are concerned with:
 
 .listitem[ Ingress ]
 
+providing access to the Kubernetes cluster ...
+--
+
+
+and ways of providing offload-functionality
+
+
+
 .listitem[ API Gateway ]
 
 .listitem[ Service Mesh ]
 
-.listitem[ Hybrid Apps ]
+.listitem[ Hybrid Apps - "API Gateway Pattern" ]
+--
+
+
+
+
+**Note: ** This is the new war-zone as API Gateways battle it out, Service Meshes battle it out and both battle it out!
 
 ???
 
 ---
 template: wseparator
 class: left, top
-# ????
+# Accessing our Services
 
-** Problem: Feel the pain **
+** Problem:** We've deployed, scaled & upgraded Services across our Cluster
+--
 
-... so ...
-** Proposition: split up components **
+
+But how do we access those services ?
+--
+
+
+- We can access the Pods/containers directly at their **IP** and **port** addresses
+--
+
+
+**Don't !! ** -  they are *ephemereal*
+--
+
+
+- What happens if a Pod dies ... *it just might happen ;-)*
+--
+
+
+(**it's a joke**: it **will** happen)
+--
+
+
+- Also - we don't want to **expose our infrastructure details !!** 
+--
+
+
+- Also - they should be on isolated networks 
+--
+
+ 
+**So** we provide *well-known endpoints* to reliably/safely **expose services**
+
 
 ---
 template: wseparator
 class: left, top
 
 ## Kubernetes - Exposing Services
+
+The general pattern is to provide a *cluster-wide, well-known endpoint* which remains available as Pods come and go
 
 ![]( images/Service_Access.svg )
 
@@ -1162,14 +1226,6 @@ Services can be exposed via
 template: wseparator
 class: left, top
 
-## Exposing Services (LoadBalancer)
-
-![]( images/Service_Access_LoadBalancer.svg )
-
----
-template: wseparator
-class: left, top
-
 ## Exposing Services (NodePort)
 
 ![]( images/Service_Access_NodePort.svg )
@@ -1178,12 +1234,10 @@ class: left, top
 ---
 template: wseparator
 class: left, top
-# ????
 
-** Problem: Feel the pain **
+## Exposing Services (LoadBalancer)
 
-... so ...
-** Proposition: split up components **
+![]( images/Service_Access_LoadBalancer.svg )
 
 ---
 template: wseparator
@@ -1284,6 +1338,7 @@ spec:
 template: wseparator
 class: centre, middle, inverse
 background-color: darkcyan
+exclude: true
 
 # Demo
 
@@ -1292,7 +1347,7 @@ background-color: darkcyan
 .img-80[ ![]( images/DEMO_KubeNodes_1mw_DockerDesktop.svg ) ]
 </td>
 <td>
-.img-80[ ![](images/DEMO.svg) ]
+.img-80[ ![](images/DEMO_LB.svg) ]
 </td>
 </tr></table>
 
@@ -1302,15 +1357,24 @@ template: wseparator
 class: left, top
 # Design Pattern - Ingress
 
-.listitem[ Ingress ]
+**Ingress** is the general term for controlling *incoming* traffic
 
-Relation to API GW, LoadBalancer
+    (and *Egress* is the term for *outgoing* traffic)
+--
 
-.listitem[ Ingress Rules ]
 
-.listitem[ Ingress Controller ]
+In the context of Kubernetes it refers to the ability (limited feature set) to control
+incoming traffic.
+See [Kubernetes Docs - Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+--
 
-.listitem[ Ingress Gateway ? ]
+
+
+A set of **Ingress Rules** is specified to be implemented by a **Kubernetes Controller** which typically
+implements Load Balancer, Gateway features.
+
+There are many projects providing such controller functionality such as *Nginx*, *HAproxy*, *Ambassador*, *Gloo*, *Traefik*
+
 
 ---
 template: wseparator
@@ -1415,8 +1479,9 @@ $ curl http://flaskapp.test/flask
 template: wseparator
 class: centre, middle, inverse
 background-color: darkcyan
+exclude: true
 
-# Demo
+# Demo (BUG)
 
 <table><tr>
 <td>
@@ -1432,12 +1497,29 @@ background-color: darkcyan
 ---
 template: wseparator
 class: left, top
-# ????
+# Design Pattern - API Gateway
 
-** Problem: Feel the pain **
+<!-- Ref: ["*Pattern: API Gateway / Backend for Front-End*"](https://microservices.io/patterns/apigateway.html) -->
 
-... so ...
-** Proposition: split up components **
+Ref: ["*What is an API Gateway?*"](https://apifriends.com/api-security/api-gateway-definition/)
+
+Classic API Gateways date back to Web Service (SOAP APIs) which offloaded Ingress functions into a single system.
+
+API Gateways are API proxies between the client (API consumer) and server (API Provider).
+
+- API Security
+<!-- Authentication, Authorization, filtering, forwarding, Encryption, Key/cert management: to offload backends. -->
+
+- API Control and governance
+<!-- Quota management, traffic throttling, load-balancing content-based routing, SLA monitoring. -->
+
+- API Monitoring
+
+- API Administration
+
+- API Transformation: See "*API Gateway Pattern*"
+<!-- Lightweight ESB or API Orchestration tools - translation between protocols, routing -->
+
 
 ---
 template: wseparator
@@ -1488,9 +1570,17 @@ class: left, top
 
 There are many API Gateways including
 
-.listitem[ ha-proxy, NGInx, Traefik, AWS ELB ?! ]
+- NGInx, HA-Proxy, 
 
-.listitem[ Newer generation: Envoy-based such as Ambassador, Gloo ]
+- Newer generation: Envoy-based such as Ambassador, Gloo
+
+
+
+
+--
+
+
+But can API Gateways resist the pressure coming from the next contender ...
 
 
 ---
@@ -1507,6 +1597,7 @@ exclude: true
 template: wseparator
 class: centre, middle, inverse
 background-color: darkcyan
+exclude: true
 
 # Demo
 
@@ -1523,16 +1614,45 @@ background-color: darkcyan
 ---
 template: wseparator
 class: left, top
-# ????
+# Design Pattern - Service Mesh
 
-** Problem: Feel the pain **
+** Problem:** Micro-services are fine, but we see the need for common functions
+- Logging and tracing
+- Reliable network communication
+- Encryption betweem components
+--
 
-... so ...
-** Proposition: split up components **
+
+** BUT** if every micro-service reimplements the same functionalities we will get **micro-monoliths** !!
+--
+
+
+- The problem is compounded by the polyglot nature of micro-services,
+requiring good library support for functions
+--
+
+
+** Service Mesh ** helps to address this issue by offloading such functionality
+
+
+This keeps our micro-services small and simple.
+
+
+Offload-functionality is provided through Sidecar containers.
+
+
+
 
 ---
 template: wseparator
 class: left, top
+exclude: true
+# Design Pattern - Service Mesh
+
+---
+template: wseparator
+class: left, top
+exclude: true
 # Design Pattern - Service Mesh
 
 Abstraction above TCP/IP, secure reliable <u>inter-service</u> connectivity.
