@@ -1638,53 +1638,57 @@ requiring good library support for functions
 This keeps our micro-services small and simple.
 
 
-Offload-functionality is provided through Sidecar containers.
-
-
-
+Offload-functionality is provided through **Sidecar** containers - *not libraries*.
 
 ---
 template: wseparator
 class: left, top
-exclude: true
 # Design Pattern - Service Mesh
 
----
-template: wseparator
-class: left, top
-exclude: true
-# Design Pattern - Service Mesh
 
 Abstraction above TCP/IP, secure reliable <u>inter-service</u> connectivity.
 
 Platforms such as Linkerd (v2) and Istio (v1) provide offload for &micro;--services
-
 --
+
+
 Offloads functionality from services in a distributed way.
-
 --
+
+
 <!-- .img-66[ ![](https://buoyant.io/wp-content/uploads/2017/04/linkerd-service-mesh-diagram-1024x587.png) ] -->
-.img-66[ ![]( images/istio-block-diagram.jpg) ]
+<!-- .img-66[ ![]( images/istio-block-diagram.jpg) ] -->
+
+.img[ ![]( images/istio-block-diagram.jpg) ]
 
 ---
 template: wseparator
 class: left, top
+exclude: true
+
 # Design Pattern - Service Mesh - Linkerd
 
 Abstraction above TCP/IP, secure reliable <u>inter-service</u> connectivity.
 
 Platforms such as Linkerd (v2) and Istio (v1) provide offload for &micro;--services
-
-
 --
+
+
+---
+template: wseparator
+class: left, top
+exclude: true
 Offloads functionality from services in a distributed way.
 
 --
+
+
 .img-66[ ![](https://buoyant.io/wp-content/uploads/2017/04/linkerd-service-mesh-diagram-1024x587.png) ]
 
 ---
 template: wseparator
 class: left, top
+exclude: true
 # Design Pattern - Service Mesh - Istio
 
 <!-- .img-66[ ![](https://buoyant.io/wp-content/uploads/2017/04/linkerd-service-mesh-diagram-1024x587.png) ] -->
@@ -1694,6 +1698,7 @@ class: left, top
 template: wseparator
 class: centre, middle, inverse
 background-color: darkcyan
+exclude: true
 
 # Demo
 
@@ -1710,17 +1715,34 @@ background-color: darkcyan
 ---
 template: wseparator
 class: left, top
-# ????
+# Hybrid Apps - *API Gateway Pattern*
 
-** Problem: Feel the pain **
+** Problem: ** But wouldn't it be better if we could mix legacy and new paradigms
 
-... so ...
-** Proposition: split up components **
+The Strangler pattern is an option but requires being able to rebuild the original monolith to extract functionality.
+
+It would be useful to be able to add new functionality in a less invasive way.
+
 
 ---
 template: wseparator
 class: left, top
-# Design Pattern - Hybrid Apps
+# Hybrid Apps - *API Gateway Pattern*
+
+There is a "*API Gateway*" pattern whereby the gateway has the ability to understand the API protocols.
+
+It may also understand the underlying Infrastructure and Platform APIs.
+
+This allows to perform API translation and routing and really take advantage of the orchestration platforms.
+
+.img-33[ ![](images/Microservices-Patterns-Cover.png) ]
+["*Microservices Patterns* Book](http://chrisrichardson.net/learnmicroservices.html)
+
+
+---
+template: wseparator
+class: left, top
+# Hybrid Apps - *API Gateway Pattern*
 
 Gloo allows to route between legacy apps, micro-services and serverless incrementally adding new functionality.
 .img-66[ ![](https://cdn-images-1.medium.com/max/800/0*rbeV0f5YDJsP1MG6.) ]
@@ -1730,9 +1752,45 @@ https://medium.com/solo-io/building-hybrid-apps-with-gloo-1eb96579b070
 ---
 template: wseparator
 class: left, top
-# Design Pattern - Hybrid Apps
+# Hybrid Apps - *API Gateway Pattern*
 
 Gloo understands the infrastructure on which it is running and the APIs being used.
+
+Gloo is one of several open source projects from [Solo.io](https://www.solo.io/) to facilitate the adoption of modern paradigms such as Micro-services
+- Gloo: API Gateway
+- Sqoop: Tool for modelling API interactions
+- Squash: Micro-service debugging tool
+
+--
+
+---
+template: wseparator
+class: left, top
+# So API Gateways or Service Mesh ?
+
+Service Mesh and API Gateways provide similar functionality
+- Service Mesh control *mainly* E-W traffic between micro-services
+- API Gateway control N-S (Ingress) traffic
+--
+
+
+Service Mesh technology is quickly advancing
+- May be overkill for some use cases
+
+- Istio now includes basic Gateway (N-S) functionality
+
+- Service Mesh Vendors say we still need API Gateways for the moment.
+
+- Linkerd just received new VC funding
+--
+
+
+But, API Gateways will continue to offer advanced functionality for Ingress control.
+--
+
+
+Going forward we can expect to see Service Mesh incorporating more and more Gateway functionality
+
 
 
 
@@ -1740,6 +1798,7 @@ Gloo understands the infrastructure on which it is running and the APIs being us
 template: wseparator
 class: centre, middle, inverse
 background-color: darkcyan
+exclude: true
 
 # Demo
 
@@ -1772,7 +1831,7 @@ class: left, top
 ---
 template: wseparator
 class: left, top
-# ????
+exclude: true
 
 ** Problem: Feel the pain **
 
@@ -1782,6 +1841,7 @@ class: left, top
 ---
 template: wseparator
 class: left, top
+exclude: true
 # Tools
 
 WHAT / WHERE ????
@@ -1850,11 +1910,11 @@ background-color: darkcyan
 
 .listitem[ From Monologue to Discussions ... ? ]
 
-<br/> <br/>
+<br/>
 
 # Questions ?
 
-<br/> <br/> <br/> <br/>
+<br/> <br/>
 
 .listitem[Michael Bright, <img src="./images/Twitter_logo_blue.png" width="4%" />@mjbright]
 
@@ -1920,8 +1980,9 @@ name: resources
 | SSola     | https://medium.com/@ssola/building-microservices-with-python-part-i-5240a8dcc2fb
 | Deployment | http://container-solutions.com/kubernetes-deployment-strategies/
 
-TO ADD: 12-factor apps
+<!-- TO ADD: 12-factor apps
 Gloo - Christian Posta
+-->
 
 <div class="wleftfooter"> Slides & source code at <u><a href="https://mjbright.github.io/Talks"> https://mjbright.github.io/Talks </a></u> </div>
 ---
